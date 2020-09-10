@@ -27,7 +27,7 @@
 							<h5>We Clean for You</h5>
 							<p>Let us handle the dirty work while you enjoy your free time.</p>
 						</div>
-						<a href="#" class="btn btn1">See Our Offer</a>
+						<a href="{{url('cleaning_services')}}" class="btn btn1">See Our Offer</a>
 					</div>
 				</div>
 			</div>
@@ -91,7 +91,7 @@
 						</p>
 					</div>
 					<div class="col-6 col-md-6 text-center">
-						<a href="#" class="btn btn1">Book Now</a>
+						<a href="{{url('cleaning_services')}}" class="btn btn1">Book Now</a>
 					</div>
 				</div>
 				<div class="home-booking-img">
@@ -158,7 +158,7 @@
 						</p>
 					</div>
 					<div class="col-md-6 text-center">
-						<a href="#" class="btn btn1">Book Now</a>
+						<a href="{{url('cleaning_services')}}" class="btn btn1">Book Now</a>
 					</div>
 				</div>
 				<div class="home-booking-img">
@@ -264,7 +264,7 @@
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non nisi est sit. Lorem mollis aliquam ut porttitor leo a diam sollicitudin. Aliquet bibendum enim facilisis gravida neque convallis a cras. Pharetra magna ac placerat vestibulum. Magna fermentum iaculis eu non diam phasellus. At imperdiet dui accumsan sit amet nulla facilisi morbi. Tempor id eu nisl nunc mi. Aliquam ut porttitor leo a diam sollicitudin tempor id eu. Donec ac odio tempor orci.</p>
 				</div>
 				<div class="home-btn text-right">
-					<a href="#" class="btn btn1 mt-4">Read More</a>
+					<a href="{{url('about_us')}}" class="btn btn1 mt-4">Read More</a>
 				</div>
 			</div>
 		</div>
@@ -300,7 +300,6 @@
 				</div>
 			</div>
 			<div class="col-md-6 ">
-				
 				<div class="testimonial-content">
 					<div class="testimonial-detail">
 						<div class="title">
@@ -391,62 +390,62 @@
 			</div>
 		<div class="row mt-5">
 			<div class="col-md-4">
-				<a href="#">
+				<a href="{{url('blog_detail')}}">
 					<div class="blog-card">
 						<div class="blog-card-img">
 							<img class="img-fluid" src="{{url('public/images/36.jpg')}}" alt=""></img>
 						</div>
-						<div class="blog-card-title">
+						<div class="home-card-title">
 							<h4>Clany Super Bowl Party Prep Guide</h4>
 						</div>
 						<span class="linear-border"></span>
 						<div class="blog-date">
-							<a href="#"><i class="far fa-calendar-alt pr-3"></i>March 21, 2020</a>
+							<a href="{{url('blog_detail')}}"><i class="far fa-calendar-alt pr-3"></i>March 21, 2020</a>
 						</div>
 						<div class="content">
 							<p>We have extensive experience of working with a variety of healthcare establishments. </p>
 						</div>
-						<a href="#" class="more">READ MORE</a>
+						<a href="{{url('blog_detail')}}" class="more">READ MORE</a>
 					</div>
 				</a>
 			</div>
 			<div class="col-md-4 mb-4">
-				<a href="#">
+				<a href="{{url('blog_detail')}}">
 					<div class="blog-card">
 						<div class="blog-card-img">
 							<img class="img-fluid" src="{{url('public/images/37.jpg')}}" alt=""></img>
 						</div>
-						<div class="blog-card-title">
+						<div class="home-card-title">
 							<h4>The Science of Spring Cleaning!</h4>
 						</div>
 						<span class="linear-border"></span>
 						<div class="blog-date">
-							<a href="#"><i class="far fa-calendar-alt pr-3"></i>March 21, 2020</a>
+							<a href="{{url('blog_detail')}}"><i class="far fa-calendar-alt pr-3"></i>March 21, 2020</a>
 						</div>
 						<div class="content">
 							<p>As specialist cleaning contractors, we are adept at carrying out high-quality cleaning. </p>
 						</div>
-						<a href="#" class="more">READ MORE</a>
+						<a href="{{url('blog_detail')}}" class="more">READ MORE</a>
 					</div>
 				</a>
 			</div>
 			<div class="col-md-4 mb-4">
-				<a href="#">
+				<a href="{{url('blog_detail')}}">
 					<div class="blog-card">
 						<div class="blog-card-img">
 							<img class="img-fluid" src="{{url('public/images/38.jpg')}}" alt=""></img>
 						</div>
-						<div class="blog-card-title">
+						<div class="home-card-title">
 							<h4>Carpet cleaning to remove flea infestation</h4>
 						</div>
 						<span class="linear-border"></span>
 						<div class="blog-date">
-							<a href="#"><i class="far fa-calendar-alt pr-3"></i>March 21, 2020</a>
+							<a href="{{url('blog_detail')}}"><i class="far fa-calendar-alt pr-3"></i>March 21, 2020</a>
 						</div>
 						<div class="content">
 							<p>Our industrial cleaning services are fully health & safety compliant. </p>
 						</div>
-						<a href="#" class="more">READ MORE</a>
+						<a href="{{url('blog_detail')}}" class="more">READ MORE</a>
 					</div>
 				</a>
 			</div>

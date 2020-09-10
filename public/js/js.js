@@ -31,7 +31,7 @@ $(document).ready(function () {
 
 
 
-$('.owl-carousel').owlCarousel({
+$('.testimonial-carousel').owlCarousel({
     loop:false,
     rewind:true,
     nav:false,
@@ -81,3 +81,98 @@ $(document).ready(function(){
         alert(userRating);
     }); 
 });
+
+
+
+
+function sticky_relocate() {
+    var window_top = $(window).scrollTop() ;
+    var footer_top = $(".none-sticky").offset().top -30;
+    var div_top = $('#sticky-anchor').offset().top;
+    var div_height = $(".sidebar").height();
+    var leftHeight = $('.left-container').height(); 
+
+    if (window_top + div_height > footer_top){
+        $('.sidebar').removeClass('stick');
+        $('.sidebar').addClass('abs');
+            $('.right-conatainer').css('min-height', leftHeight + 'px');
+        }
+    else if (window_top > div_top) {
+        $('.sidebar').addClass('stick');
+        $('.sidebar').removeClass('abs');
+    } else {
+        $('.sidebar').removeClass('stick');
+        $('.sidebar').removeClass('abs');
+    }
+}
+
+$(function () {
+    $(window).scroll(sticky_relocate);
+    sticky_relocate();
+});
+
+
+
+
+$('.our-work-carousel').owlCarousel({
+    loop:false,
+    rewind:true,
+    nav:true,
+    dots:false,
+    autoplay:false,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:4
+        }
+    }
+})
+
+$('.related-story-carousel').owlCarousel({
+    loop:false,
+    rewind:true,
+    nav:true,
+    dots:false,
+    autoplay:false,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:2
+        }
+    }
+})
+
+
+
+
+$('.more-cases-carousel').owlCarousel({
+    loop:false,
+    rewind:true,
+    nav:true,
+    dots:false,
+    autoplay:false,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:3
+        }
+    }
+})
