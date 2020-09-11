@@ -27,7 +27,7 @@
 		</div>	
 	</div>
 
-	<div class="container-fluid pl-5 pr-5 ma-t">
+	<div class="container-fluid">
 		<div class="our-work-carousel owl-carousel owl-theme">
 			<div class="item">
 				<a href="{{url('why_us_subpage')}}">
@@ -94,12 +94,12 @@
 
 	<div class="container ma-t">
 		<div class="row why-us">
-			<div class="col-md-7">
+			<div class="col-lg-7">
 				<div class="mission-img">
 					<img class="img-fluid" src="{{url('public/images/53.jpg')}}" alt=""></img>
 				</div>
 			</div>
-			<div class="col-md-5">
+			<div class="col-lg-5">
 				<div class="mission-img-content">
 					<div class="mission-title">
 						<h4>Our Mission</h4>
@@ -194,7 +194,7 @@
 		<div class="row">
 			<div class="col-md-6 light-bg">
 				<div class="row">
-					<div class="offset-lg-1 col-lg-10">
+					<div class="offset-lg-1 col-lg-10 why-choose-us">
 						<div class="title">
 							<h2>Why choose us?</h2>
 						</div>

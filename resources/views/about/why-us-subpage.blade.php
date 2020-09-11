@@ -75,12 +75,12 @@
 
 	<div class="container">
 		<div class="row mission sub-page ma-t">
-			<div class="col-md-6">
+			<div class="col-lg-6">
 				<div class="mission-img">
 					<img class="img-fluid" src="{{url('public/images/34.jpg')}}" alt="">
 				</div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-lg-6">
 				<div class="mission-content sub-page-content">
 					<div class="mission-title text-center mt-3">
 						<h4>The Challenege</h4>
@@ -102,7 +102,7 @@
 					</div>
 				</div>
 			</div>
-			<div class=" offset-lg-2 col-md-6">
+			<div class=" offset-lg-2 col-lg-6">
 				<div class="mission-img">
 					<img class="img-fluid" src="{{url('public/images/45.jpg')}}" alt="">
 				</div>

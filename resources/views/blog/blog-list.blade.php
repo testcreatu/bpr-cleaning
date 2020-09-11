@@ -16,7 +16,7 @@
 
 <div class="container blog ma-t">
 	<div class="row mt-5">
-		<div class="col-md-4 mb-5">
+		<div class="col-md-6 col-lg-4 col-xl-4 mb-5">
 			<a href="{{url('blog_detail')}}">
 				<div class="blog-card">
 					<div class="blog-card-img">
@@ -36,7 +36,7 @@
 				</div>
 			</a>
 		</div>
-		<div class="col-md-4 mb-5">
+		<div class="col-md-6 col-lg-4 col-xl-4 mb-5">
 			<a href="{{url('blog_detail')}}">
 				<div class="blog-card">
 					<div class="blog-card-img">
@@ -56,7 +56,7 @@
 				</div>
 			</a>
 		</div>
-		<div class="col-md-4 mb-5">
+		<div class="col-md-6 col-lg-4 col-xl-4 mb-5">
 			<a href="{{url('blog_detail')}}">
 				<div class="blog-card">
 					<div class="blog-card-img">
@@ -76,7 +76,7 @@
 				</div>
 			</a>
 		</div>
-		<div class="col-md-4 mb-5">
+		<div class="col-md-6 col-lg-4 col-xl-4 mb-5">
 			<a href="{{url('blog_detail')}}">
 				<div class="blog-card">
 					<div class="blog-card-img">
@@ -96,7 +96,7 @@
 				</div>
 			</a>
 		</div>
-		<div class="col-md-4 mb-5">
+		<div class="col-md-6 col-lg-4 col-xl-4 mb-5">
 			<a href="{{url('blog_detail')}}">
 				<div class="blog-card">
 					<div class="blog-card-img">
@@ -116,7 +116,7 @@
 				</div>
 			</a>
 		</div>
-		<div class="col-md-4 mb-5">
+		<div class="col-md-6 col-lg-4 col-xl-4 mb-5">
 			<a href="{{url('blog_detail')}}">
 				<div class="blog-card">
 					<div class="blog-card-img">

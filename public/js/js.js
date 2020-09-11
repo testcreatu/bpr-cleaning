@@ -142,14 +142,29 @@ $('.related-story-carousel').owlCarousel({
     autoplay:false,
     responsiveClass:true,
     responsive:{
-        0:{
-            items:1
+         0:{
+            items:1,
+            nav:true
         },
-        600:{
-            items:1
+        480:{
+            items:1,
+            nav:true
         },
-        1000:{
-            items:2
+        768:{
+            items:2,
+            nav:true
+        },
+        1024:{
+            items:2,
+            nav:true
+        },
+        1380:{
+            items:2,
+            nav:true
+        },
+        1580:{
+            items:2,
+            nav:true
         }
     }
 })

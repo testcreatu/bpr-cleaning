@@ -15,6 +15,20 @@
 		width: 100%;
 		padding: 0 20px;
 	}
+
+	.booking-form-content {
+	    padding: 0px !important;
+	}
+
+	.booking-form  .stick,
+	.booking-form .abs {
+		position: static;
+		width: 100%;
+	}
+
+	.form-field-checkbox li:first-child {
+	     padding-left: 20px; 
+	}
 }
 
 
@@ -24,6 +38,10 @@
 @media (max-width:991px) {
 	.top-header {
 		display: none;
+	}
+
+	.navbar-nav {
+		padding-bottom: 30px !important;
 	}
 
 	.home-banner-img {
@@ -80,6 +98,44 @@
 
 	.testimonial-content {
 		padding: 20px 0;
+	}
+
+	.mission-img-content {
+	    padding-top: 50px;
+	}
+
+	.mission-form {
+		padding: 25px;
+	}
+
+	.mission-form-content {
+		padding: 15px;
+	}
+
+	.light-bg {
+		padding: 80px 30px !important;
+	}
+
+	.subpage-img {
+		height: 450px;
+	}
+
+	.blog-detail-img {
+	    height: 450px;
+	}
+
+	.booking-form-content {
+	    padding: 0px !important;
+	}
+
+	.booking-form  .stick,
+	.booking-form .abs {
+		position: static;
+		width: 100%;
+	}
+
+	.form-field-checkbox li:first-child {
+	     padding-left: 20px; 
 	}
 }
 
@@ -242,5 +298,92 @@
 
 	.testimonial-img {
 	    height: 500px;
-}
+	}
+
+	.page-title {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.content-page {
+	    margin-top: 85px;
+	}
+
+	.mission-img {
+		height: 550px;
+	}
+
+	.partner-logo,
+	.choose-card {
+		margin-bottom: 25px;
+	}
+
+	.mission-img-content {
+		padding-top: 50px;
+	}
+
+	.why-choose-us {
+		padding: 50px;
+	}
+
+	.mission-form {
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+
+	.mission-form-content {
+		padding: 25px;
+	}
+
+	.form-side-img {
+		display: none;
+	}
+
+	.subpage-img {
+    	height: 230px;
+    }
+
+    .about-faq .accordion {
+    	padding: 25px;	
+    }
+
+    .blog-detail-img {
+	    height: 250px;
+	    margin-top: 25px;
+	}
+
+	.blog-detail .content .content-img {
+		margin:0;
+		padding-right: 25px;
+	}
+
+	.map iframe {
+		margin-top: 25px;
+	}
+
+	.contact-detail {
+		padding: 0;
+	}
+
+	.contact-detail-content {
+		padding: 30px !important;
+	}
+
+	.booking-form-content {
+		padding: 0 !important;
+	}
+
+	.booking-form .stick,
+	.booking-form .abs {
+		position: static;
+		width: 100%;
+	}
+
+	.sidebar .choose-card-img {
+	    height: 100px;
+	}
+
+	.form-field-checkbox li:first-child {
+	    padding-left: 20px;
+	}
 }

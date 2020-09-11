@@ -58,7 +58,7 @@
             <a class="nav-link" href="{{url('contact_us')}}">Conatct</a>
           </li>
         </ul>
-        <a href="{{url('cleaning_services')}}" class="btn btn1">Book Now</a>
+        <a href="{{url('cleaning_services')}}" class="btn btn1 d-none d-lg-block">Book Now</a>
       </div>
     </nav>
   </div>

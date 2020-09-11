@@ -25,12 +25,12 @@
 		</div>
 
 		<div class="row mission mt-5">
-			<div class="col-md-5">
+			<div class="col-lg-5">
 				<div class="mission-img">
 					<img class="img-fluid" src="{{url('public/images/40.jpg')}}" alt=""></img>
 				</div>
 			</div>
-			<div class="col-md-7">
+			<div class="col-lg-7">
 				<div class="mission-content">
 					<div class="mission-icon text-center">
 						<img class="img-fluid" src="{{url('public/images/28.png')}}" alt=""></img>
@@ -114,22 +114,22 @@
 		</div>
 		<div class="row mt-5">
 			<div class="col-md-6 col-lg-6 col-xl-3">
-				<div class="partner-logo">
+				<div class="partner-logo text-center">
 					<img class="img-fluid" src="{{url('public/images/41.svg')}}"></img>
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-6 col-xl-3">
-				<div class="partner-logo">
+				<div class="partner-logo text-center">
 					<img class="img-fluid" src="{{url('public/images/42.svg')}}"></img>
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-6 col-xl-3">
-				<div class="partner-logo">
+				<div class="partner-logo text-center">
 					<img class="img-fluid" src="{{url('public/images/43.svg')}}"></img>
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-6 col-xl-3">
-				<div class="partner-logo">
+				<div class="partner-logo text-center">
 					<img class="img-fluid" src="{{url('public/images/44.svg')}}"></img>
 				</div>
 			</div>
