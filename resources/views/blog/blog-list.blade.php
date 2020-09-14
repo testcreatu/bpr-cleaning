@@ -18,7 +18,7 @@
 	<div class="row mt-5">
 		<div class="col-md-6 col-lg-4 col-xl-4 mb-5">
 			<a href="{{url('blog_detail')}}">
-				<div class="blog-card">
+				<div class="blog-card" data-aos="fade-right" data-aos-duration="3000">
 					<div class="blog-card-img">
 						<img class="img-fluid" src="{{url('public/images/50.jpg')}}" alt=""></img>
 					</div>
@@ -38,7 +38,7 @@
 		</div>
 		<div class="col-md-6 col-lg-4 col-xl-4 mb-5">
 			<a href="{{url('blog_detail')}}">
-				<div class="blog-card">
+				<div class="blog-card" data-aos="fade-right" data-aos-duration="2000">
 					<div class="blog-card-img">
 						<img class="img-fluid" src="{{url('public/images/45.jpg')}}" alt=""></img>
 					</div>
@@ -58,7 +58,7 @@
 		</div>
 		<div class="col-md-6 col-lg-4 col-xl-4 mb-5">
 			<a href="{{url('blog_detail')}}">
-				<div class="blog-card">
+				<div class="blog-card" data-aos="fade-right" data-aos-duration="1000">
 					<div class="blog-card-img">
 						<img class="img-fluid" src="{{url('public/images/36.jpg')}}" alt=""></img>
 					</div>
@@ -78,7 +78,7 @@
 		</div>
 		<div class="col-md-6 col-lg-4 col-xl-4 mb-5">
 			<a href="{{url('blog_detail')}}">
-				<div class="blog-card">
+				<div class="blog-card" data-aos="fade-right" data-aos-duration="3000">
 					<div class="blog-card-img">
 						<img class="img-fluid" src="{{url('public/images/37.jpg')}}" alt=""></img>
 					</div>
@@ -98,7 +98,7 @@
 		</div>
 		<div class="col-md-6 col-lg-4 col-xl-4 mb-5">
 			<a href="{{url('blog_detail')}}">
-				<div class="blog-card">
+				<div class="blog-card" data-aos="fade-right" data-aos-duration="2000">
 					<div class="blog-card-img">
 						<img class="img-fluid" src="{{url('public/images/38.jpg')}}" alt=""></img>
 					</div>
@@ -118,7 +118,7 @@
 		</div>
 		<div class="col-md-6 col-lg-4 col-xl-4 mb-5">
 			<a href="{{url('blog_detail')}}">
-				<div class="blog-card">
+				<div class="blog-card" data-aos="fade-right" data-aos-duration="1000">
 					<div class="blog-card-img">
 						<img class="img-fluid" src="{{url('public/images/57.jpg')}}" alt=""></img>
 					</div>

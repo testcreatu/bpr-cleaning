@@ -6,10 +6,10 @@
 
 <div class="service-detail content-page">
 	<div class="banner">
-		<div class="banner-img">
+		<div class="banner-img" data-aos="zoom-in" data-aos-duration="3000">
 			<img class="img-fluid" src="{{url('public/images/56.jpg')}}" alt=""></img>
 		</div>
-		<div class="page-title title">
+		<div class="page-title title" data-aos="fade-right" data-aos-duration="3000">
 			<h2>Office Cleaning</h2>
 		</div>
 	</div>
@@ -18,17 +18,17 @@
 		<div class="row">
 			<div class="col-md-4">
 				<div class="service-sidebar">
-					<div class="title">
+					<div class="title" data-aos="fade-down" data-aos-duration="3000">
 						<h3>Service</h3>
 					</div>
-					<ul class="mt-4">
+					<ul class="mt-4" data-aos="fade-right" data-aos-duration="3000">
 						<li><a href="#">Office Cleaning</a></li>
 						<li><a href="#">Commercial Cleaning</a></li>
 						<li><a href="#">Hotel</a></li>
 						<li><a href="#">Resturant</a></li>
 						<li><a href="#">Boat Cleaning</a></li>
 					</ul>
-					<div class="sidebar-display">
+					<div class="sidebar-display" data-aos="fade-right" data-aos-duration="3000">
 						<div class="choose-card text-center">
 							<div class="choose-card-img">
 								<img class="img-fluid" src="{{url('public/images/25.png')}}" alt=""></img>
@@ -41,7 +41,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="sidebar-bg">
+					<div class="sidebar-bg"  data-aos="fade-right" data-aos-duration="3000">
 						<div class="choose-card text-center">
 							<div class="choose-card-img">
 								<img class="img-fluid" src="{{url('public/images/28-1.png')}}" alt=""></img>
@@ -91,12 +91,12 @@
 			</div>
 			<div class="col-md-8">
 				<div class="service-content">
-					<div class="title-content">
+					<div class="title-content"  data-aos="fade-down" data-aos-duration="3000">
 						<p>The Cleaning Services Group has more than 15 years of office cleaning experience, working with multinational companies as well as smaller independent businesses.</p>
 					</div>
 
 					<div class="row mt-4">
-						<div class="col-md-6">
+						<div class="col-md-6"  data-aos="flip-up" data-aos-duration="3000">
 							<div class="service-title mb-4">
 								<h4>The importance of commercial office cleaning</h4>
 							</div>
@@ -109,7 +109,7 @@
 								<li>With 65% of office workers sharing phones and computers, and with a whopping 25,127 germs per square inch found on just a telephone, employers need to take cleanliness seriously.</li>
 							</ul>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-6" data-aos="flip-down" data-aos-duration="3000">
 							<div class="service-title mb-4">
 								<h4>How clean offices can help workplace productivity</h4>
 							</div>
@@ -122,7 +122,7 @@
 						</div>
 					</div>
 
-					<div class="subscriber ma-t">
+					<div class="subscriber ma-t" data-aos="fade-left" data-aos-duration="3000">
 						<div class="row">
 							<div class="col-md-12">
 								<div class="title">
@@ -146,7 +146,7 @@
 					</div>
 
 					<div class="row ma-t">
-						<div class="col-md-6 recent-post">
+						<div class="col-md-6 recent-post" data-aos="flip-right" data-aos-duration="3000">
 							<div class="service-title mb-4">
 								<h4>Recent Post</h4>
 							</div>
@@ -181,7 +181,7 @@
 								</li>
 							</ul>
 						</div>
-						<div class="col-md-6 recent-post-content">
+						<div class="col-md-6 recent-post-content" data-aos="flip-left" data-aos-duration="3000">
 							<a href="{{url('service_detail')}}">
 								<div class="blog-card">
 									<div class="blog-card-img">

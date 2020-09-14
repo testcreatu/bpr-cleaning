@@ -6,7 +6,7 @@
 
 <div class="why-us subpage content-page">
 	<div class="container">
-		<div class="subpage-banner">
+		<div class="subpage-banner" data-aos="zoom-in" data-aos-duration="3000">
 			<div class="subpage-img">
 				<img class="img-fluid" src="{{url('public/images/9.jpg')}}"></img>
 			</div>
@@ -17,7 +17,7 @@
 			</div>
 		</div>
 
-		<div class="subpage-overlay-text text-center ma-t">
+		<div class="subpage-overlay-text text-center ma-t" data-aos="zoom-out" data-aos-duration="3000">
 			<h5>
 				Eco
 				<span>January 1, 2017 — Studio One</span>
@@ -26,7 +26,7 @@
 
 		<div class="row ma-t">
 			<div class="col-md-4 mb-3">
-				<div class="subpage-measures">
+				<div class="subpage-measures" data-aos="fade-right" data-aos-duration="3000">
 					<div class="title">
 						<h4>Health and safety</h4>
 					</div>
@@ -36,7 +36,7 @@
 				</div>
 			</div>
 			<div class="col-md-4 mb-3">
-				<div class="subpage-measures">
+				<div class="subpage-measures" data-aos="fade-up" data-aos-duration="3000">
 					<div class="title">
 						<h4>New bespoke epoxy</h4>
 					</div>
@@ -46,7 +46,7 @@
 				</div>
 			</div>
 			<div class="col-md-4 mb-3">
-				<div class="subpage-measures">
+				<div class="subpage-measures" data-aos="fade-left" data-aos-duration="3000">
 					<div class="title">
 						<h4>Keeping the floor clean.</h4>
 					</div>
@@ -76,12 +76,12 @@
 	<div class="container">
 		<div class="row mission sub-page ma-t">
 			<div class="col-lg-6">
-				<div class="mission-img">
+				<div class="mission-img" data-aos="zoom-out" data-aos-duration="3000">
 					<img class="img-fluid" src="{{url('public/images/34.jpg')}}" alt="">
 				</div>
 			</div>
 			<div class="col-lg-6">
-				<div class="mission-content sub-page-content">
+				<div class="mission-content sub-page-content" data-aos="fade-left" data-aos-duration="3000">
 					<div class="mission-title text-center mt-3">
 						<h4>The Challenege</h4>
 					</div>
@@ -93,7 +93,7 @@
 		</div>
 		<div class="row">
 			<div class="col-lg-4">
-				<div class="mission-content sub-page-content">
+				<div class="mission-content sub-page-content" data-aos="fade-right" data-aos-duration="3000">
 					<div class="mission-title text-center mt-3">
 						<h4>The Solution</h4>
 					</div>
@@ -102,7 +102,7 @@
 					</div>
 				</div>
 			</div>
-			<div class=" offset-lg-2 col-lg-6">
+			<div class=" offset-lg-2 col-lg-6" data-aos="zoom-in" data-aos-duration="3000">
 				<div class="mission-img">
 					<img class="img-fluid" src="{{url('public/images/45.jpg')}}" alt="">
 				</div>
@@ -113,7 +113,7 @@
 	<div class="subscriber">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-9">
+				<div class="col-md-9" data-aos="fade-right" data-aos-duration="3000">
 					<div class="title">
 						<h4>Subscribe for the Latest News:</h4>
 					</div>
@@ -132,7 +132,7 @@
 					</form>
 				</div>
 				<div class="col-md-3">
-					<div class="subscribe-link">
+					<div class="subscribe-link" data-aos="fade-left" data-aos-duration="3000">
 						<p>
 							<span>Malta</span>
 							Underlying Block H Triq Ta'Mezzi,
@@ -161,7 +161,7 @@
 					<div class="more-cases-carousel owl-carousel owl-theme">
 						<div class="item">
 							<a href="{{url('why_us_subpage')}}">
-								<div class="blog-card">
+								<div class="blog-card" data-aos="fade-right" data-aos-duration="3000">
 									<div class="blog-card-img">
 										<img class="img-fluid" src="{{url('public/images/33.jpg')}}" alt=""></img>
 									</div>
@@ -178,7 +178,7 @@
 						</div>
 						<div class="item">
 							<a href="{{url('why_us_subpage')}}">
-								<div class="blog-card">
+								<div class="blog-card" data-aos="fade-down" data-aos-duration="3000">
 									<div class="blog-card-img">
 										<img class="img-fluid" src="{{url('public/images/50.jpg')}}" alt=""></img>
 									</div>
@@ -195,7 +195,7 @@
 						</div>
 						<div class="item">
 							<a href="{{url('why_us_subpage')}}">
-								<div class="blog-card">
+								<div class="blog-card" data-aos="fade-left" data-aos-duration="3000">
 									<div class="blog-card-img">
 										<img class="img-fluid" src="{{url('public/images/10.jpg')}}" alt=""></img>
 									</div>

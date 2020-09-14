@@ -6,10 +6,10 @@
 
 <div class="contact-us content-page">
 	<div class="banner">
-		<div class="banner-img">
+		<div class="banner-img" data-aos="zoom-in" data-aos-duration="3000">
 			<img class="img-fluid" src="{{url('public/images/58.jpg')}}" alt=""></img>
 		</div>
-		<div class="page-title title">
+		<div class="page-title title" data-aos="fade-right" data-aos-duration="3000">
 			<h2>Contact</h2>
 		</div>
 	</div>
@@ -18,24 +18,24 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
-					<div class="mission-title">
+					<div class="mission-title" data-aos="fade-down" data-aos-duration="3000">
 						<h4>Get an emergency call or appoinment.</h4>
 					</div>
 					<form class="contact-form mt-5">
 						<div class="form-row">
-							<div class="form-group col-md-6">
+							<div class="form-group col-md-6" data-aos="fade-right" data-aos-duration="3000">
 								<input type="text-center" class="form-control" id="inputName" placeholder="Enter your name">
 								<i class="fas fa-user"></i>
 							</div>
-							<div class="form-group col-md-6">
+							<div class="form-group col-md-6" data-aos="fade-right" data-aos-duration="2000">
 								<input type="email" class="form-control" id="inputPhone" placeholder="Enter your email">
 							</div>
 						</div>
 						<div class="form-row">
-							<div class="form-group col-md-6">
+							<div class="form-group col-md-6" data-aos="fade-right" data-aos-duration="3000">
 								<input type="nummber" class="form-control" id="inputPhone" placeholder="Phone number">
 							</div>
-							<div class="form-group col-md-6">
+							<div class="form-group col-md-6" data-aos="fade-right" data-aos-duration="2000">
 								<select id="inputSubject" class="form-control">
 									<option selected>Subject</option>
 									<option>Commercial Cleaning</option>
@@ -46,17 +46,17 @@
 							</div>
 						</div>
 						<div class="form-row">
-							<div class="form-group col-12">
+							<div class="form-group col-12" data-aos="fade-right" data-aos-duration="3000">
 								<textarea class="form-control"></textarea>
 							</div>
 						</div>
-						<div class="col-auto text-center mt-4">
+						<div class="col-auto text-center mt-4" data-aos="fade-right" data-aos-duration="3000">
 							<button class="btn btn1 mx-auto">Submit</button>
 						</div>
 					</form>
 				</div>
 				<div class="col-md-6">
-					<div class="map">
+					<div class="map" data-aos="fade-left" data-aos-duration="3000">
 						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14132.058636846925!2d85.3450849!3d27.6859418!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6064967133397f28!2sCreatu%20Developers!5e0!3m2!1sen!2snp!4v1599718588450!5m2!1sen!2snp" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 					</div>
 				</div>
@@ -65,11 +65,11 @@
 			<div class="contact-detail ma-t">
 				<div class="row">
 					<div class="col-md-6">
-						<div class="contact-detail-img">
+						<div class="contact-detail-img" data-aos="zoom-in" data-aos-duration="3000">
 							<img class="img-fluid" src="{{url('public/images/45.jpg')}}" alt=""></img>
 						</div>
 					</div>
-					<div class="col-md-6 contact-detail-content pa-tb">
+					<div class="col-md-6 contact-detail-content pa-tb"  data-aos="zoom-out" data-aos-duration="3000">
 						<div class="service-title">
 							<h4>BPR Cleaning Service Center</h4>
 						</div>
@@ -112,7 +112,7 @@
 	<div class="subscriber">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-9">
+				<div class="col-md-9" data-aos="fade-right" data-aos-duration="3000">
 					<div class="title">
 						<h4>Subscribe for the Latest News:</h4>
 					</div>
@@ -130,7 +130,7 @@
 						</div>
 					</form>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-3" data-aos="fade-left" data-aos-duration="3000">
 					<div class="subscribe-link">
 						<p>
 							<span>Malta</span>

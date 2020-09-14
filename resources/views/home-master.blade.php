@@ -27,6 +27,7 @@
     <!-- Global CSS -->
     <link rel="stylesheet" type="text/css" href="{{url('public/css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{url('public/css/responsive.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url('public/css/aos.css')}}">
 
 
      <!-- owl carousel -->
@@ -113,6 +114,9 @@
 
 <!-- Global JS -->
 <script type="text/javascript" src="{{url('public/js/js.js')}}"></script>
-
+<script type="text/javascript" src="{{url('public/js/aos.js')}}"></script>
+<script>
+    AOS.init();
+  </script>
 
 </html>

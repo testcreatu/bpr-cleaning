@@ -6,7 +6,7 @@
 
 <div class="booking-service content-page">
 	<div class="container">
-		<div class="title text-center pa-t">
+		<div class="title text-center pa-t" data-aos="fade-down" data-aos-duration="3000">
 			<h2>
 				Choose your service
 				<span>Find the perfect plan for you — 100% Money Back Guarantee</span>
@@ -14,7 +14,7 @@
 		</div>
 		<div class="row booking-service-list ma-t ma-b">
 			<div class="col-md-6 col-lg-4 col-xl-3 mb-4">
-				<div class="service-list-content">
+				<div class="service-list-content" data-aos="fade-right" data-aos-duration="3000">
 					<div class="service-list-img">
 						<img class="img-fluid" src="{{url('public/images/39.jpg')}}"></img>
 					</div>
@@ -37,7 +37,7 @@
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-4 col-xl-3 mb-4">
-				<div class="service-list-content">
+				<div class="service-list-content" data-aos="fade-right" data-aos-duration="2500">
 					<div class="service-list-img">
 						<img class="img-fluid" src="{{url('public/images/39.jpg')}}"></img>
 					</div>
@@ -60,7 +60,7 @@
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-4 col-xl-3 mb-4">
-				<div class="service-list-content">
+				<div class="service-list-content" data-aos="fade-right" data-aos-duration="2000">
 					<div class="service-list-img">
 						<img class="img-fluid" src="{{url('public/images/39.jpg')}}"></img>
 					</div>
@@ -82,7 +82,7 @@
 				</div>
 			</div>
 			<div class="col-md-6 col-lg-4 col-xl-3 mb-4">
-				<div class="service-list-content">
+				<div class="service-list-content" data-aos="fade-right" data-aos-duration="1500">
 					<div class="service-list-img">
 						<img class="img-fluid" src="{{url('public/images/39.jpg')}}"></img>
 					</div>

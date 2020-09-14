@@ -7,7 +7,7 @@
 <div class="content-page">
 	<div class="banner pa-tb">
 		<div class="container">	
-			<div class="title">
+			<div class="title"  data-aos="fade-down" data-aos-duration="3000">
 				<h2>Why Clany’s a life-saver for my flatshare!</h2>
 			</div>
 		</div>	
@@ -19,12 +19,12 @@
 				<div class="blog-detail">
 					<div class="row blog-detail-top">
 						<div class="col-4 pt-4 pb-4">
-							<div class="date">
+							<div class="date" data-aos="fade-right" data-aos-duration="3000">
 								<span><i class="far fa-calendar-alt pr-3"></i>March 21, 2020</span>
 							</div>
 						</div>
 						<div class="col-8 share">
-							<ul class="">
+							<ul class=""  data-aos="fade-left" data-aos-duration="3000">
 								<li class="facebook">
 									<div id="fb-root"></div>
 									<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&autoLogAppEvents=1&version=v8.0&appId=706653159797806" nonce="RrVO169H"></script>
@@ -36,10 +36,10 @@
 							</ul>
 						</div>
 					</div>
-					<div class="blog-detail-img">
+					<div class="blog-detail-img" data-aos="zoom-in" data-aos-duration="3000">
 						<img class="img-fluid" src="{{url('public/images/50.jpg')}}" alt=""></img>
 					</div>
-					<div class="content">
+					<div class="content" data-aos="fade-right" data-aos-duration="3000">
 						<p>Marie is 24, originally from Montreal, Canada.<p>
 
 						<p>She moved to a new city 8 months ago and moved into a flatshare with three other girls in a small apartment downtown. “When you’re living with roommates it gets messy unbelievably quickly”, she says, “And rotas don’t really work. I mean, who’s going to remember it’s their turn to take out the trash one week in three – and the results are not pretty!”<p>
@@ -74,7 +74,7 @@
 					<div class="related-story-carousel owl-carousel owl-theme">
 						<div class="item">
 							<a href="{{url('blog_detail')}}">
-								<div class="blog-card">
+								<div class="blog-card" data-aos="flip-right" data-aos-duration="3000">
 									<div class="blog-card-img">
 										<img class="img-fluid" src="{{url('public/images/45.jpg')}}" alt=""></img>
 									</div>
@@ -94,7 +94,7 @@
 						</div>
 						<div class="item">
 							<a href="{{url('blog_detail')}}">
-								<div class="blog-card">
+								<div class="blog-card" data-aos="flip-right" data-aos-duration="3000">
 									<div class="blog-card-img">
 										<img class="img-fluid" src="{{url('public/images/36.jpg')}}" alt=""></img>
 									</div>
@@ -115,7 +115,7 @@
 						<div class="item">
 							<a href="{{url('blog_detail')}}">
 								<div class="blog-card">
-									<div class="blog-card-img">
+									<div class="blog-card-img" data-aos="flip-right" data-aos-duration="3000">
 										<img class="img-fluid" src="{{url('public/images/37.jpg')}}" alt=""></img>
 									</div>
 									<div class="home-card-title">

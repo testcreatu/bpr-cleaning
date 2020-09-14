@@ -6,10 +6,10 @@
 
 <div class="why-us content-page">
 	<div class="banner">
-		<div class="banner-img">
+		<div class="banner-img" data-aos="fade-up" data-aos-duration="3000">
 			<img class="img-fluid" src="{{url('public/images/49.jpg')}}" alt=""></img>
 		</div>
-		<div class="page-title title">
+		<div class="page-title title" data-aos="fade-right" data-aos-duration="3000">
 			<h2>Why Us</h2>
 		</div>
 	</div>
@@ -17,11 +17,11 @@
 	<div class="container pa-tb">
 		<div class="row">
 			<div class="col-md-6">
-				<div class="mission-title">
+				<div class="mission-title" data-aos="fade-left" data-aos-duration="3000">
 					<h4>Our Passion Is Building Value, for You and Your Customers</h4>
 				</div>
 			</div>
-			<div class="col-md-6 title-content">
+			<div class="col-md-6 title-content" data-aos="fade-right" data-aos-duration="3000">
 				<p>Each and every day, our mission is to build value for your business by helping you decrease operating costs, reduce customer complaints, and improve your customer’s overall experience..</p>
 			</div>
 		</div>	
@@ -95,12 +95,12 @@
 	<div class="container ma-t">
 		<div class="row why-us">
 			<div class="col-lg-7">
-				<div class="mission-img">
+				<div class="mission-img" data-aos="zoom-out-up" data-aos-duration="3000">
 					<img class="img-fluid" src="{{url('public/images/53.jpg')}}" alt=""></img>
 				</div>
 			</div>
 			<div class="col-lg-5">
-				<div class="mission-img-content">
+				<div class="mission-img-content" data-aos="zoom-out-down" data-aos-duration="3000">
 					<div class="mission-title">
 						<h4>Our Mission</h4>
 					</div>
@@ -118,12 +118,12 @@
 
 	<div class="container ma-t">
 		<div class="choose-us">
-			<div class="title text-center">
+			<div class="title text-center"  data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-duration="3000">
 				<h2>Why Choose Us</h2>
 			</div>	
 			<div class="row mt-5">
 				<div class="col-md-6 col-lg-6 col-xl-3">
-					<div class="choose-card text-center">
+					<div class="choose-card text-center" data-aos="fade-right" data-aos-duration="3000">
 						<div class="choose-card-img">
 							<img class="img-fluid" src="{{url('public/images/28.png')}}" alt="">
 						</div>
@@ -139,7 +139,7 @@
 					</div>
 				</div>		
 				<div class="col-md-6 col-lg-6 col-xl-3">
-					<div class="choose-card text-center">
+					<div class="choose-card text-center" data-aos="fade-up" data-aos-duration="3000">
 						<div class="choose-card-img">
 							<img class="img-fluid" src="{{url('public/images/25.png')}}" alt="">
 						</div>
@@ -155,7 +155,7 @@
 					</div>
 				</div>	
 				<div class="col-md-6 col-lg-6 col-xl-3">
-					<div class="choose-card text-center">
+					<div class="choose-card text-center" data-aos="fade-down" data-aos-duration="3000">
 						<div class="choose-card-img">
 							<img class="img-fluid" src="{{url('public/images/27.png')}}" alt="">
 						</div>
@@ -171,7 +171,7 @@
 					</div>
 				</div>	
 				<div class="col-md-6 col-lg-6 col-xl-3">
-					<div class="choose-card text-center">
+					<div class="choose-card text-center" data-aos="fade-left" data-aos-duration="3000">
 						<div class="choose-card-img">
 							<img class="img-fluid" src="{{url('public/images/26.png')}}" alt="">
 						</div>
@@ -194,7 +194,7 @@
 		<div class="row">
 			<div class="col-md-6 light-bg">
 				<div class="row">
-					<div class="offset-lg-1 col-lg-10 why-choose-us">
+					<div class="offset-lg-1 col-lg-10 why-choose-us" data-aos="zoom-in-down" data-aos-duration="3000">
 						<div class="title">
 							<h2>Why choose us?</h2>
 						</div>
@@ -205,7 +205,7 @@
 				</div>
 			</div>
 			<div class="col-md-6 p-0">
-				<div class="light-image">
+				<div class="light-image" data-aos="zoom-in-up" data-aos-duration="3000">
 					<img class="img-fluid" src="{{url('public/images/40.jpg')}}" alt="">
 				</div>
 			</div>
@@ -214,7 +214,7 @@
 
 	<div class="container-fluid mission-form pa-tb">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-6" data-aos="zoom-in-up" data-aos-duration="3000">
 				<div class="mission-form-content">
 					<div class="mission-title">
 						<h4>A clean that measures up.</h4>
@@ -248,7 +248,7 @@
 					</form>
 				</div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-6" data-aos="zoom-in-down" data-aos-duration="3000">
 				<div class="form-side-img">
 					<img class="img-fluid" src="{{url('public/images/31.jpg')}}" alt="">
 				</div>

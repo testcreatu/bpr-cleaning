@@ -6,10 +6,10 @@
 
 <div class="about-us content-page">
 	<div class="banner">
-		<div class="banner-img">
+		<div class="banner-img" data-aos="fade-up" data-aos-duration="3000">
 			<img class="img-fluid" src="{{url('public/images/9.jpg')}}" alt=""></img>
 		</div>
-		<div class="page-title title">
+		<div class="page-title title" data-aos="fade-right" data-aos-duration="3000">
 			<h2>About</h2>
 		</div>
 	</div>
@@ -17,21 +17,21 @@
 	<div class="container">
 		<div class="row ma-t">
 			<div class="offset-lg-1 col-lg-10 text-center title-content">
-				<div class="title">
+				<div class="title" data-aos="fade-right" data-aos-duration="3000">
 					<h2>Doing business since 1992</h2>
 				</div>
-				<p class="mt-4">Our Father 23 years ago started Clany Services with two vision, Deliver the best quality of service possible and the most outstanding customer service, we still driven by his vision.</p>
+				<p class="mt-4" data-aos="fade-left" data-aos-duration="3000">Our Father 23 years ago started Clany Services with two vision, Deliver the best quality of service possible and the most outstanding customer service, we still driven by his vision.</p>
 			</div>
 		</div>
 
 		<div class="row mission mt-5">
 			<div class="col-lg-5">
-				<div class="mission-img">
+				<div class="mission-img" data-aos="zoom-in-down" data-aos-duration="3000">
 					<img class="img-fluid" src="{{url('public/images/40.jpg')}}" alt=""></img>
 				</div>
 			</div>
 			<div class="col-lg-7">
-				<div class="mission-content">
+				<div class="mission-content" data-aos="zoom-in-up" data-aos-duration="3000">
 					<div class="mission-icon text-center">
 						<img class="img-fluid" src="{{url('public/images/28.png')}}" alt=""></img>
 					</div>
@@ -71,10 +71,10 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9">
-					<div class="title">
+					<div class="title"data-aos="fade-right" data-aos-duration="3000">
 						<h4>Subscribe for the Latest News:</h4>
 					</div>
-					<form class="subscribe-form mt-3">
+					<form class="subscribe-form mt-3"data-aos="fade-left" data-aos-duration="3000">
 						<div class="form-row">
 							<div class="form-group col-md-4">
 								<input type="text" class="form-control" placeholder="Name">
@@ -89,7 +89,7 @@
 					</form>
 				</div>
 				<div class="col-md-3">
-					<div class="subscribe-link">
+					<div class="subscribe-link"data-aos="zoom-out" data-aos-duration="3000">
 						<p>
 							<span>Malta</span>
 							Underlying Block H Triq Ta'Mezzi,
@@ -109,10 +109,10 @@
 	</div>
 
 	<div class="container ma-t">
-		<div class="mission-title text-center mt-3">
+		<div class="mission-title text-center mt-3" data-aos="fade-down" data-aos-duration="3000">
 			<h4>Our Partners</h4>
 		</div>
-		<div class="row mt-5">
+		<div class="row mt-5" data-aos="fade-up" data-aos-duration="3000">
 			<div class="col-md-6 col-lg-6 col-xl-3">
 				<div class="partner-logo text-center">
 					<img class="img-fluid" src="{{url('public/images/41.svg')}}"></img>
@@ -138,12 +138,12 @@
 
 	<div class="choose-us our-guarante ma-t">
 		<div class="container">
-			<div class="mission-title text-center">
+			<div class="mission-title text-center" data-aos="fade-left" data-aos-duration="3000">
 				<h4>Our Guarantee</h4>
 			</div>	
 			<div class="row mt-5">
 				<div class="col-md-6 col-lg-6 col-xl-3">
-					<div class="choose-card text-center">
+					<div class="choose-card text-center" data-aos="fade-right" data-aos-duration="3000">
 						<div class="gaurante-box">
 							<div class="choose-card-img">
 								<img class="img-fluid" src="{{url('public/images/28.png')}}" alt=""></img>
@@ -161,7 +161,7 @@
 					</div>
 				</div>		
 				<div class="col-md-6 col-lg-6 col-xl-3">
-					<div class="choose-card text-center">
+					<div class="choose-card text-center" data-aos="fade-right" data-aos-duration="2000">
 						<div class="gaurante-box">
 							<div class="choose-card-img">
 								<img class="img-fluid" src="{{url('public/images/25.png')}}" alt=""></img>
@@ -179,7 +179,7 @@
 					</div>
 				</div>	
 				<div class="col-md-6 col-lg-6 col-xl-3">
-					<div class="choose-card text-center">
+					<div class="choose-card text-center" data-aos="fade-right" data-aos-duration="1500">
 						<div class="gaurante-box">
 							<div class="choose-card-img">
 								<img class="img-fluid" src="{{url('public/images/27.png')}}" alt=""></img>
@@ -197,7 +197,7 @@
 					</div>
 				</div>	
 				<div class="col-md-6 col-lg-6 col-xl-3">
-					<div class="choose-card text-center">
+					<div class="choose-card text-center" data-aos="fade-right" data-aos-duration="1000">
 						<div class="gaurante-box">
 							<div class="choose-card-img">
 								<img class="img-fluid" src="{{url('public/images/26.png')}}" alt=""></img>
