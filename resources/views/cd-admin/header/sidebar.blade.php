@@ -11,7 +11,7 @@
         <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
         <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
         <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
-        <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+        <ul class="page-sidebar-menu  page-sidebar-menu-light page-sidebar-menu-hover-submenu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
             <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
             <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
             <li class="sidebar-toggler-wrapper hide">
@@ -35,9 +35,15 @@
                 <h3 class="uppercase">About Section</h3>
             </li>
             <li class="nav-item">
-                <a href="{{url('cd-admin/view-all-about')}}" class="nav-link nav-toggle">
+                <a href="{{url('cd-admin/view-about')}}" class="nav-link nav-toggle">
                     <i class="fa fa-info"></i>
                     <span class="title">About us</span>
+                </a>
+            </li> 
+            <li class="nav-item">
+                <a href="{{url('cd-admin/view-why-us')}}" class="nav-link nav-toggle">
+                    <i class="fa fa-info"></i>
+                    <span class="title">Why Us</span>
                 </a>
             </li> 
 
@@ -66,27 +72,7 @@
                     </li>
                 </ul>
             </li>
-           {{--  <li class="nav-item">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="fa fa-list-ol"></i>
-                    <span class="title">News Category</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/add-news-category')}}" class="nav-link">
-                            <i class="fa fa-plus"></i>
-                            <span class="title">Add new News Category</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/view-all-news-category')}}" class="nav-link">
-                            <i class="fa fa-eye"></i>
-                            <span class="title">View all News Category</span>
-                        </a>
-                    </li>
-                </ul>
-            </li> --}}
+         
             <li class="nav-item">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="fa fa-list-ol"></i>
@@ -97,38 +83,17 @@
                     <li class="nav-item">
                         <a href="{{url('cd-admin/add-blog')}}" class="nav-link">
                             <i class="fa fa-plus"></i>
-                            <span class="title">Add new Blog</span>
+                            <span class="title">Add Blog</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{url('cd-admin/view-all-blog')}}" class="nav-link">
+                        <a href="{{url('cd-admin/view-blog')}}" class="nav-link">
                             <i class="fa fa-eye"></i>
-                            <span class="title">View all Blog</span>
+                            <span class="title">View Blog</span>
                         </a>
                     </li>
                 </ul>
             </li>
-          {{--   <li class="nav-item">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="fa fa-graduation-cap"></i>
-                    <span class="title">University</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/add-university')}}" class="nav-link">
-                            <i class="fa fa-plus"></i>
-                            <span class="title">Add new university</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/view-all-university')}}" class="nav-link">
-                            <i class="fa fa-eye"></i>
-                            <span class="title">View all university</span>
-                        </a>
-                    </li>
-                </ul>
-            </li> --}}
 
             <li class="nav-item">
                 <a href="javascript:;" class="nav-link nav-toggle">
@@ -151,29 +116,6 @@
                     </li>
                 </ul>
             </li>
-
-           {{--  <li class="nav-item">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="fa fa-list-ol"></i>
-                    <span class="title">Courses Detail</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/add-courses-detail')}}" class="nav-link">
-                            <i class="fa fa-plus"></i>
-                            <span class="title">Add new Courses Detail</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/view-all-courses-detail')}}" class="nav-link">
-                            <i class="fa fa-eye"></i>
-                            <span class="title">View all Courses Detail</span>
-                        </a>
-                    </li>
-                </ul>
-            </li> --}}
-
             <li class="nav-item">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="fa fa-list-ol"></i>
@@ -243,20 +185,20 @@
             <li class="nav-item">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="fa fa-group"></i>
-                    <span class="title">Clients</span>
+                    <span class="title">Partners</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item">
-                        <a href="{{url('cd-admin/add-clients')}}" class="nav-link">
+                        <a href="{{url('cd-admin/add-partners')}}" class="nav-link">
                             <i class="fa fa-plus"></i>
-                            <span class="title">Add new Clients</span>
+                            <span class="title">Add Partners</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{url('cd-admin/view-all-clients')}}" class="nav-link">
+                        <a href="{{url('cd-admin/view-partners')}}" class="nav-link">
                             <i class="fa fa-eye"></i>
-                            <span class="title">View all Clients</span>
+                            <span class="title">View Partners</span>
                         </a>
                     </li>
                 </ul>

@@ -3,21 +3,21 @@
 <!-- page content -->
 @section('content')
 
-@if(Session::has('CategoryDeleteSuccess'))
+@if(Session::has('failure'))
 <div class="alert alert-danger">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong>CATEGORY DELETED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
+	<strong>Carousel Deleted Successfully</strong> {{ Session::get('message', '') }}
 </div>
-@elseif(Session::has('CategorySuccess'))
+@elseif(Session::has('success'))
 <div class="alert alert-success">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong>CATEGORY INSERTED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
+	<strong>Carousel Added Successfully</strong> {{ Session::get('message', '') }}
 </div>
 
-@elseif(Session::has('CategoryUpdateSuccess'))
+@elseif(Session::has('success1'))
 <div class="alert alert-success">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong>CATEGORY UPDATED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
+	<strong>Carousel Updated Successfully</strong> {{ Session::get('message', '') }}
 </div>
 
 @endif
@@ -31,7 +31,7 @@
 		</li>
 	</li>
 	<li>
-		<span>View all Category</span>
+		<span>View Carousel</span>
 	</li>
 </ul>
 </div>
@@ -44,11 +44,11 @@
 			<div class="portlet-title">
 				<div class="caption font-dark">
 					<i class="icon-settings font-dark"></i>
-					<span class="caption-subject bold uppercase"> View All Category </span>
+					<span class="caption-subject bold uppercase"> View Carousel </span>
 				</div>
 				<div class="btn-group pull-right">
-					<a href="{{url('cd-admin/add-category')}}">
-						<button id="sample_editable_1_new" class="btn sbold green"> Add New Category
+					<a href="{{url('cd-admin/add-carousel')}}">
+						<button id="sample_editable_1_new" class="btn sbold green"> Add Carousel
 							<i class="fa fa-plus"></i>
 						</button>
 					</a>
@@ -59,21 +59,21 @@
 					<thead>
 						<tr>
 							<th>SN</th>
-							<th> Category Name </th>
+							<th>Image </th>
 							<th>Status</th>
 							<th> Actions </th>
 						</tr>
 					</thead>
 					<tbody>
-						@foreach($category as $c)
-
+						@foreach($car as $carousels)
 						<tr class="odd gradeX">
 							<td>{{$loop->iteration}}</td>
-							<td>{!!$c->name!!}</td>
-							<td>@if($c->status == 'active')
+							<td><img src="{{url('uploads/thumbnail/'.$carousels['image'])}}" alt="" class="img-fluid" style="height: 50px; width: 50px;"></td>
+							<td>
+								@if($carousels['status'] == 'active')
 								<span class="badge badge-success"> Active </span>
 								@else
-								<span class="badge badge-danger"> In-Active </span>
+								<span class="badge badge-danger"> Inactive </span>
 								@endif
 							</td>
 							
@@ -84,17 +84,17 @@
 									</button>
 									<ul class="dropdown-menu pull-left" role="menu">
 										<li>
-											<a data-toggle="modal" href="#view-modal{{$c->id}}">
+											<a data-toggle="modal" href="#view-modal{{$carousels['id']}}">
 												<i class="fa fa-eye"></i> View
 											</a>
 										</li>
 										<li>
-											<a href="{{url('cd-admin/edit-category/'.$c->id)}}">
+											<a href="{{route('edit-carousel-form',$carousels['id'])}}">
 												<i class="fa fa-edit"></i> Edit
 											</a>
 										</li>
 										<li>
-											<a data-toggle="modal" href="#delete-modal{{$c->id}}">
+											<a data-toggle="modal" href="#delete-modal{{$carousels['id']}}">
 												<i class="fa fa-trash"></i> Delete
 											</a>
 										</li>
@@ -113,29 +113,27 @@
 </div>
 
 <!-- view modals -->
-@foreach($category as $ch)
-<div id="view-modal{{$ch->id}}" class="modal fade modal-scroll" tabindex="-1" data-replace="true">
+@foreach($car as $ch)
+<div id="view-modal{{$ch['id']}}" class="modal fade modal-scroll" tabindex="-1" data-replace="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h4 class="modal-title pull-left">Name</h4>
-				<p class="modal-title pull-right">status 
+				<h4 class="modal-title pull-left">Carousel Image</h4>
+				<p class="modal-title pull-right">Status 
+					@if($ch['status'] == 'active')
 					<span class="badge badge-success"> Active </span>
+					@else
+					<span class="badge badge-danger"> Inactive </span>
+					@endif
 				</p>
 			</div>
 			<div class="modal-body">
-				<div class="panel panel-default">
-					<div class="panel-heading"> Seo Title </div>
-					<div class="panel-body"> {!!$ch->seo_title!!} </div>
-				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading"> Seo Keyword </div>
-					<div class="panel-body"> {!!$ch->seo_keyword!!} </div>
-				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading"> Seo Description </div>
-					<div class="panel-body"> {!!$ch->seo_description!!} </div>
-				</div>
+				<img src="{{url('uploads/thumbnail/'.$ch['image'])}}" alt="" class="img-responsive">
+				<hr>
+				{{-- <div class="panel panel-default">
+					<div class="panel-heading"> Description </div>
+					<div class="panel-body"> {!!$ch['description']!!} </div>
+				</div> --}}
 			</div>
 			<div class="modal-footer">
 				<button type="button" data-dismiss="modal" class="btn dark btn-outline">Close</button>
@@ -143,11 +141,11 @@
 		</div>
 	</div>
 </div>
-@endforeach
+
 
 <!-- delete modal -->
-@foreach($category as $c)
-<div class="modal fade" id="delete-modal{{$c->id}}" tabindex="-1" role="basic" aria-hidden="true">
+
+<div class="modal fade" id="delete-modal{{$ch['id']}}" tabindex="-1" role="basic" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -157,7 +155,7 @@
 			<div class="modal-body"> Are you sure want to delete this ? </div>
 			<div class="modal-footer">
 				<button type="button" class="btn dark btn-outline" data-dismiss="modal">No</button>
-				<a href="{{url('/cd-admin/delete-category/'.$c->id)}}"  class="btn green">YES</a>
+				<a href="{{route('delete-carousel',$ch['id'])}}"  class="btn green">YES</a>
 			</div>
 		</div>
 		<!-- /.modal-content -->

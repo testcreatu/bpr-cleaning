@@ -6,18 +6,18 @@
 @if(Session::has('failure'))
 <div class="alert alert-danger">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong>DELETED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
+	<strong>Blog Deleted Successfully</strong> {{ Session::get('message', '') }}
 </div>
 @elseif(Session::has('success'))
 <div class="alert alert-success">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong>INSERTED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
+	<strong>Blog Added Successfully</strong> {{ Session::get('message', '') }}
 </div>
 
 @elseif(Session::has('success1'))
 <div class="alert alert-success">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong>UPDATED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
+	<strong>Blog Updated Successfully</strong> {{ Session::get('message', '') }}
 </div>
 
 @endif
@@ -31,7 +31,7 @@
 		</li>
 	</li>
 	<li>
-		<span>View all News</span>
+		<span>View Blog</span>
 	</li>
 </ul>
 </div>
@@ -44,11 +44,11 @@
 			<div class="portlet-title">
 				<div class="caption font-dark">
 					<i class="icon-settings font-dark"></i>
-					<span class="caption-subject bold uppercase"> View All News </span>
+					<span class="caption-subject bold uppercase"> View Blog </span>
 				</div>
 				<div class="btn-group pull-right">
 					<a href="{{url('cd-admin/add-blog')}}">
-						<button id="sample_editable_1_new" class="btn sbold green"> Add New News
+						<button id="sample_editable_1_new" class="btn sbold green"> Add Blog
 							<i class="fa fa-plus"></i>
 						</button>
 					</a>
@@ -60,7 +60,6 @@
 						<tr>
 							<th>SN</th>
 							<th>title </th>
-							<th>Category</th>
 							<th>Status</th>
 							<th> Actions </th>
 						</tr>
@@ -70,18 +69,14 @@
 						<tr class="odd gradeX">
 							<td>{{$loop->iteration}}</td>
 							<td>{{$blogs['title']}}</td>
+							
 							<td>
-								@foreach($category as $c)
-								@if($c['id'] == $blogs['category_id'])
-								<span class="badge badge-primary">{{$c['category_name']}}</span>
-								@endif
-								@endforeach
-							</td>
-							<td>@if($blogs['active'] == '1')
+								@if($blogs['status'] == 'active')
 								<span class="badge badge-success"> Active </span>
 								@else
-								<span class="badge badge-danger"> In-Active </span>
-							@endif</td>
+								<span class="badge badge-danger"> Inactive </span>
+								@endif
+							</td>
 							
 							<td>
 								<div class="btn-group">
@@ -95,7 +90,7 @@
 											</a>
 										</li>
 										<li>
-											<a href="{{url('cd-admin/edit-blog/'.$blogs['id'])}}">
+											<a href="{{route('edit-blog',$blogs['id'])}}">
 												<i class="fa fa-edit"></i> Edit
 											</a>
 										</li>
@@ -126,21 +121,21 @@
 			<div class="modal-header">
 				<h4 class="modal-title pull-left">{{$ch['title']}}</h4>
 				<p class="modal-title pull-right">status 
-					@if($blogs['active'] == '1')
+					@if($blogs['status'] == 'active')
 					<span class="badge badge-success"> Active </span>
 					@else
-					<span class="badge badge-danger"> In-Active </span>
+					<span class="badge badge-danger"> Inactive </span>
 					@endif
 				</p>
 			</div>
 			<div class="modal-body">
-				<img src="{{url('uploads/'.$ch['image'])}}" alt="" class="img-responsive">
+				<img src="{{url('uploads/thumbnail/'.$ch['image'])}}" alt="" class="img-responsive">
 				<hr>
 				<div class="panel panel-default">
 					<div class="panel-heading"> Description </div>
 					<div class="panel-body"> {!!$ch['description']!!} </div>
 				</div>
-				<div class="panel panel-default">
+				{{-- <div class="panel panel-default">
 					<div class="panel-heading"> Tags </div>
 					<?php $decode = explode(',',$ch['tags']) ?>
 					<div class="panel-body"> 
@@ -152,6 +147,19 @@
 						@endif
 						@endforeach
 					</div>
+				</div> --}}
+				<h2 align="center">SEO</h2>
+				<div class="panel panel-default">
+					<div class="panel-heading"> Title </div>
+					<div class="panel-body"> {{$ch['seo_title']}} </div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading"> Description </div>
+					<div class="panel-body"> {{$ch['seo_description']}} </div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading"> Keywords </div>
+					<div class="panel-body"> {{$ch['seo_keyword']}} </div>
 				</div>
 			</div>
 			<div class="modal-footer">

@@ -11,11 +11,11 @@
 			<i class="fa fa-circle"></i>
 		</li>
 		<li>
-			<a href="{{url('cd-admin/view-all-carousel')}}">View all carousel</a>
+			<a href="{{url('cd-admin/view-carousel')}}">View Carousel</a>
 			<i class="fa fa-circle"></i>
 		</li>
 		<li>
-			<span>Add new carousel</span>
+			<span>Add Carousel</span>
 		</li>
 	</ul>
 </div>
@@ -30,54 +30,66 @@
 		<div class="portlet-title">
 			<div class="caption">
 				<i class="icon-settings font-dark"></i>
-				<span class="caption-subject font-dark sbold uppercase">Add New Carousel</span>
+				<span class="caption-subject font-dark sbold uppercase">Add Carousel</span>
 			</div>
 		</div>
 		<div class="portlet-body form">
-			<form class="form-horizontal" role="form" method="post" action="{{url('/store-carousel')}}" enctype="multipart/form-data">
+			<form class="form-horizontal" role="form" method="post" action="{{route('add-carousel')}}" enctype="multipart/form-data">
 				{{csrf_field()}}
 				<div class="form-body">
 					
 					<div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
-						<label for="exampleInputFile" class="col-md-3 control-label">Upload Image</label>
+						<label for="exampleInputFile" class="col-md-3 control-label">Upload Image <span class="cd-admin-required">*</span></label>
 						<div class="col-md-9">
 							<input type="file" name="image" id="exampleInputFile">
 							<p class="help-block"> Upload Image. </p>
+							@if ($errors->has('image'))
+							<span class="text-danger">{{ $errors->first('image') }}</span>
+							@endif
 						</div>
 					</div>
 
 					<div class="form-group{{ $errors->has('altimage') ? ' has-error' : '' }}">
-						<label class="col-md-3 control-label">Enter Image Description</label>
+						<label class="col-md-3 control-label">Enter Image Description <span class="cd-admin-required">*</span></label>
 						<div class="col-md-6">
 							<input type="text" name="altimage" class="form-control" placeholder="Enter image Description" value="{{old('altimage')}}">
 						</div>
+						@if ($errors->has('altimage'))
+						<span class="text-danger">{{ $errors->first('altimage') }}</span>
+						@endif
 					</div>
 
-				
 
-					<div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
+
+				{{-- 	<div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
 						<label class="col-md-3 control-label">Enter Summary</label>
 						<div class="col-md-6">
 							<textarea class="form-control" rows="10" placeholder="Enter Summary" name="description">{{old('description')}}</textarea>
 						</div>
-					</div>
+						@if ($errors->has('description'))
+						<span class="text-danger">{{ $errors->first('description') }}</span>
+						@endif
+					</div> --}}
 
 
 					<hr>
 					<div class="form-group">
-						<label class="col-md-3 control-label">Status</label>
+						<label class="col-md-3 control-label">Status <span class="cd-admin-required">*</span></label>
 						<div class="col-md-6">
 							<div class="mt-radio-inline">
 								<label class="mt-radio">
-									<input type="radio" name="active" id="optionsRadios25" value="1" checked=""> Active
+									<input type="radio" name="status" id="optionsRadios25" value="active" checked=""> Active
 									<span></span>
 								</label>
 								<label class="mt-radio">
-									<input type="radio" name="active" id="optionsRadios26" value="0"> Inactive
+									<input type="radio" name="status" id="optionsRadios26" value="inactive"> Inactive
 									<span></span>
 								</label>
 							</div>
 						</div>
+						@if ($errors->has('status'))
+						<span class="text-danger">{{ $errors->first('status') }}</span>
+						@endif
 					</div>
 					<!-- status section ends -->
 

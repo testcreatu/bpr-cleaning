@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use Carbon\Carbon;
 use App\About;
 use App\Http\Controllers\backend\ImageController;
-use App\Http\Controllers\SlugController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 class AboutController extends Controller

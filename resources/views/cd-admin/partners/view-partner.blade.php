@@ -3,21 +3,21 @@
 <!-- page content -->
 @section('content')
 
-@if(Session::has('ClientDeleteSuccess'))
+@if(Session::has('PartnersDeleteSuccess'))
 <div class="alert alert-danger">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong>CLIENTS DELETED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
+	<strong>Partner Deleted Successfully</strong> {{ Session::get('message', '') }}
 </div>
-@elseif(Session::has('ClientSuccess'))
+@elseif(Session::has('PartnersSuccess'))
 <div class="alert alert-success">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong>CLIENTS INSERTED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
+	<strong>Partner Added Successfully</strong> {{ Session::get('message', '') }}
 </div>
 
-@elseif(Session::has('ClientUpdateSuccess'))
+@elseif(Session::has('PartnersUpdateSuccess'))
 <div class="alert alert-success">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong>CLIENTS UPDATED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
+	<strong>Partner Updated Successfully</strong> {{ Session::get('message', '') }}
 </div>
 
 @endif
@@ -31,7 +31,7 @@
 		</li>
 	</li>
 	<li>
-		<span>View all Clients</span>
+		<span>View Partners</span>
 	</li>
 </ul>
 </div>
@@ -44,11 +44,11 @@
 			<div class="portlet-title">
 				<div class="caption font-dark">
 					<i class="icon-settings font-dark"></i>
-					<span class="caption-subject bold uppercase"> View All Clients </span>
+					<span class="caption-subject bold uppercase"> View Partners </span>
 				</div>
 				<div class="btn-group pull-right">
-					<a href="{{url('cd-admin/add-clients')}}">
-						<button id="sample_editable_1_new" class="btn sbold green"> Add New Clients
+					<a href="{{url('cd-admin/add-partners')}}">
+						<button id="sample_editable_1_new" class="btn sbold green"> Add Partners
 							<i class="fa fa-plus"></i>
 						</button>
 					</a>
@@ -59,14 +59,14 @@
 					<thead>
 						<tr>
 							<th>SN</th>
-							<th>Client Name </th>
-							<th> Designation </th>
+							<th>Partner Name </th>
+							<th> URL </th>
 							<th>Status</th>
 							<th> Actions </th>
 						</tr>
 					</thead>
 					<tbody>
-						@foreach($clients as $c)
+						@foreach($partners as $c)
 						<tr class="odd gradeX">
 							<td>{{$loop->iteration}}</td>
 							<td>{!!$c['name']!!}</td>
@@ -90,7 +90,7 @@
 											</a>
 										</li>
 										<li>
-											<a href="{{url('cd-admin/edit-clients/'.$c['id'])}}">
+											<a href="{{url('cd-admin/edit-partners/'.$c['id'])}}">
 												<i class="fa fa-edit"></i> Edit
 											</a>
 										</li>
@@ -114,14 +114,14 @@
 </div>
 
 <!-- view modals -->
-@foreach($clients as $ch)
+@foreach($partners as $ch)
 <div id="view-modal{{$ch['id']}}" class="modal fade modal-scroll" tabindex="-1" data-replace="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
 				<h4 class="modal-title pull-left">{!!$ch['name']!!}</h4>
 				<p class="modal-title pull-right">Status 
-					@if($ch['active'] == 'active')
+					@if($ch['status'] == 'active')
 					<span class="badge badge-success"> Active </span>
 					@else
 					<span class="badge badge-danger"> In-Active </span>
@@ -129,7 +129,7 @@
 				</p>
 			</div>
 			<div class="modal-body">
-				<img src="{{url('uploads/'.$ch['logo_image'])}}" alt="" class="img-responsive">
+				<img src="{{url('uploads/thumbnail/'.$ch['logo_image'])}}" alt="" class="img-responsive">
 			</div>
 			<hr>
 			<div class="panel panel-default">
@@ -158,7 +158,7 @@
 			<div class="modal-body"> Are you sure want to delete this ? </div>
 			<div class="modal-footer">
 				<button type="button" class="btn dark btn-outline" data-dismiss="modal">No</button>
-				<a href="{{url('cd-admin/delete-clients/'.$ch['id'])}}"  class="btn green">YES</a>
+				<a href="{{url('cd-admin/delete-partners/'.$ch['id'])}}"  class="btn green">YES</a>
 			</div>
 		</div>
 		<!-- /.modal-content -->

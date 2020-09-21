@@ -11,11 +11,11 @@
 			<i class="fa fa-circle"></i>
 		</li>
 		<li>
-			<a href="{{url('cd-admin/view-why-us')}}">View Why Us</a>
+			<a href="{{url('cd-admin/view-why-us')}}">View all Why Us</a>
 			<i class="fa fa-circle"></i>
 		</li>
 		<li>
-			<span>Edit Why Us</span>
+			<span>Add Why Us</span>
 		</li>
 	</ul>
 </div>
@@ -30,17 +30,17 @@
 		<div class="portlet-title">
 			<div class="caption">
 				<i class="icon-settings font-dark"></i>
-				<span class="caption-subject font-dark sbold uppercase">Edit Why Us</span>
+				<span class="caption-subject font-dark sbold uppercase">Add Why Us</span>
 			</div>
 		</div>
 		<div class="portlet-body form">
-			<form class="form-horizontal" role="form" method="post" action="{{route('edit-why-us',$data['id'])}}" enctype="multipart/form-data">
+			<form class="form-horizontal" role="form" method="post" action="{{route('add-why-us')}}" enctype="multipart/form-data">
 				{{csrf_field()}}
 				<div class="form-body">
 					<div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
 						<label class="col-md-3 control-label">Enter Why Us Title <span class="cd-admin-required">*</span></label>
 						<div class="col-md-6">
-							<input type="text" class="form-control" placeholder="Enter why us title" name="title" value="{{$data['title']}}">
+							<input type="text" class="form-control" placeholder="Enter why us title" name="title" value="{{old('title')}}">
 						</div>
 						@if ($errors->has('title'))
 						<span class="text-danger">{{ $errors->first('title') }}</span>
@@ -72,7 +72,7 @@
 						<label class="control-label col-md-3">Enter  Vision <span class="cd-admin-required">*</span></label>
 						<div class="col-md-6">
 							<div >
-								<textarea name="description" id="summernote_1">{!!$data['description']!!}</textarea> 
+								<textarea name="description" id="summernote_1">{{old('description')}}</textarea> 
 							</div>
 						</div>
 						@if ($errors->has('description'))
@@ -85,7 +85,7 @@
 					<div class="form-group{{ $errors->has('summary') ? ' has-error' : '' }}">
 						<label class="col-md-3 control-label">Enter Summary <span class="cd-admin-required">*</span></label>
 						<div class="col-md-6">
-							<textarea class="form-control" rows="10" placeholder="Enter Summary" name="summary">{{$data['summary']}}</textarea>
+							<textarea class="form-control" rows="10" placeholder="Enter Summary" name="summary">{{old('summary')}}</textarea>
 						</div>
 						@if ($errors->has('summary'))
 						<span class="text-danger">{{ $errors->first('summary') }}</span>
@@ -96,7 +96,7 @@
 					<div class="form-group{{ $errors->has('why_choose_us') ? ' has-error' : '' }}">
 						<label class="col-md-3 control-label">Why Choose Us? <span class="cd-admin-required">*</span></label>
 						<div class="col-md-6">
-							<textarea class="form-control summernote" rows="10" placeholder="Enter Why To Choose Us" name="why_choose_us">{{$data['why_choose_us']}}</textarea>
+							<textarea class="form-control summernote" rows="10" placeholder="Enter Why To Choose Us" name="why_choose_us">{{old('why_choose_us')}}</textarea>
 						</div>
 						@if ($errors->has('why_choose_us'))
 						<span class="text-danger">{{ $errors->first('why_choose_us') }}</span>
@@ -126,16 +126,16 @@
 					</div>
 					<hr>
 					<!-- seo section starts -->					
-					{{-- <div class="form-group">
+				{{-- 	<div class="form-group">
 						<label class="col-md-3 control-label">Status <span class="cd-admin-required">*</span></label>
 						<div class="col-md-6">
 							<div class="mt-radio-inline">
 								<label class="mt-radio">
-									<input type="radio" name="status" id="optionsRadios25" value="active" <?php echo $data['status'] == 'active'?'checked':'' ?>> Active
+									<input type="radio" name="status" id="optionsRadios25" value="active" checked=""> Active
 									<span></span>
 								</label>
 								<label class="mt-radio">
-									<input type="radio" name="status" id="optionsRadios26" value="inactive"<?php echo $data['status'] == 'inactive'?'checked':'' ?>> Inactive
+									<input type="radio" name="status" id="optionsRadios26" value="inactive"> Inactive
 									<span></span>
 								</label>
 							</div>

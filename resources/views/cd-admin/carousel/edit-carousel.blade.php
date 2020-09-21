@@ -11,7 +11,7 @@
 			<i class="fa fa-circle"></i>
 		</li>
 		<li>
-			<a href="{{url('cd-admin/view-all-carousel')}}">View all Carousel</a>
+			<a href="{{url('cd-admin/view-carousel')}}">View Carousel</a>
 			<i class="fa fa-circle"></i>
 		</li>
 		<li>
@@ -34,54 +34,62 @@
 			</div>
 		</div>
 		<div class="portlet-body form">
-			<form class="form-horizontal" method="post" action="{{url('cd-admin/updateCarousel/'.$check['id'])}}" enctype="multipart/form-data" role="form">
-			@csrf
+			<form class="form-horizontal" role="form" method="post" action="{{route('edit-carousel',$data['id'])}}" enctype="multipart/form-data">
+				{{csrf_field()}}
 				<div class="form-body">
 					
-
 					<div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
-						<label for="exampleInputFile" class="col-md-3 control-label">Upload Image</label>
+						<label for="exampleInputFile" class="col-md-3 control-label">Upload Image {{-- <span class="cd-admin-required">*</span> --}}</label>
 						<div class="col-md-9">
 							<input type="file" name="image" id="exampleInputFile">
 							<p class="help-block"> Upload Image. </p>
+							@if ($errors->has('image'))
+							<span class="text-danger">{{ $errors->first('image') }}</span>
+							@endif
 						</div>
 					</div>
 
 					<div class="form-group{{ $errors->has('altimage') ? ' has-error' : '' }}">
-						<label class="col-md-3 control-label">Enter Image Description</label>
+						<label class="col-md-3 control-label">Enter Image Description <span class="cd-admin-required">*</span></label>
 						<div class="col-md-6">
-							<input type="text" name="altimage" class="form-control" placeholder="Enter Image Description" value="{{$check['altimage']}}">
+							<input type="text" name="altimage" class="form-control" placeholder="Enter image Description" value="{{$data['altimage']}}">
 						</div>
+						@if ($errors->has('altimage'))
+						<span class="text-danger">{{ $errors->first('altimage') }}</span>
+						@endif
 					</div>
 
-					
-					<div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
+
+
+				{{-- 	<div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
 						<label class="col-md-3 control-label">Enter Summary</label>
 						<div class="col-md-6">
-							<textarea class="form-control" rows="10" placeholder="Enter Summary" name="description">{!!$check['description']!!}</textarea>
+							<textarea class="form-control" rows="10" placeholder="Enter Summary" name="description">{{old('description')}}</textarea>
 						</div>
-					</div>
+						@if ($errors->has('description'))
+						<span class="text-danger">{{ $errors->first('description') }}</span>
+						@endif
+					</div> --}}
 
 
-					<!-- seo section starts -->
-					
-
-					<!-- status section starts -->
 					<hr>
 					<div class="form-group">
-						<label class="col-md-3 control-label">Status</label>
+						<label class="col-md-3 control-label">Status <span class="cd-admin-required">*</span></label>
 						<div class="col-md-6">
 							<div class="mt-radio-inline">
 								<label class="mt-radio">
-									<input type="radio"{{$check['active'] == '1' ? 'checked' : ''}} name="active" id="optionsRadios25" value="1" checked=""> Active
+									<input type="radio" name="status" id="optionsRadios25" value="active" <?php echo $data['status'] == 'active'?'checked':'' ?>> Active
 									<span></span>
 								</label>
 								<label class="mt-radio">
-									<input type="radio"{{$check['active'] == '0' ? 'checked' : ''}} name="active" id="optionsRadios26" value="0"> Inactive
+									<input type="radio" name="status" id="optionsRadios26" value="inactive" <?php echo $data['status'] == 'inactive'?'checked':'' ?>> Inactive
 									<span></span>
 								</label>
 							</div>
 						</div>
+						@if ($errors->has('status'))
+						<span class="text-danger">{{ $errors->first('status') }}</span>
+						@endif
 					</div>
 					<!-- status section ends -->
 
@@ -89,8 +97,8 @@
 				<div class="form-actions">
 					<div class="row">
 						<div class="col-md-offset-3 col-md-9">
-							<button type="submit" class="btn green">Update</button>
-							<a href="{{url()->previous()}}" class="btn default">Cancel</a>
+							<button type="submit" class="btn green">Submit</button>
+							<button type="button" class="btn default">Cancel</button>
 						</div>
 					</div>
 				</div>

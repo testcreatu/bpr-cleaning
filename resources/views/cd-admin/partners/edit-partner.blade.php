@@ -11,11 +11,11 @@
 			<i class="fa fa-circle"></i>
 		</li>
 		<li>
-			<a href="{{url('cd-admin/view-all-category')}}">View all Category</a>
+			<a href="{{url('cd-admin/view-partners')}}">View Partner</a>
 			<i class="fa fa-circle"></i>
 		</li>
 		<li>
-			<span>Edit Category</span>
+			<span>Edit Partner</span>
 		</li>
 	</ul>
 </div>
@@ -30,44 +30,41 @@
 		<div class="portlet-title">
 			<div class="caption">
 				<i class="icon-settings font-dark"></i>
-				<span class="caption-subject font-dark sbold uppercase">Edit Category</span>
+				<span class="caption-subject font-dark sbold uppercase">Edit Partner</span>
 			</div>
 		</div>
 		<div class="portlet-body form">
-			<form class="form-horizontal" method="POST" action="{{url('/cd-admin/updateCategory/'.$data['id'])}}" enctype="multipart/form-data" role="form">
+			<form class="form-horizontal" method="post" action="{{route('edit-partners',$data['id'])}}" enctype="multipart/form-data" role="form">
+				@csrf
 				<div class="form-body">
-					@csrf
 					<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-						<label class="col-md-3 control-label">Enter Course Category Name</label>
+						<label class="col-md-3 control-label">Enter Name</label>
 						<div class="col-md-6">
-							<input type="text" name="name" class="form-control" placeholder="Enter name" value="{{$data['name']}}">
+							<input type="text" class="form-control" placeholder="Enter Name" name="name" value="{{$data['name']}}">
 						</div>
+						@if ($errors->has('name'))
+						<span class="text-danger">{{ $errors->first('name') }}</span>
+						@endif
 					</div>
-
-
-
-					<!-- seo section starts -->
-					<hr>
-					<div class="form-group{{ $errors->has('seo_title') ? ' has-error' : '' }}">
-						<label class="col-md-3 control-label">Enter seo title</label>
+					<div class="form-group{{ $errors->has('url') ? ' has-error' : '' }}">
+						<label class="col-md-3 control-label">Enter Partner URL</label>
 						<div class="col-md-6">
-							<input type="text" name="seo_title" class="form-control" placeholder="Enter seo title" value="{{$data['seo_title']}}">
+							<input type="url" name="url" class="form-control" placeholder="Enter Logo URL" value="{{$data['url']}}">
 						</div>
+						@if ($errors->has('url'))
+						<span class="text-danger">{{ $errors->first('url') }}</span>
+						@endif
 					</div>
-					<div class="form-group{{ $errors->has('seo_keyword') ? ' has-error' : '' }}">
-						<label class="col-md-3 control-label">Enter seo keywords</label>
-						<div class="col-md-6">
-							<input type="text" name="seo_keyword" class="form-control" placeholder="Enter seo keywords" value="{{$data['seo_keyword']}}">
+					<div class="form-group{{ $errors->has('logo_image') ? ' has-error' : '' }}">
+						<label for="exampleInputFile" class="col-md-3 control-label">Upload Partner Logo</label>
+						<div class="col-md-9">
+							<input type="file" name="logo_image" id="exampleInputFile">
+							<p class="help-block"> Upload Logo. </p>
 						</div>
+						@if ($errors->has('logo_image'))
+						<span class="text-danger">{{ $errors->first('logo_image') }}</span>
+						@endif
 					</div>
-					<div class="form-group{{ $errors->has('seo_description') ? ' has-error' : '' }}">
-						<label class="col-md-3 control-label">Enter seo description</label>
-						<div class="col-md-6">
-							<textarea class="form-control" name="seo_description" rows="5" placeholder="Enter seo description">{{$data['seo_description']}}</textarea>
-						</div>
-					</div>
-					<!-- seo section ends -->
-
 
 					<!-- status section starts -->
 					<hr>
@@ -76,7 +73,7 @@
 						<div class="col-md-6">
 							<div class="mt-radio-inline">
 								<label class="mt-radio">
-									<input type="radio" name="status" id="optionsRadios25" value="active"  <?php echo $data['status'] == 'active'?'checked':'' ?>> Active
+									<input type="radio" name="status" id="optionsRadios25" value="active" <?php echo $data['status'] == 'active'?'checked':'' ?>> Active
 									<span></span>
 								</label>
 								<label class="mt-radio">
@@ -85,6 +82,9 @@
 								</label>
 							</div>
 						</div>
+						@if ($errors->has('status'))
+						<span class="text-danger">{{ $errors->first('status') }}</span>
+						@endif
 					</div>
 					<!-- status section ends -->
 
