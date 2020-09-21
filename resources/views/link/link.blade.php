@@ -4,8 +4,5 @@
 
 @section('content')
 
-link
-
-
 
 @endsection

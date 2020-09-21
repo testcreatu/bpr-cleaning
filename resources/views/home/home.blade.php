@@ -5,7 +5,110 @@
 @section('content')
 
 <div class="home">
-	<div class="home-banner"  data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="3000"> 
+	<div id="mainCarousel" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<div class="home-banner"  data-aos="fade-up"> 
+					<div class="img-banner">
+						<div class="home-banner-img">
+							<img class="img-fluid" src="{{url('public/images/3.png')}}" alt=""></img>
+						</div>
+						<div class="home-banner-bg">
+							<img class="img-fluid" src="{{url('public/images/1.svg')}}" alt=""></img>
+						</div>
+					</div>
+					<div class="banner-msg">
+						<div class="content">
+							<div class="banner-msg-img">
+								<img class="img-fluid" src="{{url('public/images/5.1.png')}}" alt=""></img>
+							</div>
+							<div class="banner-msg-content">
+								<div class="msg-content">
+									<div class="msg-detail">
+										<span>NEW CLIENT SUMMER OFFER</span>
+										<h4>Get Out & Have Fun</h4>
+										<h5>We Clean for You</h5>
+										<p>Let us handle the dirty work while you enjoy your free time.</p>
+									</div>
+									<a href="{{url('cleaning_services')}}" class="btn btn1">See Our Offer</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- <img src="{{url('public/images/3.png')}}" class="d-block w-100" alt="..."> -->
+			</div>
+			<div class="carousel-item">
+				<div class="home-banner"  data-aos="fade-up"> 
+					<div class="img-banner">
+						<div class="home-banner-img">
+							<img class="img-fluid" src="{{url('public/images/9.jpg')}}" alt=""></img>
+						</div>
+						<div class="home-banner-bg">
+							<img class="img-fluid" src="{{url('public/images/1.svg')}}" alt=""></img>
+						</div>
+					</div>
+					<div class="banner-msg">
+						<div class="content">
+							<div class="banner-msg-img">
+								<img class="img-fluid" src="{{url('public/images/5.1.png')}}" alt=""></img>
+							</div>
+							<div class="banner-msg-content">
+								<div class="msg-content">
+									<div class="msg-detail">
+										<span>NEW CLIENT SUMMER OFFER</span>
+										<h4>Get Out & Have Fun</h4>
+										<h5>We Clean for You</h5>
+										<p>Let us handle the dirty work while you enjoy your free time.</p>
+									</div>
+									<a href="{{url('cleaning_services')}}" class="btn btn1">See Our Offer</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="home-banner"  data-aos="fade-up"> 
+					<div class="img-banner">
+						<div class="home-banner-img">
+							<img class="img-fluid" src="{{url('public/images/10.jpg')}}" alt=""></img>
+						</div>
+						<div class="home-banner-bg">
+							<img class="img-fluid" src="{{url('public/images/1.svg')}}" alt=""></img>
+						</div>
+					</div>
+					<div class="banner-msg">
+						<div class="content">
+							<div class="banner-msg-img">
+								<img class="img-fluid" src="{{url('public/images/5.1.png')}}" alt=""></img>
+							</div>
+							<div class="banner-msg-content">
+								<div class="msg-content">
+									<div class="msg-detail">
+										<span>NEW CLIENT SUMMER OFFER</span>
+										<h4>Get Out & Have Fun</h4>
+										<h5>We Clean for You</h5>
+										<p>Let us handle the dirty work while you enjoy your free time.</p>
+									</div>
+									<a href="{{url('cleaning_services')}}" class="btn btn1">See Our Offer</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a class="carousel-control-prev" href="#mainCarousel" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#mainCarousel" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+	<!-- <div class="home-banner"  data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="3000"> 
 		<div class="img-banner">
 			<div class="home-banner-img">
 				<img class="img-fluid" src="{{url('public/images/3.png')}}" alt=""></img>
@@ -32,7 +135,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<div class="corousel-1">
 		<div class="container">
