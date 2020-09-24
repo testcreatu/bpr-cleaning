@@ -6,18 +6,18 @@
 @if(Session::has('ServiceDeleteSuccess'))
 <div class="alert alert-danger">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong>FEATURES DELETED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
+	<strong>Features Deleted Successfully</strong> {{ Session::get('message', '') }}
 </div>
 @elseif(Session::has('ServiceSuccess'))
 <div class="alert alert-success">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong>FEATURES INSERTED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
+	<strong>Features Added Successfully</strong> {{ Session::get('message', '') }}
 </div>
 
 @elseif(Session::has('ServiceUpdateSuccess'))
 <div class="alert alert-success">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong>FEATURES UPDATED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
+	<strong>Features Updated Successfully</strong> {{ Session::get('message', '') }}
 </div>
 
 @endif
@@ -31,7 +31,7 @@
 		</li>
 	</li>
 	<li>
-		<span>View all Features</span>
+		<span>View Features</span>
 	</li>
 </ul>
 </div>
@@ -44,15 +44,15 @@
 			<div class="portlet-title">
 				<div class="caption font-dark">
 					<i class="icon-settings font-dark"></i>
-					<span class="caption-subject bold uppercase"> View All Features </span>
+					<span class="caption-subject bold uppercase"> View Features </span>
 				</div>
-				{{-- <div class="btn-group pull-right">
+				<div class="btn-group pull-right">
 					<a href="{{url('cd-admin/add-features')}}">
-						<button id="sample_editable_1_new" class="btn sbold green"> Add New Features
+						<button id="sample_editable_1_new" class="btn sbold green"> Add Features
 							<i class="fa fa-plus"></i>
 						</button>
 					</a>
-				</div> --}}
+				</div>
 			</div>
 			<div class="portlet-body">
 				<table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_1">
@@ -93,11 +93,11 @@
 												<i class="fa fa-edit"></i> Edit
 											</a>
 										</li>
-									{{-- 	<li>
+										<li>
 											<a data-toggle="modal" href="#delete-modal{{$level->id}}">
 												<i class="fa fa-trash"></i> Delete
 											</a>
-										</li> --}}
+										</li>
 									</ul>
 								</div>
 							</td>
@@ -131,7 +131,7 @@
 			<div class="modal-body">
 				<div class="panel panel-default">
 					<div class="panel-heading">  Image </div>
-					<div class="panel-body"> <img src="{{url('uploads/features/'.$ch['image'])}}" height="200px" width="200px"> </div>
+					<div class="panel-body"> <img src="{{url('uploads/thumbnail/'.$ch['image'])}}" height="200px" width="200px"> </div>
 				</div>
 				<div class="panel panel-default">
 					<div class="panel-heading">  Title </div>
@@ -142,22 +142,7 @@
 					<div class="panel-body"> {!!$ch['summary']!!} </div>
 				</div>
 
-				<h2 align="center">Features</h2>
-				<?php $features = json_decode($ch['features']); ?>
-				@foreach($features as $feat)
-				<div class="panel panel-default">
-					<div class="panel-heading"> Feature Title </div>
-					<div class="panel-body"> {!!$feat->sub_title!!} </div>
-				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading"> Feature Summary </div>
-					<div class="panel-body"> {!!$feat->sub_summary!!} </div>
-				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading">  Image </div>
-					<div class="panel-body"> <img src="{{url('uploads/features/'.$feat->image)}}" height="200px" width="200px"> </div>
-				</div>
-				@endforeach
+				
 			</div>
 			<div class="modal-footer">
 				<button type="button" data-dismiss="modal" class="btn dark btn-outline">Close</button>

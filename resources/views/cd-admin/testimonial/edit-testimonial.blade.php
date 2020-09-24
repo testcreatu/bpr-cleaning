@@ -11,7 +11,7 @@
 			<i class="fa fa-circle"></i>
 		</li>
 		<li>
-			<a href="{{url('cd-admin/view-all-testimonial')}}">View all Testimonial</a>
+			<a href="{{url('cd-admin/view-testimonial')}}">View Testimonial</a>
 			<i class="fa fa-circle"></i>
 		</li>
 		<li>
@@ -34,14 +34,17 @@
 			</div>
 		</div>
 		<div class="portlet-body form">
-			<form class="form-horizontal" method="post" action="{{url('cd-admin/updateTestimonial/'.$check['id'])}}" enctype="multipart/form-data" role="form">
-			@csrf
+			<form class="form-horizontal" method="post" action="{{route('edit-testimonial',$check['id'])}}" enctype="multipart/form-data" role="form">
+				@csrf
 				<div class="form-body">
-					<div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+					<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
 						<label class="col-md-3 control-label">Enter Name</label>
 						<div class="col-md-6">
-							<input type="text" class="form-control" placeholder="Enter name" name="title" value="{{$check['title']}}">
+							<input type="text" class="form-control" placeholder="Enter name" name="name" value="{{$check['name']}}">
 						</div>
+						@if ($errors->has('name'))
+						<span class="text-danger">{{ $errors->first('name') }}</span>
+						@endif
 					</div>
 
 					<div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
@@ -50,14 +53,17 @@
 							<input type="file" name="image" id="exampleInputFile">
 							<p class="help-block"> Upload Image. </p>
 						</div>
+						@if ($errors->has('image'))
+						<span class="text-danger">{{ $errors->first('image') }}</span>
+						@endif
 					</div>
 
-					<div class="form-group{{ $errors->has('altimage') ? ' has-error' : '' }}">
+				{{-- 	<div class="form-group{{ $errors->has('altimage') ? ' has-error' : '' }}">
 						<label class="col-md-3 control-label">Enter image description</label>
 						<div class="col-md-6">
 							<input type="text" class="form-control" placeholder="Enter Image Description" name="altimage" value="{{$check['altimage']}}">
 						</div>
-					</div>
+					</div> --}}
 
 
 
@@ -66,8 +72,11 @@
 						<div class="col-md-6">
 							<div>
 								<textarea name="description" id="summernote_1">{{$check['description']}}</textarea>
-							 </div>
+							</div>
 						</div>
+						@if ($errors->has('description'))
+						<span class="text-danger">{{ $errors->first('description') }}</span>
+						@endif
 					</div>
 
 					
@@ -79,11 +88,11 @@
 						<div class="col-md-6">
 							<div class="mt-radio-inline">
 								<label class="mt-radio">
-									<input type="radio"{{$check['active'] == '1' ? 'checked' : ''}} name="active" id="optionsRadios25" value="1" checked=""> Active
+									<input type="radio" name="status" id="optionsRadios25" value="active" <?php echo $check['status'] == 'active'?'checked':'' ?>> Active
 									<span></span>
 								</label>
 								<label class="mt-radio">
-									<input type="radio"{{$check['active'] == '0' ? 'checked' : ''}} name="active" id="optionsRadios26" value="0" > Inactive
+									<input type="radio" name="status" id="optionsRadios26" value="inactive" <?php echo $check['status'] == 'active'?'checked':'' ?>> Inactive
 									<span></span>
 								</label>
 							</div>

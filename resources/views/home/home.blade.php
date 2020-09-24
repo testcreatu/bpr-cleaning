@@ -7,11 +7,12 @@
 <div class="home">
 	<div id="mainCarousel" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
-			<div class="carousel-item active">
+			@foreach($finalResult['carousel'] as $key=>$c)
+			<div class="carousel-item {{$key == 0 ?'active':''}}">
 				<div class="home-banner"  data-aos="fade-up"> 
 					<div class="img-banner">
 						<div class="home-banner-img">
-							<img class="img-fluid" src="{{url('public/images/3.png')}}" alt=""></img>
+							<img class="img-fluid" src="{{url('uploads/carousel/'.$c['image'])}}" alt=""></img>
 						</div>
 						<div class="home-banner-bg">
 							<img class="img-fluid" src="{{url('public/images/1.svg')}}" alt=""></img>
@@ -38,7 +39,9 @@
 				</div>
 				<!-- <img src="{{url('public/images/3.png')}}" class="d-block w-100" alt="..."> -->
 			</div>
-			<div class="carousel-item">
+			@endforeach
+
+			{{-- <div class="carousel-item">
 				<div class="home-banner"  data-aos="fade-up"> 
 					<div class="img-banner">
 						<div class="home-banner-img">
@@ -97,7 +100,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> --}}
 		</div>
 		<a class="carousel-control-prev" href="#mainCarousel" role="button" data-slide="prev">
 			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -486,11 +489,11 @@
 
 	<div class="container blog ma-t">
 		<div class="title text-center">
-				<h2>
-					Blog
-					<span>news and tricks</span>
-				</h2>
-			</div>
+			<h2>
+				Blog
+				<span>news and tricks</span>
+			</h2>
+		</div>
 		<div class="row mt-5">
 			<div class="col-md-4">
 				<a href="{{url('blog_detail')}}">

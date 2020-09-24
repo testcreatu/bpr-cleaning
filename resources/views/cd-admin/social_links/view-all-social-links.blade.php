@@ -29,7 +29,7 @@
 		</li>
 	</li>
 	<li>
-		<span>View all Social Links</span>
+		<span>View Social Links</span>
 	</li>
 </ul>
 @if($social != NULL) 
@@ -74,8 +74,8 @@
 					<a href="{{$social['insta_link']}}"><div class="panel-body"> {!!$social['insta_link']!!} </div></a>
 				</div>
 				<div class="panel panel-default">
-					<div class="panel-heading"> Youtube Link </div>
-					<div class="panel-body"> <a href="{{$social['youtube_link']}}">{{$social['youtube_link']}}</a> </div>
+					<div class="panel-heading"> PinInterest Link </div>
+					<div class="panel-body"> <a href="{{$social['pininterest_link']}}">{{$social['pininterest_link']}}</a> </div>
 				</div>
 				<div class="panel panel-default">
 					<div class="panel-heading">Email </div>

@@ -6,18 +6,18 @@
 @if(Session::has('ServiceDeleteSuccess'))
 <div class="alert alert-danger">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong>SERVICE DELETED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
+	<strong>Service Deleted Successfully</strong> {{ Session::get('message', '') }}
 </div>
 @elseif(Session::has('ServiceSuccess'))
 <div class="alert alert-success">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong>SERVICE INSERTED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
+	<strong>Service Added Successfully</strong> {{ Session::get('message', '') }}
 </div>
 
 @elseif(Session::has('ServiceUpdateSuccess'))
 <div class="alert alert-success">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong>SERVICE UPDATED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
+	<strong>Service Updated Successfully</strong> {{ Session::get('message', '') }}
 </div>
 
 @endif
@@ -31,7 +31,7 @@
 		</li>
 	</li>
 	<li>
-		<span>View all Services</span>
+		<span>View Services</span>
 	</li>
 </ul>
 </div>
@@ -44,11 +44,11 @@
 			<div class="portlet-title">
 				<div class="caption font-dark">
 					<i class="icon-settings font-dark"></i>
-					<span class="caption-subject bold uppercase"> View All Services </span>
+					<span class="caption-subject bold uppercase"> View Services </span>
 				</div>
 				<div class="btn-group pull-right">
 					<a href="{{url('cd-admin/add-services')}}">
-						<button id="sample_editable_1_new" class="btn sbold green"> Add New Services
+						<button id="sample_editable_1_new" class="btn sbold green"> Add Services
 							<i class="fa fa-plus"></i>
 						</button>
 					</a>
@@ -120,7 +120,7 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<h4 class="modal-title pull-left">{{$ch['name']}}</h4>
-				<p class="modal-title pull-right">status 
+				<p class="modal-title pull-right">Status 
 					@if($ch->status == 'active')
 					<span class="badge badge-success"> Active </span>
 					@else
@@ -130,17 +130,40 @@
 			</div>
 			<div class="modal-body">
 				<div class="panel panel-default">
+					<div class="panel-heading"> Service Image </div>
+					<div class="panel-body"> <img src="{{url('uploads/services/'.$ch['image'])}}" height="200px" width="200px"> </div>
+				</div>
+				<div class="panel panel-default">
 					<div class="panel-heading"> Service Name </div>
 					<div class="panel-body"> {!!$ch['name']!!} </div>
 				</div>
 				<div class="panel panel-default">
-					<div class="panel-heading"> Service Summary </div>
-					<div class="panel-body"> {!!$ch['summary']!!} </div>
+					<div class="panel-heading"> Service Sub Text </div>
+					<div class="panel-body"> {!!$ch['sub_text']!!} </div>
 				</div>
 				<div class="panel panel-default">
-					<div class="panel-heading"> Service Image </div>
-					<div class="panel-body"> <img src="{{url('uploads/services/'.$ch['image'])}}" height="200px" width="200px"> </div>
+					<div class="panel-heading"> Features</div>
+					<?php $features = json_decode($ch['features']); ?>
+					@if(isset($features))
+					@foreach($features as $f)
+					<span><i class="fa fa-clock-o"></i> {{$f}}</span>
+					<br>
+					@endforeach
+					@endif
 				</div>
+
+				<?php $sections = json_decode($ch['section']); ?>
+
+				@if(isset($sections))
+				<div class="panel-heading"> Sections</div>
+				@foreach($sections as $sec)
+				<div class="panel panel-default">
+					<p> {{$sec->sub_title}}</p>
+					<p>{!!$sec->sub_description!!}</p>
+				</div>
+				@endforeach
+				@endif
+
 			</div>
 			<div class="modal-footer">
 				<button type="button" data-dismiss="modal" class="btn dark btn-outline">Close</button>

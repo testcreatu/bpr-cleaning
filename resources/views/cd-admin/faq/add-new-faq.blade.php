@@ -11,11 +11,11 @@
 			<i class="fa fa-circle"></i>
 		</li>
 		<li>
-			<a href="{{url('cd-admin/view-all-about')}}">View all FAQ</a>
+			<a href="{{url('cd-admin/view-faq')}}">View FAQ</a>
 			<i class="fa fa-circle"></i>
 		</li>
 		<li>
-			<span>Add new FAQ</span>
+			<span>Add FAQ</span>
 		</li>
 	</ul>
 </div>
@@ -30,70 +30,46 @@
 		<div class="portlet-title">
 			<div class="caption">
 				<i class="icon-settings font-dark"></i>
-				<span class="caption-subject font-dark sbold uppercase">Add New FAQ</span>
+				<span class="caption-subject font-dark sbold uppercase">Add FAQ</span>
 			</div>
 		</div>
 		<div class="portlet-body form">
-			<form class="form-horizontal" role="form" method="post" action="{{url('cd-admin/insertFaq')}}" enctype="multipart/form-data">
+			<form class="form-horizontal" role="form" method="post" action="{{route('add-faq')}}" enctype="multipart/form-data">
 				{{csrf_field()}}
 				<div class="form-body">
-					<h2 align="center">Description</h2>
-					<div class="form-group{{ $errors->has('animated_title_1') ? ' has-error' : '' }}">
-						<label class="col-md-3 control-label">Enter Animated Title 1</label>
+					<h2 align="center">Main Title</h2>
+					<div class="form-group{{ $errors->has('main_title') ? ' has-error' : '' }}">
+						<label class="col-md-3 control-label">Main Title</label>
 						<div class="col-md-6">
-							<input type="text" class="form-control" placeholder="Enter FAQ animated_title_1" name="animated_title_1" value="{{old('animated_title_1')}}">
+							<input type="text" class="form-control" placeholder="Enter Main FAQ Title" name="main_title" value="{{old('main_title')}}">
 						</div>
-					</div>
-					<div class="form-group{{ $errors->has('description_title') ? ' has-error' : '' }}">
-						<label class="col-md-3 control-label">Enter Description Title</label>
-						<div class="col-md-6">
-							<input type="text" class="form-control" placeholder="Enter FAQ description_title" name="description_title" value="{{old('description_title')}}">
-						</div>
-					</div>
-					
-					<div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
-						<label class="control-label col-md-3">Enter FAQ Description</label>
-						<div class="col-md-6">
-							<div >
-								<textarea name="description" id="summernote_1">{{old('description')}}</textarea> 
-							</div>
-						</div>
+						@if($errors->has('main_title'))
+						<div class="alert alert-danger">{{$errors->first('main_title')}}</div>
+						@endif
 					</div>
 					<h2 align="center">FAQ</h2>
-					<div class="form-group{{ $errors->has('animated_title_2') ? ' has-error' : '' }}">
-						<label class="col-md-3 control-label">Enter Animated Title 2</label>
-						<div class="col-md-6">
-							<input type="text" class="form-control" placeholder="Enter FAQ animated_title_2" name="animated_title_2" value="{{old('animated_title_2')}}">
-						</div>
-					</div>
-					<div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
-						<label class="col-md-3 control-label">Enter Title</label>
-						<div class="col-md-6">
-							<input type="text" class="form-control" placeholder="Enter FAQ title" name="title" value="{{old('title')}}">
-						</div>
-					</div>
 					<h2 align="center">Questions/Answers</h2>
 					<div class="box-body" id="faqCard">
 						
-						<div class="form-group {{ $errors->has('question') ? ' has-error' : '' }}">
+						<div class="form-group {{ $errors->has('question[]') ? ' has-error' : '' }}">
 							<label for="inputTourName3" class="col-sm-3 control-label">Question</label>
 							<div class="col-sm-6">
 								<div class="input-group">
 									<div class="input-group-addon">
 										<i class="fa fa-user"></i>
 									</div>
-									<input type="text" class="form-control" id="inputTourName3" placeholder="Enter Question" name="question[]" value="{{old('question')}}">
+									<input type="text" class="form-control" id="inputTourName3" placeholder="Enter Question" name="question[]" value="{{old('question[]')}}">
 								</div>
 							</div>
 						</div>
-						<div class="form-group {{ $errors->has('answer') ? ' has-error' : '' }}">
+						<div class="form-group {{ $errors->has('answer[]') ? ' has-error' : '' }}">
 							<label for="inputDescription3" class="col-sm-3 control-label">Answer</label>
 							<div class="col-sm-6">
 								<div class="input-group">
 									<div class="input-group-addon">
 										<i class="fa fa-pencil"></i>
 									</div>
-									<textarea class="form-control" type="text" rows="5" id="inputDescription3" name="answer[]" value="{{old('answer')}}">
+									<textarea class="form-control" type="text" rows="5" id="inputDescription3" name="answer[]" value="{{old('answer[]')}}">
 									</textarea>
 								</div>
 							</div>

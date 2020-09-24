@@ -11,7 +11,7 @@
 			<i class="fa fa-circle"></i>
 		</li>
 		<li>
-			<a href="{{url('cd-admin/view-all-social-links')}}">View all Social Links</a>
+			<a href="{{url('cd-admin/view-social-links')}}">View Social Links</a>
 			<i class="fa fa-circle"></i>
 		</li>
 		<li>
@@ -59,10 +59,10 @@
 						</div>
 					</div>
 
-					<div class="form-group{{ $errors->has('youtube_link') ? ' has-error' : '' }}">
-						<label class="col-md-3 control-label">Enter Youtube Link</label>
+					<div class="form-group{{ $errors->has('pininterest_link') ? ' has-error' : '' }}">
+						<label class="col-md-3 control-label">Enter PinInterest Link</label>
 						<div class="col-md-6">
-							<input type="url" name="youtube_link" class="form-control" placeholder="Enter Youtube Link" value="{{$data['youtube_link']}}">
+							<input type="url" name="pininterest_link" class="form-control" placeholder="Enter Youtube Link" value="{{$data['pininterest_link']}}">
 						</div>
 					</div>
 					<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">

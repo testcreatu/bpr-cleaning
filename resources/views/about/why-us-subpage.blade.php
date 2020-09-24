@@ -8,7 +8,7 @@
 	<div class="container">
 		<div class="subpage-banner" data-aos="zoom-in" data-aos-duration="3000">
 			<div class="subpage-img">
-				<img class="img-fluid" src="{{url('public/images/9.jpg')}}"></img>
+				<img class="img-fluid" src="{{url('uploads/compliments/'.$finalCompliments['compliments']['image'])}}"></img>
 			</div>
 			<div class="subpage-overlay">
 				<div class="subpage-overlay-img">
@@ -19,8 +19,9 @@
 
 		<div class="subpage-overlay-text text-center ma-t" data-aos="zoom-out" data-aos-duration="3000">
 			<h5>
-				Eco
-				<span>January 1, 2017 — Studio One</span>
+				{{$finalCompliments['compliments']['title']}}
+				<?php $date = Carbon\Carbon::parse($finalCompliments['compliments']['created_at'])->format('F d, Y') ?>
+				<span>{{$date}}</span>
 			</h5>
 		</div>
 

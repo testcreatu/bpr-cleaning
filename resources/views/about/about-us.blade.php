@@ -7,7 +7,7 @@
 <div class="about-us content-page">
 	<div class="banner">
 		<div class="banner-img" data-aos="fade-up" data-aos-duration="3000">
-			<img class="img-fluid" src="{{url('public/images/9.jpg')}}" alt=""></img>
+			<img class="img-fluid" src="{{url('uploads/about/images/'.$finalAbout['about']['background_image'])}}" alt=""></img>
 		</div>
 		<div class="page-title title" data-aos="fade-right" data-aos-duration="3000">
 			<h2>About</h2>
@@ -18,16 +18,16 @@
 		<div class="row ma-t">
 			<div class="offset-lg-1 col-lg-10 text-center title-content">
 				<div class="title" data-aos="fade-right" data-aos-duration="3000">
-					<h2>Doing business since 1992</h2>
+					<h2>{{$finalAbout['about']['quote']}}</h2>
 				</div>
-				<p class="mt-4" data-aos="fade-left" data-aos-duration="3000">Our Father 23 years ago started Clany Services with two vision, Deliver the best quality of service possible and the most outstanding customer service, we still driven by his vision.</p>
+				<p class="mt-4" data-aos="fade-left" data-aos-duration="3000">{{$finalAbout['about']['sub_text']}}</p>
 			</div>
 		</div>
 
 		<div class="row mission mt-5">
 			<div class="col-lg-5">
 				<div class="mission-img" data-aos="zoom-in-down" data-aos-duration="3000">
-					<img class="img-fluid" src="{{url('public/images/40.jpg')}}" alt=""></img>
+					<img class="img-fluid" src="{{url('uploads/about/images/'.$finalAbout['about']['image'])}}" alt=""></img>
 				</div>
 			</div>
 			<div class="col-lg-7">
@@ -36,28 +36,10 @@
 						<img class="img-fluid" src="{{url('public/images/28.png')}}" alt=""></img>
 					</div>
 					<div class="mission-title text-center mt-3">
-						<h4>Our mission is clear</h4>
+						<h4>{{$finalAbout['about']['title']}}</h4>
 					</div>
 					<div class="content">
-						<p>Cross a major chore off your to-do list by letting us take care of the house cleaning. Then savor the pleasure of knowing your whole home has been cleaned by a professional team member(s) you can trust.</p>
-
-						<p>Our cleaning services are thorough, consistent and customized. If you would like to request a special service, change your cleaning schedule, or skip an area in your home, just let us know! We are happy to fulfill every request in order to exceed your expectations.</p>
-
-						<p>Clany home cleaning services are available weekly, every other week, monthly or one-time. On every visit, your Clany team dusts, vacuums, washes and sanitizes each room. Using our equipment and specially formulated products, they clean from left to right, top to bottom, so no detail is overlooked.</p>
-
-						<hr>
-
-						<p>
-						<span>All Rooms</span>
-						Dust picture frames, knickknacks, ceiling fans, lamps, furniture, woodwork, shelves and baseboards. Remove cobwebs. Vacuum carpets. Wash all floors and dry wood floors. Vacuum furniture, including under any cushions. Empty and clean ashtrays and wastebaskets.</p>
-
-						<p>
-						<span>Kitchen</span>
-						Clean appliances, counters, cabinets, tables and chairs. Clean, scrub and sanitize sinks. Clean and sanitize countertops and backsplashes. Clean the range top and refrigerator top and exterior. Clean microwave oven inside and out. Wash floors.</p>
-
-						<p>
-						<span>Bathrooms</span>
-						Clean, scrub and sanitize showers, bathtubs and sinks. Clean and sanitize vanities, backsplashes and toilets. Clean mirrors. Polish chrome. Wash floors and tile walls. Deodorize.</p>
+						<p>{!!$finalAbout['about']['description']!!}</p>
 					</div>
 					<div class="mission-btn text-center mt-3">
 						<a href="{{url('why_us')}}" class="btn btn1">Join in Conversion</a>
@@ -113,12 +95,16 @@
 			<h4>Our Partners</h4>
 		</div>
 		<div class="row mt-5" data-aos="fade-up" data-aos-duration="3000">
+			@foreach($finalAbout['partners'] as $p)
 			<div class="col-md-6 col-lg-6 col-xl-3">
-				<div class="partner-logo text-center">
-					<img class="img-fluid" src="{{url('public/images/41.svg')}}"></img>
-				</div>
+				<a href="{{$p['url']}}">
+					<div class="partner-logo text-center">
+						<img class="img-fluid" src="{{url('uploads/partners/'.$p['logo_image'])}}"></img>
+					</div>
+				</a>
 			</div>
-			<div class="col-md-6 col-lg-6 col-xl-3">
+			@endforeach
+			{{-- <div class="col-md-6 col-lg-6 col-xl-3">
 				<div class="partner-logo text-center">
 					<img class="img-fluid" src="{{url('public/images/42.svg')}}"></img>
 				</div>
@@ -132,7 +118,7 @@
 				<div class="partner-logo text-center">
 					<img class="img-fluid" src="{{url('public/images/44.svg')}}"></img>
 				</div>
-			</div>
+			</div> --}}
 		</div>
 	</div>
 
@@ -142,25 +128,28 @@
 				<h4>Our Guarantee</h4>
 			</div>	
 			<div class="row mt-5">
+				@foreach($finalAbout['features'] as $f)
 				<div class="col-md-6 col-lg-6 col-xl-3">
 					<div class="choose-card text-center" data-aos="fade-right" data-aos-duration="3000">
 						<div class="gaurante-box">
 							<div class="choose-card-img">
-								<img class="img-fluid" src="{{url('public/images/28.png')}}" alt=""></img>
+								<img class="img-fluid" src="{{url('uploads/features/'.$f['image'])}}" alt=""></img>
 							</div>
 						</div>
 						<div class="choose-card-title">
 							<h4>
-								Over
-								<span>250,000 cleans</span>
-							</h4>
+								{{-- Over
+									<span>250,000 cleans</span> --}}
+									{{$f['title']}}
+								</h4>
+							</div>
+							<div class="content">
+								<p>{{$f['summary']}}</p>
+							</div>
 						</div>
-						<div class="content">
-							<p>Our microfiber cloths, which capture dust and dirt rather than move it around, last longer than traditional cotton.</p>
-						</div>
-					</div>
-				</div>		
-				<div class="col-md-6 col-lg-6 col-xl-3">
+					</div>	
+					@endforeach	
+				{{-- <div class="col-md-6 col-lg-6 col-xl-3">
 					<div class="choose-card text-center" data-aos="fade-right" data-aos-duration="2000">
 						<div class="gaurante-box">
 							<div class="choose-card-img">
@@ -213,7 +202,7 @@
 							<p>Precision cleaning is required throughout such a broad range of modern industries that it might be more.</p>
 						</div>
 					</div>
-				</div>	
+				</div> --}}	
 			</div>
 		</div>
 	</div>

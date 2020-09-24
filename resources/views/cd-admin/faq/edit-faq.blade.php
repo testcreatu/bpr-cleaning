@@ -11,7 +11,7 @@
 			<i class="fa fa-circle"></i>
 		</li>
 		<li>
-			<a href="{{url('cd-admin/view-all-faq')}}">View all FAQ</a>
+			<a href="{{url('cd-admin/view-faq')}}">View FAQ</a>
 			<i class="fa fa-circle"></i>
 		</li>
 		<li>
@@ -34,44 +34,20 @@
 			</div>
 		</div>
 		<div class="portlet-body form">
-			<form class="form-horizontal" role="form" method="post" action="{{url('cd-admin/updateFaq/'.$data['id'])}}" enctype="multipart/form-data">
+			<form class="form-horizontal" role="form" method="post" action="{{route('edit-faq',$data['id'])}}" enctype="multipart/form-data">
 				{{csrf_field()}}
 				<div class="form-body">
-					<h2 align="center">Description</h2>
-					<div class="form-group{{ $errors->has('animated_title_1') ? ' has-error' : '' }}">
-						<label class="col-md-3 control-label">Enter Animated Title 1</label>
+					<h2 align="center">Main Title</h2>
+					<div class="form-group{{ $errors->has('main_title') ? ' has-error' : '' }}">
+						<label class="col-md-3 control-label">Main Title</label>
 						<div class="col-md-6">
-							<input type="text" class="form-control" placeholder="Enter FAQ animated_title_1" name="animated_title_1" value="{{$data['animated_title_1']}}">
+							<input type="text" class="form-control" placeholder="Enter Main FAQ Title" name="main_title" value="{{$data['main_title']}}">
 						</div>
-					</div>
-					<div class="form-group{{ $errors->has('description_title') ? ' has-error' : '' }}">
-						<label class="col-md-3 control-label">Enter Description Title</label>
-						<div class="col-md-6">
-							<input type="text" class="form-control" placeholder="Enter FAQ description_title" name="description_title" value="{{$data['description_title']}}">
-						</div>
+						@if($errors->has('main_title'))
+						<div class="alert alert-danger">{{$errors->first('main_title')}}</div>
+						@endif
 					</div>
 					
-					<div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
-						<label class="control-label col-md-3">Enter FAQ Description</label>
-						<div class="col-md-6">
-							<div >
-								<textarea name="description" id="summernote_1">{!!$data['description']!!}</textarea> 
-							</div>
-						</div>
-					</div>
-					<h2 align="center">FAQ</h2>
-					<div class="form-group{{ $errors->has('animated_title_2') ? ' has-error' : '' }}">
-						<label class="col-md-3 control-label">Enter Animated Title 2</label>
-						<div class="col-md-6">
-							<input type="text" class="form-control" placeholder="Enter FAQ animated_title_2" name="animated_title_2" value="{{$data['animated_title_2']}}">
-						</div>
-					</div>
-					<div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
-						<label class="col-md-3 control-label">Enter Title</label>
-						<div class="col-md-6">
-							<input type="text" class="form-control" placeholder="Enter FAQ title" name="title" value="{{$data['title']}}">
-						</div>
-					</div>
 					<h2 align="center">Questions/Answers</h2>
 
 					<div class="box-body" id="faqCard">
@@ -164,11 +140,11 @@
 						<div class="col-md-6">
 							<div class="mt-radio-inline">
 								<label class="mt-radio">
-									<input type="radio" name="status" id="optionsRadios25" value="active" checked=""> Active
+									<input type="radio" name="status" id="optionsRadios25" value="active"  <?php echo $data['status'] == 'active'?'checked':'' ?>> Active
 									<span></span>
 								</label>
 								<label class="mt-radio">
-									<input type="radio" name="status" id="optionsRadios26" value="inactive"> Inactive
+									<input type="radio" name="status" id="optionsRadios26" value="inactive" <?php echo $data['status'] == 'inactive'?'checked':'' ?>> Inactive
 									<span></span>
 								</label>
 							</div>

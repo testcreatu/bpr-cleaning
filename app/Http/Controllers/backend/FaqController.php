@@ -24,14 +24,10 @@ class FaqController extends Controller
 		return view("cd-admin.faq.edit-faq",compact('data'));
 	}
 
-	public function insertFaq()
+	public function addFaq()
 	{
 		$data = Request()->validate([
-			'animated_title_1' => 'required',
-			'animated_title_2' => 'required',
-			'description_title' => 'required',
-			'description' => 'required',
-			'title' => 'required',
+			'main_title' => 'required',
 			'question' => '',
 			'answer' => '',
 			'status' => 'required',
@@ -45,27 +41,19 @@ class FaqController extends Controller
 		}
 		$finalFaq = json_encode($finalFaq);
 		$faq = new Faq();
-		$faq->animated_title_1 = $data['animated_title_1'];
-		$faq->animated_title_2 = $data['animated_title_2'];
-		$faq->description_title = $data['description_title'];
-		$faq->description = $data['description'];
-		$faq->title = $data['title'];
+		$faq->main_title = $data['main_title'];
 		$faq->status = $data['status'];
 		$faq->faqs = $finalFaq;
 		$faq->save();
 		Session::flash('FaqSuccess');
-		return redirect('cd-admin/view-all-faq');
+		return redirect('cd-admin/view-faq');
 	}
 
 
-	public function updateFaq($id)
+	public function editFaq($id)
 	{
 		$data = Request()->validate([
-			'animated_title_1' => 'required',
-			'animated_title_2' => 'required',
-			'description_title' => 'required',
-			'description' => 'required',
-			'title' => 'required',
+			'main_title' => 'required',
 			'question' => '',
 			'answer' => '',
 			'status' => 'required',
@@ -79,16 +67,12 @@ class FaqController extends Controller
 		}
 		$finalFaq = json_encode($finalFaq);
 		$faq = Faq::find($id);
-		$faq->animated_title_1 = $data['animated_title_1'];
-		$faq->animated_title_2 = $data['animated_title_2'];
-		$faq->description_title = $data['description_title'];
-		$faq->description = $data['description'];
-		$faq->title = $data['title'];
+		$faq->main_title = $data['main_title'];
 		$faq->status = $data['status'];
 		$faq->faqs = $finalFaq;
 		$faq->save();
 		Session::flash('FaqUpdateSuccess');
-		return redirect('cd-admin/view-all-faq');
+		return redirect('cd-admin/view-faq');
 	}
 
 	public function deleteFaq($id)

@@ -6,18 +6,18 @@
 @if(Session::has('FaqDeleteSuccess'))
 <div class="alert alert-danger">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong>FAQ DELETED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
+	<strong>FAQ Deleted Successfully</strong> {{ Session::get('message', '') }}
 </div>
 @elseif(Session::has('FaqSuccess'))
 <div class="alert alert-success">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong>FAQ INSERTED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
+	<strong>FAQ Added Successfully</strong> {{ Session::get('message', '') }}
 </div>
 
 @elseif(Session::has('FaqUpdateSuccess'))
 <div class="alert alert-success">
 	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-	<strong>FAQ UPDATED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
+	<strong>FAQ Updated Successfully</strong> {{ Session::get('message', '') }}
 </div>
 
 @endif
@@ -31,7 +31,7 @@
 		</li>
 	</li>
 	<li>
-		<span>View all FAQ</span>
+		<span>View FAQ</span>
 	</li>
 </ul>
 </div>
@@ -44,15 +44,9 @@
 			<div class="portlet-title">
 				<div class="caption font-dark">
 					<i class="icon-settings font-dark"></i>
-					<span class="caption-subject bold uppercase"> View All FAQ </span>
+					<span class="caption-subject bold uppercase"> View FAQ </span>
 				</div>
-				<div class="btn-group pull-right">
-					<a href="{{url('cd-admin/add-faq')}}">
-						<button id="sample_editable_1_new" class="btn sbold green"> Add New FAQ
-							<i class="fa fa-plus"></i>
-						</button>
-					</a>
-				</div>
+				{{-- s --}}
 			</div>
 			<div class="portlet-body">
 				<table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_1">
@@ -69,7 +63,7 @@
 
 						<tr class="odd gradeX">
 							<td>{{$loop->iteration}}</td>
-							<td>{!!$detail->title!!}</td>
+							<td>{!!$detail->main_title!!}</td>
 							<td>
 								@if($detail->status == 'active')
 								<span class="badge badge-success"> Active </span>
@@ -98,11 +92,11 @@
 												<i class="fa fa-edit"></i> Edit
 											</a>
 										</li>
-										<li>
+										{{-- <li>
 											<a data-toggle="modal" href="#delete-modal{{$detail->id}}">
 												<i class="fa fa-trash"></i> Delete
 											</a>
-										</li>
+										</li> --}}
 									</ul>
 								</div>
 							</td>
@@ -134,26 +128,9 @@
 			</div>
 			<div class="modal-body">
 				<div class="panel panel-default">
-					<h2 align="center">Animated Title 1</h2>
-					<p>{!!$ch['animated_title_1']!!}</p>
+					<h2 align="center">Main Title</h2>
+					<p>{!!$ch['main_title']!!}</p>
 				</div>
-				<div class="panel panel-default">
-					<h2 align="center">Animated Title 2</h2>
-					<p>{!!$ch['animated_title_2']!!}</p>
-				</div>
-
-				<div class="panel panel-default">
-					<h2 align="center">Description Title</h2>
-					<p>{{$ch['description_title']}}</p>
-					<h2 align="center">Description</h2>
-					<p>{!!$ch['description']!!}</p>
-				</div>
-
-				<div class="panel panel-default">
-					<h2 align="center">Summary</h2>
-					<p>{{$ch['summary']}}</p>
-				</div>
-
 
 				@if($ch['faqs'] != NULL)
 				<?php $milestones = json_decode($ch['faqs']); ?>

@@ -13,13 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home.home');
-});
+Route::get('/','frontend\FrontendController@home');
 
-Route::get('home', function () {
-    return view('home.home');
-});
+Route::get('home','frontend\FrontendController@home');
 
 Route::get('cleaning_services', function () {
     return view('booking.booking-services');
@@ -29,17 +25,11 @@ Route::get('booking_form', function () {
     return view('booking.booking-form');
 });
 
-Route::get('about_us', function () {
-    return view('about.about-us');
-});
+Route::get('about_us','frontend\FrontendController@about');
 
-Route::get('why_us', function () {
-    return view('about.why-us');
-});
+Route::get('why_us','frontend\FrontendController@whyUs');
 
-Route::get('why_us_subpage', function () {
-    return view('about.why-us-subpage');
-});
+Route::get('why_us_subpage/{slug}', 'frontend\FrontendController@compliments');
 
 Route::get('faq', function () {
     return view('about.faq');
@@ -110,11 +100,72 @@ Route::group(['middleware'=>'auth'],function()
     Route::post('/cd-admin/edit-why-us/{id}','backend\ObjectiveController@editWhyUs')->name('edit-why-us');
     Route::get('/cd-admin/delete-why-us/{id}','backend\ObjectiveController@deleteWhyUs')->name('delete-why-us');
 
-// Clients 
+    // Clients 
     Route::get('/cd-admin/add-partners','backend\PartnersController@addPartnersForm')->name('add-partners-form');
     Route::post('/cd-admin/add-partners','backend\PartnersController@addPartners')->name('add-partners');
     Route::get('/cd-admin/view-partners','backend\PartnersController@viewPartners')->name('view-partners');
     Route::get('/cd-admin/edit-partners/{id}','backend\PartnersController@editPartnersForm')->name('edit-partners-form');
     Route::post('/cd-admin/edit-partners/{id}','backend\PartnersController@editPartners')->name('edit-partners');
     Route::get('/cd-admin/delete-partners/{id}','backend\PartnersController@deletePartners')->name('delete-partners');
+
+
+    // Services
+    Route::get('/cd-admin/view-services','backend\ServicesController@viewServices')->name('view-services');
+    Route::get('/cd-admin/add-services','backend\ServicesController@addServicesForm')->name('add-services-form');
+    Route::post('/cd-admin/add-services','backend\ServicesController@addServices')->name('add-services');
+    Route::get('/cd-admin/edit-services/{id}','backend\ServicesController@editServicesForm')->name('edit-services-form');
+    Route::post('/cd-admin/edit-services/{id}','backend\ServicesController@editServices')->name('edit-services');
+    Route::get('/cd-admin/delete-services/{id}','backend\ServicesController@deleteServices')->name('delete-services');
+
+
+    // Features
+    Route::get('/cd-admin/view-features','backend\FeaturesController@viewFeatures')->name('view-features');
+    Route::get('/cd-admin/add-features','backend\FeaturesController@addFeaturesForm')->name('add-features-form');
+    Route::post('/cd-admin/add-features','backend\FeaturesController@addFeatures')->name('add-features');
+    Route::get('/cd-admin/edit-features/{id}','backend\FeaturesController@editFeaturesForm')->name('edit-features-form');
+    Route::post('/cd-admin/edit-features/{id}','backend\FeaturesController@editFeatures')->name('edit-features');
+    Route::get('/cd-admin/delete-features/{id}','backend\FeaturesController@deleteFeatures')->name('delete-features');
+
+
+    //FAQ
+    Route::get('cd-admin/add-faq','backend\FaqController@addFaqForm')->name('add-faq-form');
+    Route::get('/cd-admin/view-faq','backend\FaqController@viewFaq')->name('view-faq');
+    Route::post('/cd-admin/add-faq','backend\FaqController@addFaq')->name('add-faq');
+    Route::get('/cd-admin/edit-faq/{key}','backend\FaqController@editFaqForm')->name('edit-faq-form');
+    Route::post('/cd-admin/edi-faq/{key}','backend\FaqController@editFaq')->name('edit-faq');
+    Route::get('/cd-admin/delete-faq/{key}','backend\FaqController@deleteFaq')->name('delete-faq');
+
+
+    //Testimonials
+    Route::get('/cd-admin/add-testimonial','backend\TestimonialController@addTestimonialForm')->name('add-testimonial-form');
+    Route::post('/cd-admin/add-testimonial','backend\TestimonialController@addTestimonial')->name('add-testimonial');
+    Route::get('/cd-admin/view-testimonial','backend\TestimonialController@viewTestimonial')->name('view-testimonial');
+    Route::get('/cd-admin/edit-testimonial/{id}','backend\TestimonialController@editTestimonialForm')->name('edit-testimonial-form');
+    Route::post('/cd-admin/edit-testimonial/{id}','backend\TestimonialController@editTestimonial')->name('edit-testimonial');
+    Route::get('/cd-admin/delete-testimonial/{id}','backend\TestimonialController@deleteTestimonial')->name('delete-testimonial');
+
+
+     //Compliments
+    Route::get('/cd-admin/add-compliments','backend\ComplimentsController@addComplimentsForm')->name('add-compliments-form');
+    Route::post('/cd-admin/add-compliments','backend\ComplimentsController@addCompliments')->name('add-compliments');
+    Route::get('/cd-admin/view-compliments','backend\ComplimentsController@viewCompliments')->name('view-compliments');
+    Route::get('/cd-admin/edit-compliments/{id}','backend\ComplimentsController@editComplimentsForm')->name('edit-compliments-form');
+    Route::post('/cd-admin/edit-compliments/{id}','backend\ComplimentsController@editCompliments')->name('edit-compliments');
+    Route::get('/cd-admin/delete-compliments/{id}','backend\ComplimentsController@deleteCompliments')->name('delete-compliments');
+
+
+     //Social Links
+    Route::get('/cd-admin/add-social-links','backend\SocialLinksController@addSocialLinksform')->name('add-social-links-form');
+    Route::get('/cd-admin/view-social-links','backend\SocialLinksController@view')->name('view-social-links');
+    Route::post('/store-social-links','backend\SocialLinksController@store')->name('add-social-links');
+    Route::get('/cd-admin/edit-socialLinks/{id}','backend\SocialLinksController@editSocialLinksForm')->name('edit-social-links-form');
+    Route::post('/update-social-links/{id}','backend\SocialLinksController@update')->name('edit-social-links');
+
+
+//CEO Message
+    Route::get('/cd-admin/add-ceo-message','backend\CeoMessageController@addCeoMessageForm')->name('add-ceo-message-form');
+    Route::get('/cd-admin/view-ceo-message','backend\CeoMessageController@viewCeoMessage')->name('view-ceo-message');
+    Route::post('/cd-admin/add-ceo-message','backend\CeoMessageController@addCeoMessage')->name('add-ceo-message');
+    Route::get('/cd-admin/edit-ceo-message/{id}','backend\CeoMessageController@editCeoMessageForm')->name('edit-ceo-message-form');
+    Route::post('/cd-admin/edit-ceo-message/{id}','backend\CeoMessageController@editCeoMessage')->name('edit-ceo-message');
 });

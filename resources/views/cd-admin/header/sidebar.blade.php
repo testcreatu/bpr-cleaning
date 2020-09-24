@@ -42,8 +42,15 @@
             </li> 
             <li class="nav-item">
                 <a href="{{url('cd-admin/view-why-us')}}" class="nav-link nav-toggle">
-                    <i class="fa fa-info"></i>
+                    <i class="fa fa-question"></i>
                     <span class="title">Why Us</span>
+                </a>
+            </li> 
+
+             <li class="nav-item">
+                <a href="{{url('cd-admin/view-ceo-message')}}" class="nav-link nav-toggle">
+                    <i class="fa fa-question"></i>
+                    <span class="title">CEO Message</span>
                 </a>
             </li> 
 
@@ -72,7 +79,7 @@
                     </li>
                 </ul>
             </li>
-         
+
             <li class="nav-item">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="fa fa-list-ol"></i>
@@ -97,49 +104,6 @@
 
             <li class="nav-item">
                 <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="fa fa-list-ol"></i>
-                    <span class="title">Category</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/add-category')}}" class="nav-link">
-                            <i class="fa fa-plus"></i>
-                            <span class="title">Add new Category</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/view-all-category')}}" class="nav-link">
-                            <i class="fa fa-eye"></i>
-                            <span class="title">View all Category</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="fa fa-list-ol"></i>
-                    <span class="title">SubCategory </span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/add-subCategory')}}" class="nav-link">
-                            <i class="fa fa-plus"></i>
-                            <span class="title">Add new Sub Category</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/view-all-subCategory')}}" class="nav-link">
-                            <i class="fa fa-eye"></i>
-                            <span class="title">View all Sub Category</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item">
-                <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="fa fa-quote-left"></i>
                     <span class="title">Testimonial</span>
                     <span class="arrow"></span>
@@ -148,13 +112,13 @@
                     <li class="nav-item">
                         <a href="{{url('cd-admin/add-testimonial')}}" class="nav-link">
                             <i class="fa fa-plus"></i>
-                            <span class="title">Add new Testimonial</span>
+                            <span class="title">Add Testimonial</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{url('cd-admin/view-all-testimonial')}}" class="nav-link">
+                        <a href="{{url('cd-admin/view-testimonial')}}" class="nav-link">
                             <i class="fa fa-eye"></i>
-                            <span class="title">View all Testimonial</span>
+                            <span class="title">View Testimonial</span>
                         </a>
                     </li>
                 </ul>
@@ -170,13 +134,13 @@
                     <li class="nav-item">
                         <a href="{{url('cd-admin/add-services')}}" class="nav-link">
                             <i class="fa fa-plus"></i>
-                            <span class="title">Add new Services</span>
+                            <span class="title">Add Services</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{url('cd-admin/view-all-services')}}" class="nav-link">
+                        <a href="{{url('cd-admin/view-services')}}" class="nav-link">
                             <i class="fa fa-eye"></i>
-                            <span class="title">View all Services</span>
+                            <span class="title">View Services</span>
                         </a>
                     </li>
                 </ul>
@@ -214,105 +178,50 @@
                     <li class="nav-item">
                         <a href="{{url('cd-admin/add-faq')}}" class="nav-link">
                             <i class="fa fa-plus"></i>
-                            <span class="title">Add new Faq</span>
+                            <span class="title">Add Faq</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{url('cd-admin/view-all-faq')}}" class="nav-link">
+                        <a href="{{url('cd-admin/view-faq')}}" class="nav-link">
                             <i class="fa fa-eye"></i>
-                            <span class="title">View all Faq</span>
+                            <span class="title">View Faq</span>
                         </a>
                     </li>
                 </ul>
             </li>
 
-           {{--   <li class="nav-item">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="fa fa-group"></i>
-                    <span class="title">Team</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/add-team')}}" class="nav-link">
-                            <i class="fa fa-plus"></i>
-                            <span class="title">Add new Team</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/view-all-team')}}" class="nav-link">
-                            <i class="fa fa-eye"></i>
-                            <span class="title">View all Team</span>
-                        </a>
-                    </li>
-                </ul>
-            </li> --}}
             <li class="nav-item">
-                <a href="{{url('cd-admin/view-all-social-links')}}" class="nav-link nav-toggle">
+                <a href="{{url('cd-admin/view-social-links')}}" class="nav-link nav-toggle">
                     <i class="fa fa-group"></i>
                     <span class="title">Social Links</span>
                 </a>
             </li>
 
 
-            <li class="nav-item">
-                <a href="{{url('cd-admin/view-page-titles')}}" class="nav-link nav-toggle">
-                    <i class="fa fa-group"></i>
-                    <span class="title">Headers</span>
-                </a>
-            </li>
 
             <li class="nav-item">
-                <a href="{{url('cd-admin/view-all-features')}}" class="nav-link nav-toggle">
+                <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="fa fa-group"></i>
                     <span class="title">Features</span>
+                    <span class="arrow"></span>
                 </a>
+                <ul class="sub-menu">
+                    <li class="nav-item">
+                        <a href="{{url('cd-admin/add-features')}}" class="nav-link">
+                            <i class="fa fa-plus"></i>
+                            <span class="title">Add Features</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url('cd-admin/view-features')}}" class="nav-link">
+                            <i class="fa fa-eye"></i>
+                            <span class="title">View Features</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
-           {{--  <li class="nav-item">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="fa fa-graduation-cap"></i>
-                    <span class="title">Scholorship</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item">
-                        <a href="{{url('/cd-admin/add-scholorship-link')}}" class="nav-link">
-                            <i class="fa fa-plus"></i>
-                            <span class="title">Add new Scholorship Link</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/view-available-scholorship')}}" class="nav-link">
-                            <i class="fa fa-eye"></i>
-                            <span class="title">View all Scholorship Link</span>
-                        </a>
-                    </li>
-                </ul>
-            </li> --}}
+
 {{-- 
-            <li class="nav-item">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="fa fa-tasks"></i>
-                    <span class="title">Job</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/add-job-link')}}" class="nav-link">
-                            <i class="fa fa-plus"></i>
-                            <span class="title">Add new Job Link</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/view-available-job')}}" class="nav-link">
-                            <i class="fa fa-eye"></i>
-                            <span class="title">View all Job link</span>
-                        </a>
-                    </li>
-                </ul>
-            </li> --}}
-
-
             <li class="heading">
                 <h3 class="uppercase">Message Section</h3>
             </li>
@@ -344,181 +253,6 @@
                 </ul>
             </li>
 
-
-            <li class="nav-item">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="fa fa-envelope"></i>
-                    <span class="title">SEO Report Request</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/view-all-seo-report')}}" class="nav-link">
-                            <i class="fa fa-eye"></i>
-                            <span class="title">View all Requests</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/seo-report-replies')}}" class="nav-link">
-                            <i class="fa fa-eye"></i>
-                            <span class="title">View all Replied Requests</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            {{-- <li class="nav-item">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="fa fa-list-ol"></i>
-                    <span class="title">Achivement</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/add-achivement')}}" class="nav-link">
-                            <i class="fa fa-plus"></i>
-                            <span class="title">Add new Achivement</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/view-all-achivement')}}" class="nav-link">
-                            <i class="fa fa-eye"></i>
-                            <span class="title">View all Achivement</span>
-                        </a>
-                    </li>
-                </ul>
-            </li> --}}
-            {{-- <li class="nav-item">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="fa fa-list-ol"></i>
-                    <span class="title">category</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/add-category')}}" class="nav-link">
-                            <i class="fa fa-plus"></i>
-                            <span class="title">Add new Category</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/view-all-category')}}" class="nav-link">
-                            <i class="fa fa-eye"></i>
-                            <span class="title">View all Category</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-
-            <li class="nav-item">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="fa fa-list-ol"></i>
-                    <span class="title">Sub-Category</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/add-sub-category')}}" class="nav-link">
-                            <i class="fa fa-plus"></i>
-                            <span class="title">Add new sub-category</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/view-all-sub-category')}}" class="nav-link">
-                            <i class="fa fa-eye"></i>
-                            <span class="title">View all sub-category</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="fa fa-list-ol"></i>
-                    <span class="title">Portfolio</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/add-portfolio')}}" class="nav-link">
-                            <i class="fa fa-plus"></i>
-                            <span class="title">Add new Portfolio</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/view-all-portfolio')}}" class="nav-link">
-                            <i class="fa fa-eye"></i>
-                            <span class="title">View all Portfolio</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-          
-
-
-           
-
-            <li class="nav-item">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="fa fa-graduation-cap"></i>
-                    <span class="title">Career</span>
-                    <span class="arrow"></span>
-                </a>
-                <ul class="sub-menu">
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/add-career')}}" class="nav-link">
-                            <i class="fa fa-plus"></i>
-                            <span class="title">Add new Career</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{url('cd-admin/view-all-career')}}" class="nav-link">
-                            <i class="fa fa-eye"></i>
-                            <span class="title">View all Career</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="heading">
-                <h3 class="uppercase">Mail Section</h3>
-            </li>
-
-            <li class="nav-item">
-                <a href="{{url('/cd-admin/view-all-applied')}}" class="nav-link nav-toggle">
-                    <i class="fa fa-tasks"></i>
-                    <span class="title">Career Applied</span>
-                    <span class=""></span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="{{url('/cd-admin/view-all-consultant')}}" class="nav-link nav-toggle">
-                    <i class="fa fa-clock-o"></i>
-                    <span class="title">Consultant</span>
-                    <span class=""></span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="{{url('/cd-admin/view-all-contact')}}" class="nav-link nav-toggle">
-                    <i class="fa fa-envelope"></i>
-                    <span class="title">Contact</span>
-                    <span class=""></span>
-                </a>
-            </li>
-
-
-            <li class="heading">
-                <h3 class="uppercase">Service Inquiry</h3>
-            </li>
-            <li class="nav-item">
-                <a href="{{url('cd-admin/view-all-service-inquiry')}}" class="nav-link nav-toggle">
-                    <i class="fa fa-comments"></i>
-                    <span class="title">Service Inquiry</span>
-                </a>
-            </li> --}}
-
             <li class="heading">
                 <h3 class="uppercase">Others</h3>
             </li>
@@ -532,12 +266,12 @@
                     <li class="nav-item">
                         <a href="{{url('/seo-view')}}" class="nav-link">
                             <i class="fa fa-eye"></i>
-                            <span class="title">View all Seo</span>
+                            <span class="title">View all SEO</span>
                         </a>
                     </li>
                     
                 </ul>
-            </li>
+            </li> --}}
 
         </ul>
         <!-- END SIDEBAR MENU -->
@@ -545,4 +279,3 @@
     </div>
     <!-- END SIDEBAR -->
 </div>
-                <!-- END SIDEBAR
