@@ -12,7 +12,7 @@
 				<div class="home-banner"  data-aos="fade-up"> 
 					<div class="img-banner">
 						<div class="home-banner-img">
-							<img class="img-fluid" src="{{url('uploads/carousel/'.$c['image'])}}" alt=""></img>
+							<img class="img-fluid" src="{{url('uploads/thumbnail/'.$c['image'])}}" alt=""></img>
 						</div>
 						<div class="home-banner-bg">
 							<img class="img-fluid" src="{{url('public/images/1.svg')}}" alt=""></img>

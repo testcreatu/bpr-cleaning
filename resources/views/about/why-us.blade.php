@@ -55,18 +55,42 @@
 					</div>
 				</a>
 			</div>
-			<div class="item">
-				<a href="{{url('why_us_subpage')}}">
-					<div class="our-work">
-						<div class="work-img">
-							<img class="img-fluid" src="{{url('public/images/50.jpg')}}"></img>
-						</div>
-						<div class="work-title">
-							<h2>Clany Kitchen</h2>
-						</div>
-					</div>
-				</a>
-			</div>
+			div
+			class
+			item
+			a
+			href
+			url(
+			why
+			us
+			subpage
+			)
+			div
+			class
+			our-work
+			div
+			class
+			work-img
+			img
+			class
+			img-fluid
+			src
+			url(
+			public/images/50.jpg
+			)
+			/img
+			/div
+			div
+			class
+			work-title
+			h2
+			Clany
+			Kitchen
+			/h2
+			/div
+			/div
+			/a
+			/div
 			<div class="item">
 				<a href="{{url('why_us_subpage')}}">
 					<div class="our-work">

@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use View;
+use App\Services;
+use App\SocialLinks;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -23,6 +25,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $finalHeader = [];
+        $finalHeader['services'] = Services::where('status','active')->get();
+        $finalHeader['contact'] = SocialLinks::get()->first();
+        View::share('finalHeader',$finalHeader);
+
     }
 }

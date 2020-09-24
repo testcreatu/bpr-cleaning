@@ -13,21 +13,25 @@
 			</h2>
 		</div>
 		<div class="row booking-service-list ma-t ma-b">
+			@foreach($finalServiceList['services'] as $key => $service)
 			<div class="col-md-6 col-lg-4 col-xl-3 mb-4">
 				<div class="service-list-content" data-aos="fade-right" data-aos-duration="3000">
 					<div class="service-list-img">
-						<img class="img-fluid" src="{{url('public/images/39.jpg')}}"></img>
+						<img class="img-fluid" src="{{url('uploads/thumbnail/'.$service['image'])}}"></img>
 					</div>
 					<div class="service-list-dtl">
 						<div class="home-card-title">
-							<h4>Commercial Cleaning</h4>
+							<h4>{{$service['name']}}</h4>
 						</div>
+						<?php $features = json_decode($service['features']); ?>
 						<ul class="service-list-option mt-4">
-							<li>Domestic Cleaning </li>
-							<li>Post Construction Cleaning</li>
+							@foreach($features as $f)
+							<li>{{$f}} </li>
+							@endforeach
+							{{-- <li>Post Construction Cleaning</li>
 							<li>Office Cleaning</li>
 							<li>Upholstery Cleaning</li>
-							<li>Glass Cleaning</li>
+							<li>Glass Cleaning</li> --}}
 						</ul>
 						<div class="service-btn text-center mt-3">
 							<a href="{{url('booking_form')}}" class="btn btn1">Book Now</a>
@@ -36,7 +40,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-6 col-lg-4 col-xl-3 mb-4">
+			@endforeach
+			{{-- <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
 				<div class="service-list-content" data-aos="fade-right" data-aos-duration="2500">
 					<div class="service-list-img">
 						<img class="img-fluid" src="{{url('public/images/39.jpg')}}"></img>
@@ -101,7 +106,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> --}}
 		</div>
 	</div>
 </div>

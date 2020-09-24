@@ -16,25 +16,30 @@
 	<div class="about-faq pa-tb">
 		<div class="container">
 			<div class="mission-title">
-				<h4>Below is a list of the most frequently asked questions about our cleaning services. I hope they will be helpful.</h4>
+				<h4>{{$finalFaq['faq']['main_title']}}</h4>
 			</div>
 			<div class="accordion mt-5" id="accordionExample">
+				<?php $faq = json_decode($finalFaq['faq']['faqs']); ?>
+				@foreach($faq as $key => $f)
 				<div class="card">
-					<div class="card-header" id="headingOne">
+					<div class="card-header" id="{{$key}}">
 						<h2 class="mb-0">
-							<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-								Is a long-term contract required for service?
+							<button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#{{'collapse'.$key}}" aria-expanded="true" aria-controls="{{'collapse'.$key}}">
+								{{$f->question}}
 							</button>
 						</h2>
 					</div>
 
-					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+					<div id="{{'collapse'.$key}}" class="collapse" aria-labelledby="{{$key}}" data-parent="#accordionExample">
 						<div class="card-body">
-							<p>Absolutely not. Our services are provided as needed to suit your busy lifestyle. There are no long-term contracts or obligations required.</p>
+							<p>								
+								{{$f->answer}}
+							</p>
 						</div>
 					</div>
 				</div>
-				<div class="card">
+				@endforeach
+				{{-- <div class="card">
 					<div class="card-header" id="headingTwo">
 						<h2 class="mb-0">
 							<button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -103,8 +108,8 @@
 							<p>We pamper all our clients with our Ecofriendly House cleaning. There is no extra charge for this, The difference is that your home is cleaned with Natural Cleaning Products of harsh cleaning chemicals.</p>
 						</div>
 					</div>
-				</div>
-				<div class="card">
+				</div> --}}
+				{{-- <div class="card">
 					<div class="card-header" id="headingSeven">
 						<h2 class="mb-0">
 							<button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
@@ -159,7 +164,7 @@
 							<p>Yes. You will have the same cleaning professional for each visit. We know how important it is to have someone you know and trust cleaning your home. You will have a team of two cleaners (same team) for each cleaning.</p>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 			</div>
 		</div>
 	</p>

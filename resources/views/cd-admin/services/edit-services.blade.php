@@ -216,6 +216,246 @@
 						</div>
 					</div>
 
+
+					<h2 align="center">HomePage</h2>
+
+					<div class="form-group{{ $errors->has('image') ? ' has-error' : '' }}">
+						<label class="col-md-3 control-label">Enter Image</label>
+						<div class="col-md-6">
+							<input type="file" name="image" class="form-control" placeholder="Enter Image" value="{{old('image')}}">
+						</div>
+						@if ($errors->has('image'))
+						<span class="text-danger">{{ $errors->first('image') }}</span>
+						@endif
+					</div>
+					<div class="form-group{{ $errors->has('start_price') ? ' has-error' : '' }}">
+						<label class="col-md-3 control-label">Enter Starting Price<span class="cd-admin-required">*</span></label>
+						<div class="col-md-6">
+							<input type="text" name="start_price" class="form-control" placeholder="Enter Service Icon" value="{{$data['start_price']}}">
+						</div>
+						@if ($errors->has('start_price'))
+						<span class="text-danger">{{ $errors->first('start_price') }}</span>
+						@endif
+					</div>
+					<h2 align="center">Room</h2>
+					<?php $rooms = json_decode($data['rooms']);  ?>
+					<div class="box-body" id="card-room">
+						@if($data['rooms'] != NULL)
+						@foreach($rooms as $key => $room)
+						@if($key == 0)
+						<div class="form-group {{ $errors->has('room_title[]') ? ' has-error' : '' }}">
+							<label for="inputTourName3" class="col-sm-3 control-label">Title</label>
+							<div class="col-sm-6">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-user"></i>
+									</div>
+									<input type="text" class="form-control" id="inputTourName3" placeholder="Enter Title" name="room_title[]" value="{{$room->room_title}}">
+								</div>
+							</div>
+						</div>
+						<div class="form-group {{ $errors->has('room_summary[]') ? ' has-error' : '' }}">
+							<label for="inputDescription3" class="col-sm-3 control-label">Summary</label>
+							<div class="col-sm-6">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-pencil"></i>
+									</div>
+									<textarea class="form-control textarea" rows="5" id="inputDescription3" placeholder="Enter Summary" name="room_summary[]">{!!$room->room_summary!!}</textarea>
+									
+								</div>
+							</div>
+						</div>
+						<div class="form-group {{ $errors->has('room_image[]') ? ' has-error' : '' }}">
+							<label for="inputDescription3" class="col-sm-3 control-label">Room Image</label>
+							<div class="col-sm-6">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-pencil"></i>
+									</div>
+									<input type="file" class="form-control" id="inputTourName3" placeholder="Enter Title" name="room_image[]" value="{{old('room_image[]')}}">		
+								</div>
+							</div>
+						</div>
+						@else
+						<div class="new-group" style="clear: both" id="{{'room'.$key}}">
+							<div class="form-group {{ $errors->has('room_title[]') ? ' has-error' : '' }}">
+								<label for="inputTourName3" class="col-sm-3 control-label">Title</label>
+								<div class="col-sm-6">
+									<div class="input-group">
+										<div class="input-group-addon">
+											<i class="fa fa-user"></i>
+										</div>
+										<input type="text" class="form-control" id="inputTourName3" placeholder="Enter Title" name="room_title[]" value="{{$room->room_title}}">
+									</div>
+								</div>
+							</div>
+							<div class="form-group {{ $errors->has('room_summary[]') ? ' has-error' : '' }}">
+								<label for="inputDescription3" class="col-sm-3 control-label">Summary</label>
+								<div class="col-sm-6">
+									<div class="input-group">
+										<div class="input-group-addon">
+											<i class="fa fa-pencil"></i>
+										</div>
+										<textarea class="form-control textarea" rows="5" id="inputDescription3" placeholder="Enter Summary" name="room_summary[]">{!!$room->room_summary!!}</textarea>
+
+									</div>
+								</div>
+							</div>
+							<div class="form-group {{ $errors->has('room_image[]') ? ' has-error' : '' }}">
+								<label for="inputDescription3" class="col-sm-3 control-label">Room Image</label>
+								<div class="col-sm-6">
+									<div class="input-group">
+										<div class="input-group-addon">
+											<i class="fa fa-pencil"></i>
+										</div>
+										<input type="file" class="form-control" id="inputTourName3" placeholder="Enter Title" name="room_image[]" value="{{old('room_image[]')}}">		
+									</div>
+								</div>
+							</div>
+							<input style="margin-left: 315px;" type="button" class="remove btn btn-danger" id="close" value="Delete Room"/ onclick="remove('{{'room'.$key}}')">
+
+						</div>
+						@endif
+						@endforeach
+						@else
+						<div class="form-group {{ $errors->has('room_title[]') ? ' has-error' : '' }}">
+							<label for="inputTourName3" class="col-sm-3 control-label">Title</label>
+							<div class="col-sm-6">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-user"></i>
+									</div>
+									<input type="text" class="form-control" id="inputTourName3" placeholder="Enter Title" name="room_title[]" value="{{old('room_title[]')}}">
+								</div>
+							</div>
+						</div>
+						<div class="form-group {{ $errors->has('room_summary[]') ? ' has-error' : '' }}">
+							<label for="inputDescription3" class="col-sm-3 control-label">Summary</label>
+							<div class="col-sm-6">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-pencil"></i>
+									</div>
+									<textarea class="form-control" rows="5" id="inputDescription3" placeholder="Enter Summary" name="room_summary[]">{!!old('room_summary[]')!!}</textarea>
+									
+								</div>
+							</div>
+						</div>
+						<div class="form-group {{ $errors->has('room_image[]') ? ' has-error' : '' }}">
+							<label for="inputDescription3" class="col-sm-3 control-label">Room Image</label>
+							<div class="col-sm-6">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-pencil"></i>
+									</div>
+									<input type="file" class="form-control" id="inputTourName3" placeholder="Enter Title" name="room_image[]" value="{{old('room_image[]')}}">		
+								</div>
+							</div>
+						</div>
+						@endif
+					</div>
+					<div class="form-group">
+						<div class="col-sm-11 control-label">
+							<div class="col-sm-10">
+								<input id="submitButton" type="button" class="add_another_room btn btn-info" value="Add New  Room"/>
+							</div>
+						</div>
+					</div>
+
+					<h2 align="center">Pricings</h2>
+					<?php $pricing = json_decode($data['pricing']); ?>
+					<div class="box-body" id="card-pricings">
+						@if($data['pricing'] != NULL)
+						@foreach($pricing as $key => $price)
+						@if($key == 0)
+						<div class="form-group {{ $errors->has('duration[]') ? ' has-error' : '' }}">
+							<label for="inputTourName3" class="col-sm-3 control-label">Duration</label>
+							<div class="col-sm-6">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-user"></i>
+									</div>
+									<input type="text" class="form-control" id="inputTourName3" placeholder="Enter Title" name="duration[]" value="{{$price->duration}}">
+								</div>
+							</div>
+						</div>
+						<div class="form-group {{ $errors->has('price[]') ? ' has-error' : '' }}">
+							<label for="inputDescription3" class="col-sm-3 control-label">Price</label>
+							<div class="col-sm-6">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-pencil"></i>
+									</div>
+									<input type="number" class="form-control" id="inputTourName3" placeholder="Enter Price" name="price[]" value="{{$price->price}}">
+
+								</div>
+							</div>
+						</div>
+						@else
+						<div class="new-group" id="{{'pricing'.$key}}" style="clear: both;">
+							<div class="form-group {{ $errors->has('duration[]') ? ' has-error' : '' }}">
+								<label for="inputTourName3" class="col-sm-3 control-label">Duration</label>
+								<div class="col-sm-6">
+									<div class="input-group">
+										<div class="input-group-addon">
+											<i class="fa fa-user"></i>
+										</div>
+										<input type="text" class="form-control" id="inputTourName3" placeholder="Enter Title" name="duration[]" value="{{$price->duration}}">
+									</div>
+								</div>
+							</div>
+							<div class="form-group {{ $errors->has('price[]') ? ' has-error' : '' }}">
+								<label for="inputDescription3" class="col-sm-3 control-label">Price</label>
+								<div class="col-sm-6">
+									<div class="input-group">
+										<div class="input-group-addon">
+											<i class="fa fa-pencil"></i>
+										</div>
+										<input type="number" class="form-control" id="inputTourName3" placeholder="Enter Price" name="price[]" value="{{$price->price}}">
+
+									</div>
+								</div>
+							</div>
+							<input style="margin-left: 315px;" type="button" class="remove btn btn-danger" id="close" value="Delete Pricings"/ onclick="remove('{{'pricing'.$key}}')">
+
+						</div>
+						@endif
+						@endforeach
+						@else
+						<div class="form-group {{ $errors->has('sub_title[]') ? ' has-error' : '' }}">
+							<label for="inputTourName3" class="col-sm-3 control-label">Duration</label>
+							<div class="col-sm-6">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-user"></i>
+									</div>
+									<input type="text" class="form-control" id="inputTourName3" placeholder="Enter Title" name="duration[]" value="{{old('duration[]')}}">
+								</div>
+							</div>
+						</div>
+						<div class="form-group {{ $errors->has('price[]') ? ' has-error' : '' }}">
+							<label for="inputDescription3" class="col-sm-3 control-label">Price</label>
+							<div class="col-sm-6">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-pencil"></i>
+									</div>
+									<input type="number" class="form-control" id="inputTourName3" placeholder="Enter Price" name="price[]" value="{{old('price[]')}}">
+
+								</div>
+							</div>
+						</div>
+						@endif
+					</div>
+					<div class="form-group">
+						<div class="col-sm-11 control-label">
+							<div class="col-sm-10">
+								<input id="submitButton" type="button" class="add_another_pricing btn btn-info" value="Add New  Pricings"/>
+							</div>
+						</div>
+					</div>
+
 					<!-- seo section starts -->
 					<hr>
 					<div class="form-group{{ $errors->has('seo_title') ? ' has-error' : '' }}">

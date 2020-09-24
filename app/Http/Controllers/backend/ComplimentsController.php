@@ -96,8 +96,8 @@ class ComplimentsController extends Controller
 		foreach($data['sub_title'] as $key1=>$sub)
 		{
 			$count = count($encode);
-			$encode[$count]['sub_title'] = $sub_title[$key1];
-			$encode[$count]['sub_summary'] = $sub_description[$key1]?$sub_description[$key1]:NULL;
+			$encode[$count]['sub_title'] = $data['sub_title'][$key1];
+			$encode[$count]['sub_summary'] = $data['sub_summary'][$key1]?$data['sub_summary'][$key1]:NULL;
 			$encode[$count]['image'] = isset($data['sub_image'][$key1])?$this->uploadImage($data['sub_image'][$key1],'uploads/compliments'):'';
 			unset($data['sub_title'][$key1]);
 		}

@@ -3,13 +3,21 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8">
-          <p>Call for Free Booking! We're the Dust Busters: <a href="tel:77787789">77787789</a> / <a href="tel:77787020">77787020</a></p>
+          <p>Call for Free Booking! We're the Dust Busters: <a href="tel:{{$finalHeader['contact']['contact_no']}}">{{$finalHeader['contact']['contact_no']}}</a></p>
         </div>
         <div class="col-md-4 header-icon">
-            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-pinterest"></i></a>
+          @if($finalHeader['contact']['fb_link'] != NULL)
+          <a href="{{$finalHeader['contact']['fb_link']}}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          @endif
+          @if($finalHeader['contact']['twitter_link'] != NULL)
+          <a href="{{$finalHeader['contact']['twitter_link']}}" target="_blank"><i class="fab fa-twitter"></i></a>
+          @endif
+          @if($finalHeader['contact']['insta_link'] != NULL)
+          <a href="{{$finalHeader['contact']['insta_link']}}" target="_blank"><i class="fab fa-instagram"></i></a>
+          @endif
+          @if($finalHeader['contact']['pininterest_link'] != NULL)
+          <a href="{{$finalHeader['contact']['pininterest_link']}}" target="_blank"><i class="fab fa-pinterest"></i></a>
+          @endif
         </div>
       </div>
     </div>  
@@ -44,11 +52,13 @@
               Service
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{{url('service_detail')}}">Commercial Cleaning</a>
-              <a class="dropdown-item" href="{{url('service_detail')}}">Office Cleaning</a>
+              @foreach($finalHeader['services'] as $service)
+              <a class="dropdown-item" href="{{url('service_detail/'.$service['slug'])}}">{{$service['name']}}</a>
+              @endforeach
+              {{-- <a class="dropdown-item" href="{{url('service_detail')}}">Office Cleaning</a>
               <a class="dropdown-item" href="{{url('service_detail')}}">Hotel</a>
               <a class="dropdown-item" href="{{url('service_detail')}}">Resturant</a>
-              <a class="dropdown-item" href="{{url('service_detail')}}">Boat Cleaning</a>
+              <a class="dropdown-item" href="{{url('service_detail')}}">Boat Cleaning</a> --}}
             </div>
           </li>
           <li class="nav-item {{ (request()->is('blog_list*')) ? 'active' : '' }}">
@@ -66,6 +76,6 @@
 
 
 <button class="btn btn-primary scroll-top" data-scroll="up" type="button">
-<i class="fa fa-chevron-up"></i>
+  <i class="fa fa-chevron-up"></i>
 </button>
 

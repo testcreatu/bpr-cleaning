@@ -268,11 +268,30 @@ License: You must have a valid license purchased only from themeforest(the above
     })
 </script>
 
+
+<script>
+    $(document).ready(function(){
+        $('.add_another_room').click(function() {
+            var random = Math.ceil(Math.random()*100) << 0;
+            $("#card-room").append('<div class="group {{ $errors->has('room_title[]') ? ' has-error' : '' }}" id="'+random+'"><hr><div class="form-group"><label class="col-sm-3 control-label">Title</label><div class="col-sm-6"><div class="input-group"><div class="input-group-addon"><i class="fa fa-user"></i></div><input type="text" class="form-control" name="room_title[]" value="{{old('room_title[]')}}" value="" placeholder="Enter Room Title" ></div></div></div><div class="form-group{{ $errors->has('room_summary[]') ? ' has-error' : '' }}"><label class="col-sm-3 control-label"> Description</label><div class="col-sm-6"><textarea type="text" name="room_summary[]" class="form-control summernote" rows="5" id="inputDescription3" value="" placeholder="Enter Room Summary">{{old('room_summary[]')}}</textarea></div></div><div class="form-group {{ $errors->has('room_image[]') ? ' has-error' : '' }} "><label for="exampleInputFile" class="col-md-3 control-label">Upload Room Image</label><div class="col-md-6"><input type="file" name="room_image[]" id="exampleInputFile"><p class="help-block"> Upload Room Image. </p></div></div><input type="button" class="remove btn btn-danger" onclick="removeDynamic('+random+')" id="close" value="Delete Card" style="margin-left:'+'315px'+';"/></div><label class="col-sm-8 control-label"></label></div>');
+        });
+    })
+</script>
+
 <script>
     $(document).ready(function(){
         $('.add_another_reason').click(function() {
             var random = Math.ceil(Math.random()*100) << 0;
             $("#card_reasons").append('<div class="group {{ $errors->has('sub_title[]') ? ' has-error' : '' }}" id="reason'+random+'"><hr><div class="form-group"><label class="col-sm-3 control-label">Title</label><div class="col-sm-6"><div class="input-group"><div class="input-group-addon"><i class="fa fa-user"></i></div><input type="text" class="form-control" name="sub_title[]" value="{{old('sub_title[]')}}" value="" placeholder="Enter Title" ></div></div></div><div class="form-group{{ $errors->has('sub_summary[]') ? ' has-error' : '' }}"><label class="col-sm-3 control-label"> Description</label><div class="col-sm-6"><textarea type="text" name="sub_summary[]" class="form-control " rows="5" id="inputDescription3" value="" placeholder="Enter Description">{{old('sub_summary[]')}}</textarea></div></div><div class="form-group {{ $errors->has('sub_image[]') ? ' has-error' : '' }} "><label for="exampleInputFile" class="col-md-3 control-label">Image</label><div class="col-md-6"><input type="file" name="sub_image[]" id="exampleInputFile"><p class="help-block"> Upload Reason Image. </p></div></div><input type="button" class="remove btn btn-danger" onclick="removeDynamic(\'reason'+random+'\')" id="close" value="Delete Card" style="margin-left:'+'315px'+';"/></div><label class="col-sm-8 control-label"></label></div>');
+        });
+    })
+</script>
+
+<script>
+    $(document).ready(function(){
+        $('.add_another_pricing').click(function() {
+            var random = Math.ceil(Math.random()*100) << 0;
+            $("#card-pricings").append('<div class="group {{ $errors->has('duration[]') ? ' has-error' : '' }}" id="'+random+'"><hr><div class="form-group"><label class="col-sm-3 control-label">Title</label><div class="col-sm-6"><div class="input-group"><div class="input-group-addon"><i class="fa fa-user"></i></div><input type="text" class="form-control" name="duration[]" value="{{old('duration[]')}}" value="" placeholder="Enter Duration" ></div></div></div><div class="form-group{{ $errors->has('price[]') ? ' has-error' : '' }}"><label class="col-sm-3 control-label"> Price</label><div class="col-sm-6"><input type="number" name="price[]" class="form-control" id="inputDescription3" value="" placeholder="Enter Price">{{old('price[]')}}</textarea></div></div></div><input type="button" class="remove btn btn-danger" onclick="removeDynamic('+random+')" id="close" value="Delete Card" style="margin-left:'+'315px'+';"/></div><label class="col-sm-8 control-label"></label></div>');
         });
     })
 </script>

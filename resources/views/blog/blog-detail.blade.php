@@ -8,7 +8,7 @@
 	<div class="banner pa-tb">
 		<div class="container">	
 			<div class="title"  data-aos="fade-down" data-aos-duration="3000">
-				<h2>Why Clany’s a life-saver for my flatshare!</h2>
+				<h2>{{$finalBlogDetail['blog_detail']['title']}}</h2>
 			</div>
 		</div>	
 	</div>
@@ -20,7 +20,9 @@
 					<div class="row blog-detail-top">
 						<div class="col-4 pt-4 pb-4">
 							<div class="date" data-aos="fade-right" data-aos-duration="3000">
-								<span><i class="far fa-calendar-alt pr-3"></i>March 21, 2020</span>
+								<?php $date = Carbon\Carbon::parse($finalBlogDetail['blog_detail']['created_at'])->format('F d, Y'); ?>
+
+								<span><i class="far fa-calendar-alt pr-3"></i>{{$date}}</span>
 							</div>
 						</div>
 						<div class="col-8 share">
@@ -37,20 +39,10 @@
 						</div>
 					</div>
 					<div class="blog-detail-img" data-aos="zoom-in" data-aos-duration="3000">
-						<img class="img-fluid" src="{{url('public/images/50.jpg')}}" alt=""></img>
+						<img class="img-fluid" src="{{url('uploads/blogs/'.$finalBlogDetail['blog_detail']['image'])}}" alt=""></img>
 					</div>
 					<div class="content" data-aos="fade-right" data-aos-duration="3000">
-						<p>Marie is 24, originally from Montreal, Canada.<p>
-
-						<p>She moved to a new city 8 months ago and moved into a flatshare with three other girls in a small apartment downtown. “When you’re living with roommates it gets messy unbelievably quickly”, she says, “And rotas don’t really work. I mean, who’s going to remember it’s their turn to take out the trash one week in three – and the results are not pretty!”<p>
-						<div class="content-img">
-							<img class="img-fluid" src="{{url('public/images/50.jpg')}}" alt=""></img>
-						</div>
-						<p>Marie and her flatmates have been using Clany for nearly 8 months now. Last year Marie quit her job to study for her Masters. As she works from home, having a tidy place is even more important to her. We asked her what were her favorite things about the service, she told us:</p>
-
-						<p>“I like the fact that you can rate the professional. And let them know how grateful you are when they do a great job. Also that you can change and stop your subscription. You have complete control.”</p>
-
-						<p>“As I’m studying I spend a lot of time at home. I don’t have time to clean. Not having to worry about that is great. It’s one less thing to worry about. And when I’m there, I see it all in front of me. It’s like the apartment transforms – I notice it suddenly smells fresh and clean, and I immediately feel more at ease. I honestly think it helps me study better when it’s clean. So thank you, Clany, for that!”</p>
+						<p>{!!$finalBlogDetail['blog_detail']['description']!!}</p>
 
 					</div>
 				</div>
@@ -67,32 +59,35 @@
 	<div class="related-story">
 		<div class="container">
 			<div class="mission-title text-center">
-				<h4>Releated Stories</h4>
+				<h4>Releated Blogs</h4>
 			</div>
 			<div class="row mt-4">
 				<div class="offset-lg-1 col-lg-10 offset-xl-1 col-xl-10">
 					<div class="related-story-carousel owl-carousel owl-theme">
+						@foreach($finalBlogDetail['other_blogs'] as $b)
 						<div class="item">
-							<a href="{{url('blog_detail')}}">
+							<a href="{{url('blog_detail/'.$b['slug'])}}">
 								<div class="blog-card" data-aos="flip-right" data-aos-duration="3000">
 									<div class="blog-card-img">
-										<img class="img-fluid" src="{{url('public/images/45.jpg')}}" alt=""></img>
+										<img class="img-fluid" src="{{url('uploads/thumbnail/'.$b['image'])}}" alt=""></img>
 									</div>
 									<div class="home-card-title">
-										<h4>Plants that keep the air clean</h4>
+										<h4>{{$b['title']}}</h4>
 									</div>
 									<span class="linear-border"></span>
 									<div class="blog-date">
-										<a href="{{url('blog_detail')}}"><i class="far fa-calendar-alt pr-3"></i>March 21, 2020</a>
+										<?php $date = Carbon\Carbon::parse($b['created_at'])->format('F d, Y'); ?>
+										<a href="{{url('blog_detail/'.$b['slug'])}}"><i class="far fa-calendar-alt pr-3"></i>{{$date}}</a>
 									</div>
 									<div class="content">
-										<p>Providing a clean office environment is a key component to a modern, effective organisation.</p>
+										<p>{{$b['summary']}}</p>
 									</div>
-									<a href="{{url('blog_detail')}}" class="more">READ MORE</a>
+									<a href="{{url('blog_detail/'.$b['slug'])}}" class="more">READ MORE</a>
 								</div>
 							</a>
 						</div>
-						<div class="item">
+						@endforeach
+						{{-- <div class="item">
 							<a href="{{url('blog_detail')}}">
 								<div class="blog-card" data-aos="flip-right" data-aos-duration="3000">
 									<div class="blog-card-img">
@@ -131,7 +126,7 @@
 									<a href="{{url('blog_detail')}}" class="more">READ MORE</a>
 								</div>
 							</a>
-						</div>
+						</div> --}}
 					</div>
 				</div>
 			</div>

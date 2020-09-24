@@ -148,6 +148,28 @@
 
             <li class="nav-item">
                 <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="fa fa-quote-left"></i>
+                    <span class="title">Compliments</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item">
+                        <a href="{{url('cd-admin/add-compliments')}}" class="nav-link">
+                            <i class="fa fa-plus"></i>
+                            <span class="title">Add Compliments</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url('cd-admin/view-compliments')}}" class="nav-link">
+                            <i class="fa fa-eye"></i>
+                            <span class="title">View Compliments</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="fa fa-group"></i>
                     <span class="title">Partners</span>
                     <span class="arrow"></span>

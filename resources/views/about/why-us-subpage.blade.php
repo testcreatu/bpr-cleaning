@@ -26,17 +26,20 @@
 		</div>
 
 		<div class="row ma-t">
+			<?php $measures = json_decode($finalCompliments['compliments']['measures']); ?>
+			@foreach($measures as $m)
 			<div class="col-md-4 mb-3">
 				<div class="subpage-measures" data-aos="fade-right" data-aos-duration="3000">
 					<div class="title">
-						<h4>Health and safety</h4>
+						<h4>{{$m->title}}</h4>
 					</div>
 					<div class="content mt-2 ">
-						<p>Health and safety managers in a hospital decided that they needed to replace an old floor in a kitchen area following a number of slipping accidents.</p>
+						<p>{{$m->summary}}</p>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 mb-3">
+			@endforeach
+			{{-- <div class="col-md-4 mb-3">
 				<div class="subpage-measures" data-aos="fade-up" data-aos-duration="3000">
 					<div class="title">
 						<h4>New bespoke epoxy</h4>
@@ -55,19 +58,19 @@
 						<p>The floor was duly laid and some time afterwards the flooring supplier was asked to visit the site because they were having problems keeping the floor clean.</p>
 					</div>
 				</div>
-			</div>
+			</div> --}}
 		</div>	
 	</div>
 
-	<div class="parallel-img">
+	<div class="parallel-img" style=" background-image: url('{{url('uploads/compliments/'.$finalCompliments['compliments']['quote_image'])}}');">
 		<div class="container">
 			<div class="row">
 				<div class="offset-md-6 col-md-6">
 					<div class="mission-title">
-						<h4>You Should Know</h4>
+						<h4>{{$finalCompliments['compliments']['quote']}}</h4>
 					</div>
 					<div class="content">
-						<p>All this could have been avoided if someone had bothered to tell the cleaners about the appropriate cleaning regime for the new floor!</p>
+						<p>{{$finalCompliments['compliments']['sub_text']}}</p>
 					</div>
 				</div>
 			</div>
@@ -75,40 +78,47 @@
 	</div>
 
 	<div class="container">
+		<?php $reasons = json_decode($finalCompliments['compliments']['reasons']); ?>
 		<div class="row mission sub-page ma-t">
+			@foreach($reasons as $key=>$r)
+			@if($key % 2 == 0)
 			<div class="col-lg-6">
 				<div class="mission-img" data-aos="zoom-out" data-aos-duration="3000">
-					<img class="img-fluid" src="{{url('public/images/34.jpg')}}" alt="">
+					<img class="img-fluid" src="{{url('uploads/compliments/'.$r->image)}}" alt="">
 				</div>
 			</div>
 			<div class="col-lg-6">
 				<div class="mission-content sub-page-content" data-aos="fade-left" data-aos-duration="3000">
 					<div class="mission-title text-center mt-3">
-						<h4>The Challenege</h4>
+						<h4>{{$r->sub_title}}</h4>
 					</div>
 					<div class="content">
-						<p>The owner/operator of a high volume restaurant stepped away from the day-to-day activities of running the restaurant. After a few online reviews about the cleanliness of the restaurant, the owner needed to check things out. The owner was not thoroughly satisfied with the performance of the previous cleaning vendor. Among other things, the state of the floors and equipment use to clean said floors were unsatisfactory. Over time, the grout lines and floors became intolerable.</p>
+						<p>{{$r->sub_summary}}</p>
 					</div>
 				</div>
 			</div>
 		</div>
+		@else
 		<div class="row">
 			<div class="col-lg-4">
 				<div class="mission-content sub-page-content" data-aos="fade-right" data-aos-duration="3000">
 					<div class="mission-title text-center mt-3">
-						<h4>The Solution</h4>
+						<h4>{{$r->sub_title}}</h4>
 					</div>
 					<div class="content">
-						<p>Excel Cleaning Service was called in for a quote. After the walk thru the client received a list of chemicals and equipment used on their behalf. Very impressed by the aforementioned listing, the client felt assured and comfortable with the capabilities of Excel Cleaning Services.</p>
+						<p>{{$r->sub_summary}}</p>
 					</div>
 				</div>
 			</div>
 			<div class=" offset-lg-2 col-lg-6" data-aos="zoom-in" data-aos-duration="3000">
 				<div class="mission-img">
-					<img class="img-fluid" src="{{url('public/images/45.jpg')}}" alt="">
+					<img class="img-fluid" src="{{url('uploads/compliments/'.$r->image)}}" alt="">
 				</div>
 			</div>
 		</div>
+		@endif
+		@endforeach
+		
 	</div>
 
 	<div class="subscriber">
@@ -140,10 +150,18 @@
 							Naxxar,
 						</p>
 						<div class="header-icon">
-							<a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-							<a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-							<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-							<a href="#" target="_blank"><i class="fab fa-pinterest"></i></a>
+							@if($finalCompliments['contact']['fb_link'] != NULL)
+							<a href="{{$finalCompliments['contact']['fb_link']}}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+							@endif
+							@if($finalCompliments['contact']['twitter_link'] != NULL)
+							<a href="{{$finalCompliments['contact']['twitter_link']}}" target="_blank"><i class="fab fa-twitter"></i></a>
+							@endif
+							@if($finalCompliments['contact']['insta_link'] != NULL)
+							<a href="{{$finalCompliments['contact']['insta_link']}}" target="_blank"><i class="fab fa-instagram"></i></a>
+							@endif
+							@if($finalCompliments['contact']['pininterest_link'] != NULL)
+							<a href="{{$finalCompliments['contact']['pininterest_link']}}" target="_blank"><i class="fab fa-pinterest"></i></a>
+							@endif
 						</div>
 					</div>
 				</div>
@@ -160,24 +178,21 @@
 			<div class="row mt-4">
 				<div class="col-12">
 					<div class="more-cases-carousel owl-carousel owl-theme">
+						@foreach($finalCompliments['more_compliments'] as $more)
 						<div class="item">
-							<a href="{{url('why_us_subpage')}}">
-								<div class="blog-card" data-aos="fade-right" data-aos-duration="3000">
-									<div class="blog-card-img">
-										<img class="img-fluid" src="{{url('public/images/33.jpg')}}" alt=""></img>
+							<a href="{{url('why_us_subpage/'.$more['slug'])}}">
+								<div class="our-work">
+									<div class="work-img">
+										<img class="img-fluid" src="{{url('uploads/thumbnail/'.$more['image'])}}"></img>
 									</div>
-									<div class="home-card-title">
-										<h4>Kitchen Story</h4>
+									<div class="work-title">
+										<h2>{{$more['title']}}</h2>
 									</div>
-									<span class="linear-border"></span>
-									<div class="content">
-										<p>Regular warehouse cleaning leads to greater operational efficiency.</p>
-									</div>
-									<a href="{{url('why_us_subpage')}}" class="more">READ MORE</a>
 								</div>
 							</a>
 						</div>
-						<div class="item">
+						@endforeach
+						{{-- <div class="item">
 							<a href="{{url('why_us_subpage')}}">
 								<div class="blog-card" data-aos="fade-down" data-aos-duration="3000">
 									<div class="blog-card-img">
@@ -227,7 +242,7 @@
 									<a href="{{url('why_us_subpage')}}" class="more">READ MORE</a>
 								</div>
 							</a>
-						</div>
+						</div> --}}
 					</div>
 				</div>
 			</div>
