@@ -71,7 +71,7 @@
               </td>
 
               <td class="mailbox-name">{{$contact->name}}
-               <td class="mailbox-subject">{!!str_limit($contact->message,$limits='50')!!}
+               <td class="mailbox-subject">{!!substr($contact->message,0,50)!!}
                </td>
              </td>
              <td class="mailbox-subject">
@@ -79,7 +79,7 @@
              </td>
 
              <td class="mailbox-date">
-              {{ \Carbon\Carbon::parse($contact->created_at)->format('d/m/Y ')}} </td>
+              {{ \Carbon\Carbon::parse($contact->created_at)->format('F d, Y ')}} </td>
 
 
             </tr>

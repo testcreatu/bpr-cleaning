@@ -4,23 +4,23 @@
 @section('content')
 
 @if(Session::has('failure'))
-	<div class="alert alert-danger">
-		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-		<strong>DELETED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
-	</div>
-	@elseif(Session::has('success'))
-	<div class="alert alert-success">
-		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-		<strong>INSERTED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
-	</div>
+<div class="alert alert-danger">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	<strong> SEO DELETED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
+</div>
+@elseif(Session::has('success'))
+<div class="alert alert-success">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	<strong> SEO INSERTED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
+</div>
 
-	@elseif(Session::has('success1'))
-	<div class="alert alert-success">
-		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-		<strong>UPDATED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
-	</div>
+@elseif(Session::has('success1'))
+<div class="alert alert-success">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	<strong> SEO UPDATED SUCCESSFULLY!!!</strong> {{ Session::get('message', '') }}
+</div>
 
-	@endif
+@endif
 
 <!-- BEGIN PAGE BAR -->
 <div class="page-bar">
@@ -31,7 +31,7 @@
 		</li>
 	</li>
 	<li>
-		<span>View all Seo</span>
+		<span>View SEO</span>
 	</li>
 </ul>
 </div>
@@ -44,9 +44,9 @@
 			<div class="portlet-title">
 				<div class="caption font-dark">
 					<i class="icon-settings font-dark"></i>
-					<span class="caption-subject bold uppercase"> View All Seo </span>
+					<span class="caption-subject bold uppercase"> View SEO </span>
 				</div>
-	
+
 			</div>
 			<div class="portlet-body">
 				<table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_1">
@@ -54,12 +54,11 @@
 						<tr>
 							<th>SN</th>
 							<th>Page_title </th>
-							
 							<th> Actions </th>
 						</tr>
 					</thead>
 					<tbody>
-					@foreach($seo as $blogs)
+						@foreach($seo as $blogs)
 						<tr class="odd gradeX">
 							<td>{{$loop->iteration}}</td>
 							<td>{{$blogs['name']}}</td>
@@ -79,11 +78,7 @@
 												<i class="fa fa-edit"></i> Edit
 											</a>
 										</li>
-										<li>
-											<a data-toggle="modal" href="#delete-modal{{$blogs['id']}}">
-												<i class="fa fa-trash"></i> Delete
-											</a>
-										</li>
+										
 									</ul>
 								</div>
 							</td>
@@ -112,9 +107,9 @@
 				<strong>SEO Keywords = {{$ch['keywords']}}</strong>
 				<hr>
 				<div class="panel panel-default">
-				<div class="panel-heading">SEO Description </div>
-				<div class="panel-body"> {!!$ch['description']!!} </div>
-			</div>
+					<div class="panel-heading">SEO Description </div>
+					<div class="panel-body"> {!!$ch['description']!!} </div>
+				</div>
 			</div>
 			<div class="modal-footer">
 				<button type="button" data-dismiss="modal" class="btn dark btn-outline">Close</button>
@@ -122,27 +117,5 @@
 		</div>
 	</div>
 </div>
-
-
-<!-- delete modal -->
-
-<div class="modal fade" id="delete-modal{{$ch['id']}}" tabindex="-1" role="basic" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-				<h4 class="modal-title">Delete</h4>
-			</div>
-			<div class="modal-body"> Are you sure want to delete this ? </div>
-			<div class="modal-footer">
-				<button type="button" class="btn dark btn-outline" data-dismiss="modal">No</button>
-				<a href="{{url('delete-seo/'.$ch['id'])}}"  class="btn green">YES</a>
-			</div>
-		</div>
-		<!-- /.modal-content -->
-	</div>
-	<!-- /.modal-dialog -->
-</div>
 @endforeach
-
 @endsection

@@ -11,20 +11,28 @@
 						<a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="">About</a>
+						<a class="nav-link" href="{{url('about_us')}}">About</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="">Service</a>
+						<a class="nav-link" href="{{url('faq')}}">FAQ</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="">Conatct</a>
+						<a class="nav-link" href="{{url('contact_us')}}">Contact</a>
 					</li>
 				</ul>
 				<ul class="footer-icon">
-					<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-					<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-					<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-					<li><a href="#" target="_blank"><i class="fab fa-pinterest"></i></a></li>
+					@if($finalHeader['contact']['fb_link'] != NULL)
+					<a href="{{$finalHeader['contact']['fb_link']}}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+					@endif
+					@if($finalHeader['contact']['twitter_link'] != NULL)
+					<a href="{{$finalHeader['contact']['twitter_link']}}" target="_blank"><i class="fab fa-twitter"></i></a>
+					@endif
+					@if($finalHeader['contact']['insta_link'] != NULL)
+					<a href="{{$finalHeader['contact']['insta_link']}}" target="_blank"><i class="fab fa-instagram"></i></a>
+					@endif
+					@if($finalHeader['contact']['pininterest_link'] != NULL)
+					<a href="{{$finalHeader['contact']['pininterest_link']}}" target="_blank"><i class="fab fa-pinterest"></i></a>
+					@endif
 				</ul>
 			</div>
 		</nav>
@@ -39,7 +47,7 @@
 				<div class="col-md-3">
 					<div class="footer-wrap">
 						<h5>About Us</h5>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non nisi est sit. Lorem mollis aliquam ut porttitor leo a diam sollicitudin. Aliquet bibendum enim facilisis gravida neque convallis a cras. </p>
+						<p>{{$finalHeader['about']['summary']}} </p>
 					</div>
 				</div>
 				<div class="col-md-4">
@@ -48,16 +56,12 @@
 							<div class="footer-wrap">
 								<h5>Contact</h5>
 								<p>
-									Shop No.1,Underlying Block H
-									
-									Triq Ta'Mezzi,
-									<br>
-									Naxxar,Malta
+									{{$finalHeader['contact']['address']}}
 								</p>
 								<a href="https://www.google.com/maps/place/Creatu+Developers/@27.6859418,85.3450849,15z/data=!4m5!3m4!1s0x0:0x6064967133397f28!8m2!3d27.6859418!4d85.3450849" class="map-link" target="_blank">Google Map</a>
 								<p>
-									T: <a href="tel:777-877-89">777-877-89</a><br>
-									E:<a href="mailto:info@bprcleaning.com">info@bprcleaning.com</a>
+									T: <a href="tel:{{$finalHeader['contact']['contact_no']}}">{{$finalHeader['contact']['contact_no']}}</a><br>
+									E:<a href="mailto:{{$finalHeader['contact']['email']}}">{{$finalHeader['contact']['email']}}</a>
 								</p>
 							</div>
 						</div>
@@ -75,9 +79,9 @@
 				<div class="col-md-3">
 					<div class="footer-wrap">
 						<h5>Get Free Estimate</h5>
-						<p><a href="tel:271-369-35" class="call">271-369-35</a></p>
+						<p><a href="tel:{{$finalHeader['contact']['contact_no']}}" class="call">{{$finalHeader['contact']['contact_no']}}</a></p>
 						<p>Get Free Estimate</p>
-						<a href="#" class="btn btn1 mt-2">Request with Online Form</a>
+						<a href="{{url('contact_us')}}" class="btn btn1 mt-2">Contact Us</a>
 					</div>
 				</div>
 			</div>
@@ -86,8 +90,8 @@
 		<div class="copyright">
 			<div class="row">
 				<div class="offset-md-2 col-md-8 text-center">
-					<p class="pt-5">Ultricies lacus sed turpis tincidunt id aliquet risus feugiat in. In nulla posuere sollicitudin aliquam ultrices sagittis. Sapien eget mi proin sed libero enim sed faucibus turpis. Pharetra pharetra massa massa ultricies mi quis hendrerit dolor magna.</p>
-					<p class="mt-3">© {{date('Y')}} <a href="#">BPR Cleaning</a> by <a href="http://creatudevelopers.com/">Creatudevelopers</a> - <a href="#">Term & Condition</a></p>
+					<p class="pt-5"></p>
+					<p class="mt-3">© {{date('Y')}} <a href="#">BPR Cleaning</a> by <a href="http://creatudevelopers.com/">Creatu Developers</a> - <a href="#">Terms & Conditions</a></p>
 				</div>
 			</div>			
 		</div>

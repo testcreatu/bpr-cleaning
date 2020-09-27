@@ -72,6 +72,13 @@
 						</div>
 					</div>
 
+					<div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+						<label class="col-md-3 control-label">Enter Address </label>
+						<div class="col-md-6">
+							<input type="text" name="address" class="form-control" placeholder="Enter Address" value="{{old('address')}}">
+						</div>
+					</div>
+
 
 
 					<!-- status section starts -->

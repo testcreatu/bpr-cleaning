@@ -1,6 +1,16 @@
 @extends('home-master')
 
+@section('seo_title')	
+{{$finalServiceDetail['service_detail']['seo_title']}}
+@endsection
 
+@section('seo_description')	
+{{$finalServiceDetail['service_detail']['seo_description']}}
+@endsection
+
+@section('seo_keyword')	
+{{$finalServiceDetail['service_detail']['seo_keyword']}}
+@endsection
 
 @section('content')
 
@@ -52,44 +62,10 @@
 							<div class="choose-card-title">
 								<h4>
 									{{$f['title']}}
-									{{-- <span>250,000 cleans</span> --}}
 								</h4>
 							</div>
 						</div>
 						@endforeach
-						{{-- <div class="choose-card text-center">
-							<div class="choose-card-img">
-								<img class="img-fluid" src="{{url('public/images/25-1.png')}}" alt=""></img>
-							</div>
-							<div class="choose-card-title">
-								<h4>
-									100%
-									<span>Satisfaction</span>
-								</h4>
-							</div>
-						</div>
-						<div class="choose-card text-center">
-							<div class="choose-card-img">
-								<img class="img-fluid" src="{{url('public/images/27-1.png')}}" alt=""></img>
-							</div>
-							<div class="choose-card-title">
-								<h4>
-									Eco-Friendly
-									<span>Cleaning Products</span>
-								</h4>
-							</div>
-						</div>
-						<div class="choose-card text-center">
-							<div class="choose-card-img">
-								<img class="img-fluid" src="{{url('public/images/26-1.png')}}" alt=""></img>
-							</div>
-							<div class="choose-card-title">
-								<h4>
-									Cost
-									<span>Effective</span>
-								</h4>
-							</div>
-						</div> --}}
 					</div>
 				</div>
 			</div>
@@ -109,17 +85,7 @@
 							<p>{!!$s->sub_description!!}</p>
 						</div>
 						@endforeach
-						{{-- <div class="col-md-6" data-aos="flip-down" data-aos-duration="3000">
-							<div class="service-title mb-4">
-								<h4>How clean offices can help workplace productivity</h4>
-							</div>
-							<ul class="service-points">
-								<li>Increased focus: In a clean working environment, you are less likely to be distracted by cluttered objects, and that greater level of concentration leads to more and better work being done.</li>
-								<li>Less time wasted: A lot of time can be squandered when searching for documents in a messy workspace. In cleaner, well-organised offices, paperwork can be tracked down easily and quickly.</li>
-								<li>Less stress: A cluttered desk can result in you trying to focus on too many things at once, which lowers your stress threshold.</li>
-								<li>Greater profitability: Instead of wasting time looking for documents, workers in a clean office get more work done, which helps with profitability in the long-term.</li>
-							</ul>
-						</div> --}}
+						
 					</div>
 
 					<div class="subscriber ma-t" data-aos="fade-left" data-aos-duration="3000">
@@ -128,13 +94,14 @@
 								<div class="title">
 									<h4>Subscribe for the Latest News:</h4>
 								</div>
-								<form class="subscribe-form mt-3">
+								<form class="subscribe-form mt-3" action="{{url('add-subscriptions')}}" method="POST">
+									@csrf
 									<div class="form-row">
 										<div class="form-group col-md-4 ">
-											<input type="text" class="form-control" placeholder="Name">
+											<input type="text" class="form-control" placeholder="Name" name="name">
 										</div>
 										<div class="form-group col-md-4">
-											<input type="email" class="form-control" placeholder="Email Address">
+											<input type="email" class="form-control" placeholder="Email Address" name="email">
 										</div>
 										<div class="form-group col-md-4 text-center">
 											<button type="submit" class="btn btn1">Subscribe</button>

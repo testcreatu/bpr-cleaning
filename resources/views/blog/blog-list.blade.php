@@ -1,6 +1,16 @@
 @extends('home-master')
 
+@section('seo_title')	
+{{$finalBlogList['seo']['title']}}
+@endsection
 
+@section('seo_description')	
+{{$finalBlogList['seo']['description']}}
+@endsection
+
+@section('seo_keyword')	
+{{$finalBlogList['seo']['keywords']}}
+@endsection
 
 @section('content')
 

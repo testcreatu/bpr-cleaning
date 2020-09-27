@@ -35,6 +35,7 @@ class SocialLinksController extends Controller
 			'email' => '',
 			'contact_no' => '',
 			'show_status' => 'required',
+			'address' => '',
 		]);
 		$social_links = new SocialLinks();
 		$social_links->fb_link = $data['fb_link'];
@@ -44,6 +45,7 @@ class SocialLinksController extends Controller
 		$social_links->email = $data['email'];
 		$social_links->contact_no = $data['contact_no'];
 		$social_links->show_status = $data['show_status'];
+		$social_links->address = $data['address'];
 		$social_links->save();
 		Session::flash('storeSuccess');
 		return redirect('/cd-admin/view-social-links');
@@ -59,6 +61,7 @@ class SocialLinksController extends Controller
 			'email' => '',
 			'show_status' => 'required',
 			'contact_no' => '',
+			'address' => '',
 		]);
 		$social_links = SocialLinks::find($id);
 		$social_links->fb_link = $data['fb_link'];
@@ -68,6 +71,7 @@ class SocialLinksController extends Controller
 		$social_links->email = $data['email'];
 		$social_links->show_status = $data['show_status'];
 		$social_links->contact_no = $data['contact_no'];
+		$social_links->address = $data['address'];
 		$social_links->save();
 		Session::flash('updateSuccess');
 		return redirect('/cd-admin/view-social-links');

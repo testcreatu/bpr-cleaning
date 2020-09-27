@@ -19,9 +19,9 @@ Route::get('home','frontend\FrontendController@home');
 
 Route::get('booking_list','frontend\FrontendController@BookingList');
 
-Route::get('booking_form', function () {
-    return view('booking.booking-form');
-});
+Route::get('booking_form/{slug}','frontend\FrontendController@BookingForm');
+Route::post('submit-booking-form','frontend\FrontendController@submitBookingForm');
+
 
 Route::get('about_us','frontend\FrontendController@about');
 
@@ -33,16 +33,17 @@ Route::get('faq','frontend\FrontendController@faq');
 
 Route::get('service_detail/{slug}','frontend\FrontendController@serviceDetail');
 
-Route::get('contact_us', function () {
-    return view('contact.contact-us');
-});
+Route::get('contact_us','frontend\FrontendController@contact');
 
 Route::get('blog_list','frontend\FrontendController@BlogList');
 
 
 Route::get('blog_detail/{slug}','frontend\FrontendController@BlogDetail');
 
+Route::post('store-free-call','frontend\FrontendController@storeFreeCall');
+Route::post('add-subscriptions','frontend\FrontendController@addSubscriptions');
 
+Route::post('/store-contact','frontend\FrontendController@addContactMessage');
 
 Route::get('link', function () {
     return view('link.link');
@@ -52,8 +53,8 @@ Auth::routes(['register' => false]);
 Route::group(['middleware'=>'auth'],function()
 {
     Route::get('/cd-admin/dashboard', function(){
-     return view('cd-admin.dashboard.dashboard');
- })->name('home');
+       return view('cd-admin.dashboard.dashboard');
+   })->name('home');
 
 
 
@@ -158,4 +159,38 @@ Route::group(['middleware'=>'auth'],function()
     Route::post('/cd-admin/add-ceo-message','backend\CeoMessageController@addCeoMessage')->name('add-ceo-message');
     Route::get('/cd-admin/edit-ceo-message/{id}','backend\CeoMessageController@editCeoMessageForm')->name('edit-ceo-message-form');
     Route::post('/cd-admin/edit-ceo-message/{id}','backend\CeoMessageController@editCeoMessage')->name('edit-ceo-message');
+
+
+    //Call Requests
+    Route::get('/cd-admin/view-call-requests','backend\CallRequestsController@viewCallRequests')->name('view-call-requests');
+
+    //Subscriptions
+    Route::get('/cd-admin/view-subscriptions','backend\SubscriptionsController@viewSubscription')->name('view-subscriptions');
+
+
+    //Contact 
+    Route::post('/cd-admin/store-contact-reply/{id}','ContactController@storereply');
+    Route::get('/cd-admin/view-contact','backend\ContactController@view');
+    Route::get('/cd-admin/delete-Message/{id}','backend\ContactController@delete');
+    Route::get('/cd-admin/reply-contact/{id}','backend\ContactController@replyform');
+    Route::post('/cd-admin/store-reply/{id}','backend\ContactController@storereply');
+    Route::get('/cd-admin/contact-replies','backend\ContactController@viewreply');
+    Route::get('/cd-admin/delete-Message-reply/{id}','backend\ContactController@deletereply');
+
+
+    //Bookings
+    Route::get('/cd-admin/view-bookings','backend\BookingsController@viewBookings');
+    Route::get('/cd-admin/view-replied-bookings','backend\BookingsController@viewRepliedBookings');
+    Route::get('/cd-admin/view-booking/{id}','backend\BookingsController@viewOneBooking');
+    Route::post('/cd-admin/update-booking-status/{id}','backend\BookingsController@updateStatus');
+    Route::get('/cd-admin/delete-bookings/{id}','backend\BookingsController@deleteBookings');
+
+    //-------------------SEO---------------------
+    Route::get('/seo-add','backend\SeoController@add');
+    Route::get('/seo-view','backend\SeoController@view');
+    Route::post('/cd-admin/insertseo','backend\SeoController@store');
+    Route::get('/edit-seo/{id}','backend\SeoController@edit');
+    Route::post('/updateseo/{id}','backend\SeoController@updateseo');
+    Route::get('/delete-seo/{id}','backend\SeoController@delete');
+
 });

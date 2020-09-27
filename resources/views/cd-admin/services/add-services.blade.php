@@ -226,6 +226,42 @@
 						</div>
 					</div>
 
+
+					<h2 align="center">Extras</h2>
+					<div class="box-body" id="card-extra">
+						
+						<div class="form-group {{ $errors->has('extra_title[]') ? ' has-error' : '' }}">
+							<label for="inputTourName3" class="col-sm-3 control-label">Title</label>
+							<div class="col-sm-6">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-user"></i>
+									</div>
+									<input type="text" class="form-control" id="inputTourName3" placeholder="Enter Title" name="extra_title[]" value="{{old('extra_title[]')}}">
+								</div>
+							</div>
+						</div>
+						<div class="form-group {{ $errors->has('extra_price[]') ? ' has-error' : '' }}">
+							<label for="inputDescription3" class="col-sm-3 control-label">Price</label>
+							<div class="col-sm-6">
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-pencil"></i>
+									</div>
+									<input type="number" class="form-control" id="inputTourName3" placeholder="Enter Price" name="extra_price[]" value="{{old('extra_price[]')}}">
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-11 control-label">
+							<div class="col-sm-10">
+								<input id="submitButton" type="button" class="add_another_extra btn btn-info" value="Add New  Extra"/>
+							</div>
+						</div>
+					</div>
+
 					<!-- seo section starts -->
 					<hr>
 					<div class="form-group{{ $errors->has('seo_title') ? ' has-error' : '' }}">
@@ -260,6 +296,25 @@
 
 					<!-- status section starts -->
 					<hr>
+
+					<div class="form-group">
+						<label class="col-md-3 control-label">Show In Homepage <span class="cd-admin-required">*</span></label>
+						<div class="col-md-6">
+							<div class="mt-radio-inline">
+								<label class="mt-radio">
+									<input type="radio" name="show_in_homepage" id="optionsRadios25" value="show" checked=""> Show
+									<span></span>
+								</label>
+								<label class="mt-radio">
+									<input type="radio" name="show_in_homepage" id="optionsRadios26" value="hide"> Hide
+									<span></span>
+								</label>
+							</div>
+						</div>
+						@if ($errors->has('status'))
+						<span class="text-danger">{{ $errors->first('status') }}</span>
+						@endif
+					</div>
 					<div class="form-group">
 						<label class="col-md-3 control-label">Status <span class="cd-admin-required">*</span></label>
 						<div class="col-md-6">

@@ -243,12 +243,18 @@
                 </ul>
             </li>
 
-{{-- 
+
             <li class="heading">
                 <h3 class="uppercase">Message Section</h3>
             </li>
             <li class="nav-item">
-                <a href="{{url('cd-admin/view-all-Subscription')}}" class="nav-link nav-toggle">
+                <a href="{{url('cd-admin/view-call-requests')}}" class="nav-link nav-toggle">
+                    <i class="fa fa-comments"></i>
+                    <span class="title">Call Requests</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{url('cd-admin/view-subscriptions')}}" class="nav-link nav-toggle">
                     <i class="fa fa-comments"></i>
                     <span class="title">Subscription</span>
                 </a>
@@ -261,15 +267,38 @@
                 </a>
                 <ul class="sub-menu">
                     <li class="nav-item">
-                        <a href="{{url('cd-admin/view-all-contact')}}" class="nav-link">
+                        <a href="{{url('cd-admin/view-contact')}}" class="nav-link">
                             <i class="fa fa-eye"></i>
-                            <span class="title">View all Inbox</span>
+                            <span class="title">View  Inbox</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{url('cd-admin/contact-replies')}}" class="nav-link">
                             <i class="fa fa-eye"></i>
-                            <span class="title">View all Reply</span>
+                            <span class="title">View Reply</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+             <li class="nav-item">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="fa fa-envelope"></i>
+                    <span class="title">Bookings</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <li class="nav-item">
+                        <a href="{{url('cd-admin/view-bookings')}}" class="nav-link">
+                            <i class="fa fa-eye"></i>
+                            <span class="title">View  New Bookings</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{url('cd-admin/view-replied-bookings')}}" class="nav-link">
+                            <i class="fa fa-eye"></i>
+                            <span class="title">View Replied Bookings </span>
                         </a>
                     </li>
                 </ul>
@@ -293,7 +322,7 @@
                     </li>
                     
                 </ul>
-            </li> --}}
+            </li>
 
         </ul>
         <!-- END SIDEBAR MENU -->

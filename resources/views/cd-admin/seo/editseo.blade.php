@@ -51,7 +51,7 @@
 					</div>
 
 					<div class="form-group{{ $errors->has('keywords') ? ' has-error' : '' }}">
-						<label class="col-md-3 control-label">Seo Title</label>
+						<label class="col-md-3 control-label">Seo Keyowrd</label>
 						<div class="col-md-6">
 							<input type="text" name="keywords" class="form-control" placeholder="Enter Seo Keywords" value="{{$ser['keywords']}}">
 						</div>

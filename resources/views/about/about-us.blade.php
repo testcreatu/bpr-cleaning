@@ -1,5 +1,16 @@
 @extends('home-master')
 
+@section('seo_title')	
+{{$finalAbout['seo']['title']}}
+@endsection
+
+@section('seo_description')	
+{{$finalAbout['seo']['description']}}
+@endsection
+
+@section('seo_keyword')	
+{{$finalAbout['seo']['keywords']}}
+@endsection
 
 
 @section('content')
@@ -56,13 +67,14 @@
 					<div class="title"data-aos="fade-right" data-aos-duration="3000">
 						<h4>Subscribe for the Latest News:</h4>
 					</div>
-					<form class="subscribe-form mt-3"data-aos="fade-left" data-aos-duration="3000">
+					<form class="subscribe-form mt-3"data-aos="fade-left" data-aos-duration="3000" action="{{url('add-subscriptions')}}" method="POST">
+						@csrf
 						<div class="form-row">
 							<div class="form-group col-md-4">
-								<input type="text" class="form-control" placeholder="Name">
+								<input type="text" name="name" class="form-control" placeholder="Name">
 							</div>
 							<div class="form-group col-md-4">
-								<input type="email" class="form-control" placeholder="Email Address">
+								<input type="email" name="email" class="form-control" placeholder="Email Address">
 							</div>
 							<div class="form-group col-md-4 text-center">
 								<button type="submit" class="btn btn1">Subscribe</button>
@@ -73,9 +85,7 @@
 				<div class="col-md-3">
 					<div class="subscribe-link"data-aos="zoom-out" data-aos-duration="3000">
 						<p>
-							<span>Malta</span>
-							Underlying Block H Triq Ta'Mezzi,
-							Naxxar,
+							{{$finalHeader['contact']['address']}}
 						</p>
 						<div class="header-icon">
 							<a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>

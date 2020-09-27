@@ -79,7 +79,11 @@ class CarouselController extends Controller
 			'image' => 'required|mimes:jpeg,jpg,png,gif',
 			'altimage' => 'required',
 				// 'description' => 'required',
-			'status' => 'required'
+			'status' => 'required',
+			'offer_tag' => '',
+			'offer_title' => '',
+			'offer_sub_text' => '',
+			'show_offer' => 'required',
 		]);
 		return $valid;
 	}
@@ -91,7 +95,12 @@ class CarouselController extends Controller
 			'image' => 'mimes:jpeg,jpg,png,gif',
 			'altimage' => 'required',
 				// 'description' => 'required',
-			'status' => 'required'
+			'status' => 'required',
+			'offer_tag' => '',
+			'offer_title' => '',
+			'offer_sub_text' => '',
+			'show_offer' => 'required',
+
 		]);
 		return $valid;
 	}

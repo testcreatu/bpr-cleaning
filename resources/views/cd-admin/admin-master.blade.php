@@ -202,14 +202,14 @@ License: You must have a valid license purchased only from themeforest(the above
 <script>
   $(document).ready(function(){
     $('.add_another_benifits').click(function() {
-       var random = Math.ceil(Math.random()*100) << 0;
-       $("#card_benifits").append('<div class="group{{ $errors->has('benifits[]') ? ' has-error' : '' }}" id="benifits'+random+'"><hr><div class="form-group"><label class="col-sm-3 control-label">Benifits</label><div class="col-sm-6"><div class="input-group"><div class="input-group-addon"><i class="fa fa-user"></i></div><input type="text" class="form-control" name="benifits[]" value="" value="" placeholder="Enter Benifits" ></div></div></div><label class="col-sm-8 control-label"></label><input type="button" class="remove btn btn-danger"  onclick="removeDynamic(\'benifits'+random+'\')" id="close" value="Delete Card"/></div>');
+     var random = Math.ceil(Math.random()*100) << 0;
+     $("#card_benifits").append('<div class="group{{ $errors->has('benifits[]') ? ' has-error' : '' }}" id="benifits'+random+'"><hr><div class="form-group"><label class="col-sm-3 control-label">Benifits</label><div class="col-sm-6"><div class="input-group"><div class="input-group-addon"><i class="fa fa-user"></i></div><input type="text" class="form-control" name="benifits[]" value="" value="" placeholder="Enter Benifits" ></div></div></div><label class="col-sm-8 control-label"></label><input type="button" class="remove btn btn-danger"  onclick="removeDynamic(\'benifits'+random+'\')" id="close" value="Delete Card"/></div>');
 
-       $('.group').on('click','.remove',function() {
+     $('.group').on('click','.remove',function() {
         $(this).parent().remove();
     });
 
-   });
+ });
 })
 </script>
 
@@ -217,14 +217,14 @@ License: You must have a valid license purchased only from themeforest(the above
 <script>
   $(document).ready(function(){
     $('.add_another_features').click(function() {
-       var random = Math.ceil(Math.random()*100) << 0;
-       $("#card_features").append('<div class="group{{ $errors->has('features[]') ? ' has-error' : '' }}" id="features'+random+'"><hr><div class="form-group"><label class="col-sm-3 control-label">Features</label><div class="col-sm-6"><div class="input-group"><div class="input-group-addon"><i class="fa fa-user"></i></div><input type="text" class="form-control" name="features[]" value="" value="" placeholder="Enter Feature" ></div></div></div><label class="col-sm-8 control-label"></label><input type="button" class="remove btn btn-danger"  onclick="removeDynamic(\'features'+random+'\')" id="close" value="Delete Card"/></div>');
+     var random = Math.ceil(Math.random()*100) << 0;
+     $("#card_features").append('<div class="group{{ $errors->has('features[]') ? ' has-error' : '' }}" id="features'+random+'"><hr><div class="form-group"><label class="col-sm-3 control-label">Features</label><div class="col-sm-6"><div class="input-group"><div class="input-group-addon"><i class="fa fa-user"></i></div><input type="text" class="form-control" name="features[]" value="" value="" placeholder="Enter Feature" ></div></div></div><label class="col-sm-8 control-label"></label><input type="button" class="remove btn btn-danger"  onclick="removeDynamic(\'features'+random+'\')" id="close" value="Delete Card"/></div>');
 
-       $('.group').on('click','.remove',function() {
+     $('.group').on('click','.remove',function() {
         $(this).parent().remove();
     });
 
-   });
+ });
 })
 </script>
 
@@ -291,7 +291,16 @@ License: You must have a valid license purchased only from themeforest(the above
     $(document).ready(function(){
         $('.add_another_pricing').click(function() {
             var random = Math.ceil(Math.random()*100) << 0;
-            $("#card-pricings").append('<div class="group {{ $errors->has('duration[]') ? ' has-error' : '' }}" id="'+random+'"><hr><div class="form-group"><label class="col-sm-3 control-label">Title</label><div class="col-sm-6"><div class="input-group"><div class="input-group-addon"><i class="fa fa-user"></i></div><input type="text" class="form-control" name="duration[]" value="{{old('duration[]')}}" value="" placeholder="Enter Duration" ></div></div></div><div class="form-group{{ $errors->has('price[]') ? ' has-error' : '' }}"><label class="col-sm-3 control-label"> Price</label><div class="col-sm-6"><input type="number" name="price[]" class="form-control" id="inputDescription3" value="" placeholder="Enter Price">{{old('price[]')}}</textarea></div></div></div><input type="button" class="remove btn btn-danger" onclick="removeDynamic('+random+')" id="close" value="Delete Card" style="margin-left:'+'315px'+';"/></div><label class="col-sm-8 control-label"></label></div>');
+            $("#card-pricings").append('<div class="group {{ $errors->has('duration[]') ? ' has-error' : '' }}" id="'+random+'"><hr><div class="form-group"><label class="col-sm-3 control-label">Title</label><div class="col-sm-6"><div class="input-group"><div class="input-group-addon"><i class="fa fa-user"></i></div><input type="text" class="form-control" name="duration[]" value="{{old('duration[]')}}" value="" placeholder="Enter Duration" ></div></div></div><div class="form-group{{ $errors->has('price[]') ? ' has-error' : '' }}"><label class="col-sm-3 control-label"> Price</label><div class="col-sm-6"><input type="number" name="price[]" class="form-control" id="inputDescription3" value="" placeholder="Enter Price">{{old('price[]')}}</textarea></div></div></div><input type="button" class="remove btn btn-danger" onclick="removeDynamic('+random+')" id="close" value="Delete Pricing" style="margin-left:'+'315px'+';"/></div><label class="col-sm-8 control-label"></label></div>');
+        });
+    })
+</script>
+
+<script>
+    $(document).ready(function(){
+        $('.add_another_extra').click(function() {
+            var random = Math.ceil(Math.random()*100) << 0;
+            $("#card-extra").append('<div class="group {{ $errors->has('extra_title[]') ? ' has-error' : '' }}" id="'+random+'"><hr><div class="form-group"><label class="col-sm-3 control-label">Title</label><div class="col-sm-6"><div class="input-group"><div class="input-group-addon"><i class="fa fa-user"></i></div><input type="text" class="form-control" name="extra_title[]" value="{{old('extra_title[]')}}" value="" placeholder="Enter Title" ></div></div></div><div class="form-group{{ $errors->has('extra_price[]') ? ' has-error' : '' }}"><label class="col-sm-3 control-label"> Price</label><div class="col-sm-6"><input type="number" name="extra_price[]" class="form-control" id="inputDescription3" value="" placeholder="Enter Price">{{old('extra_price[]')}}</textarea></div></div></div><input type="button" class="remove btn btn-danger" onclick="removeDynamic('+random+')" id="close" value="Delete Extras" style="margin-left:'+'315px'+';"/></div><label class="col-sm-8 control-label"></label></div>');
         });
     })
 </script>

@@ -31,7 +31,7 @@
 		</li>
 	</li>
 	<li>
-		<span>View all  message reply</span>
+		<span>View all  Message Reply</span>
 	</li>
 </ul>
 </div>
@@ -58,11 +58,11 @@
                     </td>
                     <td class="mailbox-name"><strong>{{$re->email}}</strong></td>
                     <td class="mailbox-subject"><strong>{{$re->subject}}</strong>
-                      <td class="mailbox-subject">{!!str_limit($re->message,$limits='50')!!}
+                      <td class="mailbox-subject">{!!substr($re->message,0,50)!!}
                       </td>
                     </td>
                     
-                    <td class="mailbox-date">{{ \Carbon\Carbon::parse($re->created_at)->format('d/m/Y')}}
+                    <td class="mailbox-date">{{ \Carbon\Carbon::parse($re->created_at)->format('F d, Y')}}
 </td>
 
                     

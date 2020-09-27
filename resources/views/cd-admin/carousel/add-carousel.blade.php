@@ -60,6 +60,37 @@
 					</div>
 
 
+					<h2 align="center">Offer Title</h2>
+					<div class="form-group{{ $errors->has('offer_tag') ? ' has-error' : '' }}">
+						<label class="col-md-3 control-label">Enter Offer Tag </label>
+						<div class="col-md-6">
+							<input type="text" name="offer_tag" class="form-control" placeholder="Enter Offer Tag" value="{{old('offer_tag')}}">
+						</div>
+						@if ($errors->has('offer_tag'))
+						<span class="text-danger">{{ $errors->first('offer_tag') }}</span>
+						@endif
+					</div>
+
+					<div class="form-group{{ $errors->has('offer_title') ? ' has-error' : '' }}">
+						<label class="col-md-3 control-label">Enter Offer Title </label>
+						<div class="col-md-6">
+							<input type="text" name="offer_title" class="form-control" placeholder="Enter Offer Title" value="{{old('offer_title')}}">
+						</div>
+						@if ($errors->has('offer_title'))
+						<span class="text-danger">{{ $errors->first('offer_title') }}</span>
+						@endif
+					</div>
+
+					<div class="form-group{{ $errors->has('offer_sub_text') ? ' has-error' : '' }}">
+						<label class="col-md-3 control-label">Enter Offer Sub Text </label>
+						<div class="col-md-6">
+							<input type="text" name="offer_sub_text" class="form-control" placeholder="Enter Offer Sub Text" value="{{old('offer_sub_text')}}">
+						</div>
+						@if ($errors->has('offer_sub_text'))
+						<span class="text-danger">{{ $errors->first('offer_sub_text') }}</span>
+						@endif
+					</div>
+
 
 				{{-- 	<div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
 						<label class="col-md-3 control-label">Enter Summary</label>
@@ -70,7 +101,24 @@
 						<span class="text-danger">{{ $errors->first('description') }}</span>
 						@endif
 					</div> --}}
-
+					<div class="form-group">
+						<label class="col-md-3 control-label">Show Offer <span class="cd-admin-required">*</span></label>
+						<div class="col-md-6">
+							<div class="mt-radio-inline">
+								<label class="mt-radio">
+									<input type="radio" name="show_offer" id="optionsRadios25" value="show" checked=""> Show
+									<span></span>
+								</label>
+								<label class="mt-radio">
+									<input type="radio" name="show_offer" id="optionsRadios26" value="hide"> Hide
+									<span></span>
+								</label>
+							</div>
+						</div>
+						@if ($errors->has('status'))
+						<span class="text-danger">{{ $errors->first('status') }}</span>
+						@endif
+					</div>
 
 					<hr>
 					<div class="form-group">

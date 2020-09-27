@@ -28,85 +28,16 @@
 							@foreach($features as $f)
 							<li>{{$f}} </li>
 							@endforeach
-							{{-- <li>Post Construction Cleaning</li>
-							<li>Office Cleaning</li>
-							<li>Upholstery Cleaning</li>
-							<li>Glass Cleaning</li> --}}
+							
 						</ul>
 						<div class="service-btn text-center mt-3">
-							<a href="{{url('booking_form')}}" class="btn btn1">Book Now</a>
-							<a href="#" class="more mt-2 ">Or Learn More</a>
+							<a href="{{url('booking_form/'.$service['slug'])}}" class="btn btn1">Book Now</a>
+							<a href="{{url('service_detail/'.$service['slug'])}}" class="more mt-2 ">Or Learn More</a>
 						</div>
 					</div>
 				</div>
 			</div>
 			@endforeach
-			{{-- <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
-				<div class="service-list-content" data-aos="fade-right" data-aos-duration="2500">
-					<div class="service-list-img">
-						<img class="img-fluid" src="{{url('public/images/39.jpg')}}"></img>
-					</div>
-					<div class="service-list-dtl">
-						<div class="home-card-title">
-							<h4>Office Cleaning</h4>
-						</div>
-						<ul class="service-list-option mt-4">
-							<li>Domestic Cleaning </li>
-							<li>Commercial Cleaning</li>
-							<li>Post Construction Cleaning</li>
-							<li>Upholstery Cleaning</li>
-							<li>Glass Cleaning</li>
-						</ul>
-						<div class="service-btn text-center mt-3">
-							<a href="{{url('booking_form')}}" class="btn btn1">Book Now</a>
-							<a href="#" class="more mt-2 ">Or Learn More</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-4 col-xl-3 mb-4">
-				<div class="service-list-content" data-aos="fade-right" data-aos-duration="2000">
-					<div class="service-list-img">
-						<img class="img-fluid" src="{{url('public/images/39.jpg')}}"></img>
-					</div>
-					<div class="service-list-dtl">
-						<div class="home-card-title">
-							<h4>Hotel Cleaning</h4>
-						</div>
-						<ul class="service-list-option mt-4">
-							<li>Post Construction Cleaning</li>
-							<li>Office Cleaning</li>
-							<li>Upholstery Cleaning</li>
-							<li>Glass Cleaning</li>
-						</ul>
-						<div class="service-btn text-center mt-3">
-							<a href="{{url('booking_form')}}" class="btn btn1">Book Now</a>
-							<a href="#" class="more mt-2 ">Or Learn More</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-4 col-xl-3 mb-4">
-				<div class="service-list-content" data-aos="fade-right" data-aos-duration="1500">
-					<div class="service-list-img">
-						<img class="img-fluid" src="{{url('public/images/39.jpg')}}"></img>
-					</div>
-					<div class="service-list-dtl">
-						<div class="home-card-title">
-							<h4>Resturant Cleaning</h4>
-						</div>
-						<ul class="service-list-option mt-4">
-							<li>Post Construction Cleaning</li>
-							<li>Office Cleaning</li>
-							<li>Glass Cleaning</li>
-						</ul>
-						<div class="service-btn text-center mt-3">
-							<a href="{{url('booking_form')}}" class="btn btn1">Book Now</a>
-							<a href="#" class="more mt-2 ">Or Learn More</a>
-						</div>
-					</div>
-				</div>
-			</div> --}}
 		</div>
 	</div>
 </div>

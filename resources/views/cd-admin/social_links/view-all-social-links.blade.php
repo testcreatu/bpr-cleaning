@@ -81,6 +81,11 @@
 					<div class="panel-heading">Email </div>
 					<a href="mailto:{{$social['email']}}"><div class="panel-body"> {!!$social['email']!!} </div></a>
 				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading"> Address </div>
+					<div class="panel-body"> {{$social['address']}} </div>
+				</div>	
 				<div class="panel panel-default">
 					<div class="panel-heading"> Contact Number </div>
 					<a href="tel:{{$social['contact_no']}}"><div class="panel-body"> {!!$social['contact_no']!!} </div></a>

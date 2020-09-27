@@ -1,10 +1,23 @@
 @extends('home-master')
 
+@section('seo_title')	
+{{$finalWhyUs['seo']['title']}}
+@endsection
+
+@section('seo_description')	
+{{$finalWhyUs['seo']['description']}}
+@endsection
+
+@section('seo_keyword')	
+{{$finalWhyUs['seo']['keywords']}}
+@endsection
+
 
 
 @section('content')
 
 <div class="why-us content-page">
+
 	<div class="banner">
 		<div class="banner-img" data-aos="fade-up" data-aos-duration="3000">
 			<img class="img-fluid" src="{{url('public/images/9.jpg')}}" alt=""></img>
@@ -43,78 +56,6 @@
 				</a>
 			</div>
 			@endforeach
-			{{-- <div class="item">
-				<a href="{{url('why_us_subpage')}}">
-					<div class="our-work">
-						<div class="work-img">
-							<img class="img-fluid" src="{{url('public/images/40.jpg')}}"></img>
-						</div>
-						<div class="work-title">
-							<h2>Drake House</h2>
-						</div>
-					</div>
-				</a>
-			</div>
-			div
-			class
-			item
-			a
-			href
-			url(
-			why
-			us
-			subpage
-			)
-			div
-			class
-			our-work
-			div
-			class
-			work-img
-			img
-			class
-			img-fluid
-			src
-			url(
-			public/images/50.jpg
-			)
-			/img
-			/div
-			div
-			class
-			work-title
-			h2
-			Clany
-			Kitchen
-			/h2
-			/div
-			/div
-			/a
-			/div
-			<div class="item">
-				<a href="{{url('why_us_subpage')}}">
-					<div class="our-work">
-						<div class="work-img">
-							<img class="img-fluid" src="{{url('public/images/51.jpg')}}"></img>
-						</div>
-						<div class="work-title">
-							<h2>Crisp</h2>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="item">
-				<a href="{{url('why_us_subpage')}}">
-					<div class="our-work">
-						<div class="work-img">
-							<img class="img-fluid" src="{{url('public/images/52.jpg')}}"></img>
-						</div>
-						<div class="work-title">
-							<h2>Kitchen Story</h2>
-						</div>
-					</div>
-				</a>
-			</div> --}}
 		</div>
 	</div>
 
@@ -249,27 +190,28 @@
 					<div class="title-content">
 						<p>Submit your request online by filling out the form</p>
 					</div>
-					<form class="form-content-detail mt-4">
+					<form class="form-content-detail mt-4" action="{{url('store-contact')}}" method="POST">
+						@csrf
 						<section class="mb-3">Fields marked with an <small>*</small> are required</section>
 						<div class="form-row mb-3">
 							<div class="form-group col-md-6">
-								<input type="text-center" class="form-control" id="inputName" placeholder="Name">
+								<input type="text-center" class="form-control" name="name" id="inputName" placeholder="Name">
 							</div>
 							<div class="form-group col-md-6">
-								<input type="nummber" class="form-control" id="inputPhone" placeholder="Company">
+								<input type="text" name="subject" class="form-control" id="inputPhone" placeholder="Subject">
 							</div>
 						</div>
 						<div class="form-row mb-3">
 							<div class="form-group col-md-6">
-								<input type="email" class="form-control" id="inputEmail4" placeholder="Email Address">
+								<input type="email" class="form-control" name="email" id="inputEmail4" placeholder="Email Address">
 							</div>
 							<div class="form-group col-md-6">
-								<input type="nummber" class="form-control" id="inputPhone" placeholder="Phone No">
+								<input type="number" name="phone_no" class="form-control" id="inputPhone" placeholder="Phone No">
 							</div>
 						</div>
 						<div class="form-group">
 							<label>Message <small>*</small></label>
-							<textarea class="form-control col-md-12" placeholder="How can we help"></textarea>
+							<textarea class="form-control col-md-12" name="message" placeholder="How can we help"></textarea>
 						</div>
 						<button type="submit" class="btn btn1">Submit</button>
 					</form>

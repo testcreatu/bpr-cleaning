@@ -65,10 +65,10 @@
             <a class="nav-link" href="{{url('blog_list')}}">Blog</a>
           </li>
           <li class="nav-item {{ (request()->is('contact_us*')) ? 'active' : '' }}">
-            <a class="nav-link" href="{{url('contact_us')}}">Conatct</a>
+            <a class="nav-link" href="{{url('contact_us')}}">Contact</a>
           </li>
         </ul>
-        <a href="{{url('cleaning_services')}}" class="btn btn1 d-none d-lg-block">Book Now</a>
+        <a href="{{url('booking_list')}}" class="btn btn1 d-none d-lg-block">Book Now</a>
       </div>
     </nav>
   </div>

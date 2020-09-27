@@ -1,5 +1,16 @@
 @extends('home-master')
 
+@section('seo_title')	
+{{$finalFaq['seo']['title']}}
+@endsection
+
+@section('seo_description')	
+{{$finalFaq['seo']['description']}}
+@endsection
+
+@section('seo_keyword')	
+{{$finalFaq['seo']['keywords']}}
+@endsection
 
 
 @section('content')

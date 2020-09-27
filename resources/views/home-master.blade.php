@@ -3,7 +3,7 @@
 <head>
 
     <!-- Page Title -->
-    <title>BPR Cleaning</title>
+    <title>@yield('seo_title')</title>
 
 
     <!-- FavIcon Link -->
@@ -14,8 +14,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="@yield('seo_description')">
+    <meta name="keywords" content="@yield('seo_keyword')">
 
 
     <!-- Bootstrap CSS -->
@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="{{url('public/css/aos.css')}}">
 
 
-     <!-- owl carousel -->
+    <!-- owl carousel -->
     <link rel="stylesheet" type="text/css" href="{{url('public/owl/owl.carousel.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{url('public/owl/owl.theme.default.min.css')}}">
 
@@ -42,63 +42,63 @@
     <script type="text/javascript" src="{{url('public/js/jquery-1.9.1.min.js')}}"></script>
 
     <script>
-    $(document).ready(function () {
-        $('.nav-tabs > li a[title]').tooltip();
-        
-        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        $(document).ready(function () {
+            $('.nav-tabs > li a[title]').tooltip();
 
-            var target = $(e.target);
-            
-            if (target.parent().hasClass('disabled')) {
-                return false;
-            }
+            $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+
+                var target = $(e.target);
+
+                if (target.parent().hasClass('disabled')) {
+                    return false;
+                }
+            });
+
+            $(".next-step").click(function (e) {
+
+                var active = $('.wizard .nav-tabs li.active');
+                active.next().removeClass('disabled');
+                nextTab(active);
+
+            });
+            $(".prev-step").click(function (e) {
+
+                var active = $('.wizard .nav-tabs li.active');
+                prevTab(active);
+
+            });
         });
 
-        $(".next-step").click(function (e) {
+        function nextTab(elem) {
+            $(elem).next().find('a[data-toggle="tab"]').click();
+        }
+        function prevTab(elem) {
+            $(elem).prev().find('a[data-toggle="tab"]').click();
+        }
 
-            var active = $('.wizard .nav-tabs li.active');
-            active.next().removeClass('disabled');
-            nextTab(active);
 
+        $('.nav-tabs').on('click', 'li', function() {
+            $('.nav-tabs li.active').removeClass('active');
+            $(this).addClass('active');
         });
-        $(".prev-step").click(function (e) {
-
-            var active = $('.wizard .nav-tabs li.active');
-            prevTab(active);
-
-        });
-    });
-
-    function nextTab(elem) {
-        $(elem).next().find('a[data-toggle="tab"]').click();
-    }
-    function prevTab(elem) {
-        $(elem).prev().find('a[data-toggle="tab"]').click();
-    }
-
-
-    $('.nav-tabs').on('click', 'li', function() {
-        $('.nav-tabs li.active').removeClass('active');
-        $(this).addClass('active');
-    });
-</script>
+    </script>
 
 </head>
 
 <body>
 
-<div>
-	@include('header.header')
-</div>
+    <div>
+       @include('header.header')
+   </div>
 
-<div style="min-height: 50vh">
-	@yield('content')
-</div>
+   <div style="min-height: 50vh">
+       @yield('content')
+   </div>
 
-<div>
-	@include('footer.footer')
-</div>
-	
+   <div>
+       @include('footer.footer')
+   </div>
+
 </body>
 
 <!-- Popper, Boostrap JS -->

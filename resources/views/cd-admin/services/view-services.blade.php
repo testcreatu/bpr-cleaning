@@ -164,6 +164,23 @@
 				@endforeach
 				@endif
 
+
+
+				<?php $rooms = json_decode($ch['rooms']); ?>
+
+				@if(isset($rooms))
+				<div class="panel-heading"> Rooms</div>
+				@foreach($rooms as $room)
+				<div class="panel panel-default">
+					<img src="{{url('uploads/services/'.$room->image)}}" height="200px" width="200px">
+					<p> {{$room->room_title}}</p>
+					<p>{!!$room->room_summary!!}</p>
+				</div>
+				@endforeach
+				@endif
+
+
+
 			</div>
 			<div class="modal-footer">
 				<button type="button" data-dismiss="modal" class="btn dark btn-outline">Close</button>

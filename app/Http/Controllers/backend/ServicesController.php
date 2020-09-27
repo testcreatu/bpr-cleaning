@@ -49,6 +49,9 @@ class ServicesController extends Controller
 			'price' => '',
 			'start_price' => 'required',
 			'image' => 'required|mimes:jpg,jpeg,png,svg,gif|image',
+			'show_in_homepage' => 'required',
+			'extra_title' => '',
+			'extra_price' => '',
 		]);
 		$pricing = [];
 		foreach($data['duration'] as $key=>$pr)
@@ -56,6 +59,14 @@ class ServicesController extends Controller
 			$pricing[$key]['duration'] = $pr;
 			$pricing[$key]['price'] = $data['price'][$key]?$data['price'][$key]:'';
 			unset($data['duration'][$key]);
+		}
+
+		$extras = [];
+		foreach($data['extra_title'] as $key=>$ex)
+		{
+			$extras[$key]['extra_title'] = $ex;
+			$extras[$key]['extra_price'] = $data['extra_price'][$key]?$data['extra_price'][$key]:'';
+			unset($data['extra_title'][$key]);
 		}
 		$room = [];
 		foreach($data['room_title'] as $key=>$rt)
@@ -87,6 +98,8 @@ class ServicesController extends Controller
 		$service->slug = Str::slug($data['name']);
 		$service->front_image = $this->uploadImage($data['image'],'uploads/services');
 		$service->start_price = $data['start_price'];
+		$service->show_in_homepage = $data['show_in_homepage'];
+		$service->extras = json_encode($extras);
 		$service->save();
 		Session::flash('ServiceSuccess');
 		return redirect('cd-admin/view-services');
@@ -114,6 +127,9 @@ class ServicesController extends Controller
 			'price' => '',
 			'start_price' => 'required',
 			'image' => 'mimes:jpg,jpeg,png,svg,gif|image',
+			'show_in_homepage' => 'required',
+			'extra_title' => '',
+			'extra_price' => '',
 		]);
 
 		$service = Services::find($id);
@@ -124,8 +140,17 @@ class ServicesController extends Controller
 			$pricing[$key]['price'] = $data['price'][$key]?$data['price'][$key]:'';
 			unset($data['duration'][$key]);
 		}
+
+		$extras = [];
+		foreach($data['extra_title'] as $key=>$pr)
+		{
+			$extras[$key]['extra_title'] = $pr;
+			$extras[$key]['extra_price'] = $data['extra_price'][$key]?$data['extra_price'][$key]:'';
+			unset($data['extra_title'][$key]);
+		}
 		$room = [];
-		foreach(json_decode($service->rooms) as $key=>$d)
+		$rooms = json_decode($service->rooms)?json_decode($service->rooms):'';
+		foreach($rooms as $key=>$d)
 		{
 			$room[$key]['room_title'] = $data['room_title'][$key]?$data['room_title'][$key]:'';
 			$room[$key]['room_summary'] = $data['room_summary'][$key]?$data['room_summary'][$key]:NULL;
@@ -177,8 +202,14 @@ class ServicesController extends Controller
 		$service->rooms = json_encode($room);
 		$service->pricing = json_encode($pricing);
 		$service->slug = Str::slug($data['name']);
-		$service->front_image = $this->uploadImage($data['image'],'uploads/services');
+		if(isset($data['front_image']))
+		{
+			$this->unlinkImage('uploads/services/'.$service['front_image']);
+			$service->front_image = $this->uploadImage($data['image'],'uploads/services');
+		}
+		$service->show_in_homepage = $data['show_in_homepage'];
 		$service->start_price = $data['start_price'];
+		$service->extras = json_encode($extras);
 		$service->save();
 		Session::flash('ServiceUpdateSuccess');
 		return redirect('cd-admin/view-services');

@@ -1,6 +1,16 @@
 @extends('home-master')
 
+@section('seo_title')	
+{{$finalContact['seo']['title']}}
+@endsection
 
+@section('seo_description')	
+{{$finalContact['seo']['description']}}
+@endsection
+
+@section('seo_keyword')	
+{{$finalContact['seo']['keywords']}}
+@endsection
 
 @section('content')
 
@@ -21,21 +31,25 @@
 					<div class="mission-title" data-aos="fade-down" data-aos-duration="3000">
 						<h4>Get an emergency call or appoinment.</h4>
 					</div>
-					<form class="contact-form mt-5">
+					<form class="contact-form mt-5" action="{{url('store-contact')}}" method="POST">
+						@csrf
 						<div class="form-row">
 							<div class="form-group col-md-6" data-aos="fade-right" data-aos-duration="3000">
-								<input type="text-center" class="form-control" id="inputName" placeholder="Enter your name">
+								<input type="text" name="name" class="form-control" id="inputName" placeholder="Enter your name">
 								<i class="fas fa-user"></i>
 							</div>
 							<div class="form-group col-md-6" data-aos="fade-right" data-aos-duration="2000">
-								<input type="email" class="form-control" id="inputPhone" placeholder="Enter your email">
+								<input type="email" name="email" class="form-control" id="inputPhone" placeholder="Enter your email">
 							</div>
 						</div>
 						<div class="form-row">
 							<div class="form-group col-md-6" data-aos="fade-right" data-aos-duration="3000">
-								<input type="nummber" class="form-control" id="inputPhone" placeholder="Phone number">
+								<input type="text" name="subject" class="form-control" id="inputSubject" placeholder="Subject">
 							</div>
-							<div class="form-group col-md-6" data-aos="fade-right" data-aos-duration="2000">
+							<div class="form-group col-md-6" data-aos="fade-right" data-aos-duration="3000">
+								<input type="number" name="phone_no" class="form-control" id="inputPhone" placeholder="Phone number">
+							</div>
+							{{-- <div class="form-group col-md-6" data-aos="fade-right" data-aos-duration="2000">
 								<select id="inputSubject" class="form-control">
 									<option selected>Subject</option>
 									<option>Commercial Cleaning</option>
@@ -43,11 +57,12 @@
 									<option>Hotel Cleaning</option>
 									<option>Resturant Cleaning</option>
 								</select>
-							</div>
+							</div> --}}
+
 						</div>
 						<div class="form-row">
 							<div class="form-group col-12" data-aos="fade-right" data-aos-duration="3000">
-								<textarea class="form-control"></textarea>
+								<textarea class="form-control" type="text" name="message"></textarea>
 							</div>
 						</div>
 						<div class="col-auto text-center mt-4" data-aos="fade-right" data-aos-duration="3000">
@@ -75,7 +90,7 @@
 						</div>
 						<p class="location">
 							<i class="fas fa-map-marker-alt"></i>
-							Shop No.1,Underlying Block H Triq Ta'Mezzi, Naxxar, Malta
+							{{$finalHeader['contact']['address']}}
 						</p>
 						<div class="row mt-4">
 							<div class="col-lg-6 mb-4">
@@ -85,7 +100,7 @@
 									</div>
 									<div class="icon-body float-left">
 										<h5>Get In Touch</h5>
-										<a href="tel:777-877-89">777-877-89</a>
+										<a href="tel:{{$finalHeader['contact']['contact_no']}}">{{$finalHeader['contact']['contact_no']}}</a>
 									</div>
 								</div>
 							</div>
@@ -96,13 +111,12 @@
 									</div>
 									<div class="icon-body float-left">
 										<h5>Mail Us</h5>
-										<a href="mailto:info@bprcleaning.com">info@bprcleaning.com</a>
+										<a href="mailto:{{$finalHeader['contact']['email']}}">{{$finalHeader['contact']['email']}}</a>
 									</div>
 								</div>
 							</div>
 						</div>
-						<p>Objectively productivate cutting-edge channels without cross functional markets.
-                                        Objectively brand enterprise-wide internal.</p>
+						<p>{{$finalHeader['about']['summary']}}</p>
 					</div>
 				</div>
 			</div>
@@ -116,13 +130,14 @@
 					<div class="title">
 						<h4>Subscribe for the Latest News:</h4>
 					</div>
-					<form class="subscribe-form mt-3">
+					<form class="subscribe-form mt-3" action="{{url('add-subscriptions')}}" method="POST">
+						@csrf
 						<div class="form-row">
 							<div class="form-group col-md-4">
-								<input type="text" class="form-control" placeholder="Name">
+								<input type="text" class="form-control" name="name" placeholder="Name">
 							</div>
 							<div class="form-group col-md-4">
-								<input type="email" class="form-control" placeholder="Email Address">
+								<input type="email" class="form-control" name="email" placeholder="Email Address">
 							</div>
 							<div class="form-group col-md-4 text-center">
 								<button type="submit" class="btn btn-outline-dark">Subscribe</button>
